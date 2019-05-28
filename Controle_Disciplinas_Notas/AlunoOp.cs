@@ -12,5 +12,14 @@ namespace Controle_Disciplinas_Notas
         {
             // Adicionar id guid, nome, idade, telefone, ano (série)
         }
+
+        public void AdicionarNota(Disciplina disc, Aluno alu)
+        {
+
+        }
+        public void ExcluirNota(Disciplina disc, Aluno alu)
+        {
+
+        }
     }
 }

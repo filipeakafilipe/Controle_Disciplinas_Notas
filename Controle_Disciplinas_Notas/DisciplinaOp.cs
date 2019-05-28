@@ -10,13 +10,24 @@ namespace Controle_Disciplinas_Notas
     {
         public DisciplinaOp(Disciplina disc)
         {
-            // Adicionar o nome, nomes das notas e notas máx
+            // Adicionar o nome, professor, nomes das notas e notas máx
         }
 
-        public void AdicionarNota(Disciplina disc, Aluno alu, double Nota)
+        public void AdicionarAtividade(Disciplina disc)
         {
-            // Adicionar uma nota do aluno
-            // Vai receber do ControleCadastro
+
         }
+
+        public void ExcluirAtividade(Disciplina disc)
+        {
+
+        }
+
+
+        //public void AdicionarNota(Disciplina disc, Aluno alu)
+        //{
+        //    // Adicionar uma nota do aluno
+        //    // Vai receber do ControleCadastro
+        //}
     }
 }

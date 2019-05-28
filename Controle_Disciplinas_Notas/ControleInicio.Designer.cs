@@ -48,7 +48,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.Controls.Add(this.label1);
             this.Name = "ControleInicio";
-            this.Size = new System.Drawing.Size(598, 361);
+            this.Size = new System.Drawing.Size(1079, 614);
             this.ResumeLayout(false);
             this.PerformLayout();
 

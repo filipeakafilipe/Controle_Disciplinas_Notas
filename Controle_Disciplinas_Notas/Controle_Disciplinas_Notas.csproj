@@ -88,6 +88,12 @@
     <Compile Include="ControleCadastroDisciplina.Designer.cs">
       <DependentUpon>ControleCadastroDisciplina.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControleCadastroInicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControleCadastroInicio.Designer.cs">
+      <DependentUpon>ControleCadastroInicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControleInicio.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -99,6 +105,24 @@
     </Compile>
     <Compile Include="ControleListar.Designer.cs">
       <DependentUpon>ControleListar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControleListarAlunos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControleListarAlunos.Designer.cs">
+      <DependentUpon>ControleListarAlunos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControleListarDisciplinas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControleListarDisciplinas.Designer.cs">
+      <DependentUpon>ControleListarDisciplinas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControleListarInicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControleListarInicio.Designer.cs">
+      <DependentUpon>ControleListarInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Disciplina.cs" />
     <Compile Include="DisciplinaOp.cs" />
@@ -123,11 +147,23 @@
     <EmbeddedResource Include="ControleCadastroDisciplina.resx">
       <DependentUpon>ControleCadastroDisciplina.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ControleCadastroInicio.resx">
+      <DependentUpon>ControleCadastroInicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControleInicio.resx">
       <DependentUpon>ControleInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControleListar.resx">
       <DependentUpon>ControleListar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControleListarAlunos.resx">
+      <DependentUpon>ControleListarAlunos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControleListarDisciplinas.resx">
+      <DependentUpon>ControleListarDisciplinas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControleListarInicio.resx">
+      <DependentUpon>ControleListarInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

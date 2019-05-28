@@ -17,12 +17,20 @@ namespace Controle_Disciplinas_Notas
             set { _NomeDisc = value; }
         }
 
-        private ArrayList _NomeNota;
+        private string _Professor;
 
-        public ArrayList NomeNota
+        public string Professor
         {
-            get { return _NomeNota; }
-            set { _NomeNota = value; }
+            get { return _Professor; }
+            set { _Professor = value; }
+        }
+
+        private ArrayList _NomeAtividade;
+
+        public ArrayList NomeAtividade
+        {
+            get { return _NomeAtividade; }
+            set { _NomeAtividade = value; }
         }
 
         private ArrayList _NotaMax;
