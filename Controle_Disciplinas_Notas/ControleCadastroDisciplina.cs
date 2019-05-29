@@ -16,5 +16,15 @@ namespace Controle_Disciplinas_Notas
         {
             InitializeComponent();
         }
+
+        private void btnAdicionarDisciplina_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdicionarAtividade_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

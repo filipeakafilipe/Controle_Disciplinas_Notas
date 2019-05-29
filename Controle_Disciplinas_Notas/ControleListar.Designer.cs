@@ -31,15 +31,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnListarAlunos = new System.Windows.Forms.Button();
             this.btnListarDisciplinas = new System.Windows.Forms.Button();
-            this.controleListarAlunos1 = new Controle_Disciplinas_Notas.ControleListarAlunos();
             this.controleListarDisciplinas1 = new Controle_Disciplinas_Notas.ControleListarDisciplinas();
             this.controleListarInicio1 = new Controle_Disciplinas_Notas.ControleListarInicio();
+            this.controleListarAlunos1 = new Controle_Disciplinas_Notas.ControleListarAlunos();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(365, 63);
@@ -48,56 +51,63 @@
             // 
             // btnListarAlunos
             // 
+            this.btnListarAlunos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnListarAlunos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarAlunos.ForeColor = System.Drawing.Color.White;
             this.btnListarAlunos.Location = new System.Drawing.Point(493, 33);
             this.btnListarAlunos.Name = "btnListarAlunos";
             this.btnListarAlunos.Size = new System.Drawing.Size(75, 23);
             this.btnListarAlunos.TabIndex = 1;
             this.btnListarAlunos.Text = "Alunos";
-            this.btnListarAlunos.UseVisualStyleBackColor = true;
+            this.btnListarAlunos.UseVisualStyleBackColor = false;
             this.btnListarAlunos.Click += new System.EventHandler(this.BtnListarAlunos_Click);
             // 
             // btnListarDisciplinas
             // 
+            this.btnListarDisciplinas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnListarDisciplinas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarDisciplinas.ForeColor = System.Drawing.Color.White;
             this.btnListarDisciplinas.Location = new System.Drawing.Point(601, 33);
             this.btnListarDisciplinas.Name = "btnListarDisciplinas";
             this.btnListarDisciplinas.Size = new System.Drawing.Size(75, 23);
             this.btnListarDisciplinas.TabIndex = 2;
             this.btnListarDisciplinas.Text = "Disciplinas";
-            this.btnListarDisciplinas.UseVisualStyleBackColor = true;
+            this.btnListarDisciplinas.UseVisualStyleBackColor = false;
             this.btnListarDisciplinas.Click += new System.EventHandler(this.BtnListarDisciplinas_Click);
-            // 
-            // controleListarAlunos1
-            // 
-            this.controleListarAlunos1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.controleListarAlunos1.Location = new System.Drawing.Point(0, 114);
-            this.controleListarAlunos1.Name = "controleListarAlunos1";
-            this.controleListarAlunos1.Size = new System.Drawing.Size(1082, 500);
-            this.controleListarAlunos1.TabIndex = 3;
             // 
             // controleListarDisciplinas1
             // 
-            this.controleListarDisciplinas1.BackColor = System.Drawing.Color.DarkOrange;
-            this.controleListarDisciplinas1.Location = new System.Drawing.Point(-3, 114);
+            this.controleListarDisciplinas1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.controleListarDisciplinas1.ForeColor = System.Drawing.Color.White;
+            this.controleListarDisciplinas1.Location = new System.Drawing.Point(0, 114);
             this.controleListarDisciplinas1.Name = "controleListarDisciplinas1";
             this.controleListarDisciplinas1.Size = new System.Drawing.Size(1082, 500);
             this.controleListarDisciplinas1.TabIndex = 4;
             // 
             // controleListarInicio1
             // 
-            this.controleListarInicio1.BackColor = System.Drawing.Color.Olive;
-            this.controleListarInicio1.Location = new System.Drawing.Point(-3, 114);
+            this.controleListarInicio1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.controleListarInicio1.Location = new System.Drawing.Point(0, 114);
             this.controleListarInicio1.Name = "controleListarInicio1";
             this.controleListarInicio1.Size = new System.Drawing.Size(1082, 500);
             this.controleListarInicio1.TabIndex = 5;
+            // 
+            // controleListarAlunos1
+            // 
+            this.controleListarAlunos1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.controleListarAlunos1.Location = new System.Drawing.Point(0, 114);
+            this.controleListarAlunos1.Name = "controleListarAlunos1";
+            this.controleListarAlunos1.Size = new System.Drawing.Size(1082, 500);
+            this.controleListarAlunos1.TabIndex = 6;
             // 
             // ControleListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.controleListarAlunos1);
             this.Controls.Add(this.controleListarInicio1);
             this.Controls.Add(this.controleListarDisciplinas1);
-            this.Controls.Add(this.controleListarAlunos1);
             this.Controls.Add(this.btnListarDisciplinas);
             this.Controls.Add(this.btnListarAlunos);
             this.Controls.Add(this.label1);
@@ -113,8 +123,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnListarAlunos;
         private System.Windows.Forms.Button btnListarDisciplinas;
-        private ControleListarAlunos controleListarAlunos1;
         private ControleListarDisciplinas controleListarDisciplinas1;
         private ControleListarInicio controleListarInicio1;
+        private ControleListarAlunos controleListarAlunos1;
     }
 }

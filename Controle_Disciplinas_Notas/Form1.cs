@@ -27,6 +27,7 @@ namespace Controle_Disciplinas_Notas
             controleInicio1.BringToFront();
             btnInicio.BackColor = Color.FromArgb(50, 50, 50);
             btnCadastro.BackColor = Color.FromArgb(40, 40, 40);
+            btnAlterar.BackColor = Color.FromArgb(40, 40, 40);
             btnListar.BackColor = Color.FromArgb(40, 40, 40);
             btnAluno.BackColor = Color.FromArgb(40, 40, 40);
         }
@@ -38,9 +39,22 @@ namespace Controle_Disciplinas_Notas
             controleCadastro1.BringToFront();
             btnInicio.BackColor = Color.FromArgb(40, 40, 40);
             btnCadastro.BackColor = Color.FromArgb(50, 50, 50);
+            btnAlterar.BackColor = Color.FromArgb(40, 40, 40);
             btnListar.BackColor = Color.FromArgb(40, 40, 40);
             btnAluno.BackColor = Color.FromArgb(40, 40, 40);
             //InitializeComponent();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            PainelLadoVerde.Height = btnAlterar.Height;
+            PainelLadoVerde.Top = btnAlterar.Top;
+            controleAlterar1.BringToFront();
+            btnInicio.BackColor = Color.FromArgb(40, 40, 40);
+            btnCadastro.BackColor = Color.FromArgb(40, 40, 40);
+            btnAlterar.BackColor = Color.FromArgb(50, 50, 50);
+            btnListar.BackColor = Color.FromArgb(40, 40, 40);
+            btnAluno.BackColor = Color.FromArgb(40, 40, 40);
         }
 
         private void BtnListar_Click(object sender, EventArgs e)
@@ -50,6 +64,7 @@ namespace Controle_Disciplinas_Notas
             controleListar1.BringToFront();
             btnInicio.BackColor = Color.FromArgb(40, 40, 40);
             btnCadastro.BackColor = Color.FromArgb(40, 40, 40);
+            btnAlterar.BackColor = Color.FromArgb(40, 40, 40);
             btnListar.BackColor = Color.FromArgb(50, 50, 50);
             btnAluno.BackColor = Color.FromArgb(40, 40, 40);
         }
@@ -61,6 +76,7 @@ namespace Controle_Disciplinas_Notas
             controleAluno1.BringToFront();
             btnInicio.BackColor = Color.FromArgb(40, 40, 40);
             btnCadastro.BackColor = Color.FromArgb(40, 40, 40);
+            btnAlterar.BackColor = Color.FromArgb(40, 40, 40);
             btnListar.BackColor = Color.FromArgb(40, 40, 40);
             btnAluno.BackColor = Color.FromArgb(50, 50, 50);
         }

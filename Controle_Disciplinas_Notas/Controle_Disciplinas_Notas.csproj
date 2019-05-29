@@ -64,6 +64,30 @@
     <Compile Include="Aluno.cs" />
     <Compile Include="AlunoOp.cs" />
     <Compile Include="Alunos.cs" />
+    <Compile Include="ControleAlterar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControleAlterar.Designer.cs">
+      <DependentUpon>ControleAlterar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControleAlterarAluno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControleAlterarAluno.Designer.cs">
+      <DependentUpon>ControleAlterarAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControleAlterarDisciplina.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControleAlterarDisciplina.Designer.cs">
+      <DependentUpon>ControleAlterarDisciplina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControleAlterarInicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControleAlterarInicio.Designer.cs">
+      <DependentUpon>ControleAlterarInicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControleAluno.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -135,6 +159,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ControleAlterar.resx">
+      <DependentUpon>ControleAlterar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControleAlterarAluno.resx">
+      <DependentUpon>ControleAlterarAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControleAlterarDisciplina.resx">
+      <DependentUpon>ControleAlterarDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControleAlterarInicio.resx">
+      <DependentUpon>ControleAlterarInicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControleAluno.resx">
       <DependentUpon>ControleAluno.cs</DependentUpon>
     </EmbeddedResource>

@@ -20,7 +20,7 @@ namespace Controle_Disciplinas_Notas
         }
 
         private int _Idade;
-
+        // Trocar idade para data de nascimento?
         public int Idade
         {
             get { return _Idade; }
@@ -36,7 +36,7 @@ namespace Controle_Disciplinas_Notas
         }
 
         private int _Ano;
-
+        // Série
         public int Ano
         {
             get { return _Ano; }
