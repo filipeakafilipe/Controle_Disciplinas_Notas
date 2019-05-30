@@ -12,7 +12,7 @@ namespace Controle_Disciplinas_Notas
     class DisciplinaOp
     {
         private string caminho = @"C:\Users\Filipe\Desktop\Prog\PUC\Controle_Disciplinas_Notas\disciplinas.xml";
-        private IEnumerable<XElement> DiscSelecionada { get; set; }
+        //private IEnumerable<XElement> DiscSelecionada { get; set; }
 
         public DisciplinaOp()
         {
@@ -59,10 +59,10 @@ namespace Controle_Disciplinas_Notas
                            };
 
             // foreach aqui e lá
-            foreach(var x in Consulta)
+            foreach (var x in Consulta)
             {
                 discs.Add(x.Nome);
-            } 
+            }
 
             return discs;
         }
@@ -84,10 +84,39 @@ namespace Controle_Disciplinas_Notas
         //    return Consulta;
         //}
 
-        //public void AdicionarAtividade(Disciplina disc, string NomeAtividade, double NotaMax/*, IEnumerable<XElement> Consulta*/)
-        //{
-        //    this.SalvaXmlAtividade(disc, NomeAtividade, NotaMax);
-        //}
+        public void AdicionarAtividade(Disciplina disc, string NomeDisciplina, string NomeAtividade, double NotaMax/*, IEnumerable<XElement> Consulta*/)
+        {
+            XElement Raiz = XElement.Load(caminho);
+
+            var Consulta = from P in Raiz.Elements("Disciplina")
+                           where ((string)P.Element("NomeDisc")).Equals(NomeDisciplina)
+                           select P;
+
+            //XElement NovaAtividade;
+            //XElement NovaNota;
+
+            //XElement NovaAtividade = new XElement("NomeAtividade", NomeAtividade,
+            //    new XElement("NotaMax", NotaMax));
+
+            foreach (var x in Consulta)
+            {
+                //x.Element("NomeAtividade").Add(NomeAtividade);
+                //x.Element("NotaMax").Add(NotaMax);
+
+                //NovaAtividade = new XElement("NomeAtividade", NomeAtividade);
+                //Raiz.Add(NovaAtividade);
+                x.SetElementValue("NomeAtividade", NomeAtividade);
+                //NovaNota = new XElement("NotaMax", NotaMax);
+                //Raiz.Add(NovaNota);
+                x.SetElementValue("NotaMax", NotaMax);
+
+                //Raiz.AppendChild(NovaAtividade);
+            }
+
+            Raiz.Save(caminho);
+
+            //this.SalvaXmlAtividade(disc, NomeAtividade, NotaMax);
+        }
 
         public void AlterarDisciplina(Disciplina disc)
         {
@@ -96,7 +125,7 @@ namespace Controle_Disciplinas_Notas
 
         public void AlterarAtividade(Disciplina disc)
         {
-            
+
         }
 
         public void ExcluirDisciplina(Disciplina disc)
@@ -139,7 +168,7 @@ namespace Controle_Disciplinas_Notas
         //    //XElement NovaAtividade = new XElement("NomeAtividade", NomeAtividade,
         //    //    new XElement("NotaMax", NotaMax));
 
-        //    foreach(var x in DiscSelecionada)
+        //    foreach (var x in DiscSelecionada)
         //    {
         //        x.Add("NomeAtividade", NomeAtividade);
         //        x.Add("NotaMax", NotaMax);

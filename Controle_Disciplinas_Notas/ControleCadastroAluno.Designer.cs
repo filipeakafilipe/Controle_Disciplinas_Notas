@@ -53,8 +53,6 @@
             this.btnAdicionarNotaCadAl = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSelecionarAluno = new System.Windows.Forms.Button();
-            this.btnSelecionarDisciplina = new System.Windows.Forms.Button();
             this.btnAtualizarAlunos = new System.Windows.Forms.Button();
             this.btnAtualizarDisciplinas = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -288,30 +286,6 @@
             this.panel1.Size = new System.Drawing.Size(10, 600);
             this.panel1.TabIndex = 24;
             // 
-            // btnSelecionarAluno
-            // 
-            this.btnSelecionarAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnSelecionarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecionarAluno.ForeColor = System.Drawing.Color.White;
-            this.btnSelecionarAluno.Location = new System.Drawing.Point(653, 174);
-            this.btnSelecionarAluno.Name = "btnSelecionarAluno";
-            this.btnSelecionarAluno.Size = new System.Drawing.Size(75, 23);
-            this.btnSelecionarAluno.TabIndex = 25;
-            this.btnSelecionarAluno.Text = "Selecionar";
-            this.btnSelecionarAluno.UseVisualStyleBackColor = false;
-            // 
-            // btnSelecionarDisciplina
-            // 
-            this.btnSelecionarDisciplina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnSelecionarDisciplina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecionarDisciplina.ForeColor = System.Drawing.Color.White;
-            this.btnSelecionarDisciplina.Location = new System.Drawing.Point(653, 243);
-            this.btnSelecionarDisciplina.Name = "btnSelecionarDisciplina";
-            this.btnSelecionarDisciplina.Size = new System.Drawing.Size(75, 23);
-            this.btnSelecionarDisciplina.TabIndex = 26;
-            this.btnSelecionarDisciplina.Text = "Selecionar";
-            this.btnSelecionarDisciplina.UseVisualStyleBackColor = false;
-            // 
             // btnAtualizarAlunos
             // 
             this.btnAtualizarAlunos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -343,8 +317,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.btnAtualizarDisciplinas);
             this.Controls.Add(this.btnAtualizarAlunos);
-            this.Controls.Add(this.btnSelecionarDisciplina);
-            this.Controls.Add(this.btnSelecionarAluno);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnAdicionarNotaCadAl);
@@ -405,8 +377,6 @@
         private System.Windows.Forms.Button btnAdicionarNotaCadAl;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnSelecionarAluno;
-        private System.Windows.Forms.Button btnSelecionarDisciplina;
         private System.Windows.Forms.Button btnAtualizarAlunos;
         private System.Windows.Forms.Button btnAtualizarDisciplinas;
     }

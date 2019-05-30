@@ -32,21 +32,15 @@ namespace Controle_Disciplinas_Notas
             DisciplinaOp Disc = new DisciplinaOp(new Disciplina(), txtNomeDisc.Text, txtProfessor.Text);
         }
 
-        private void BtnSelecionarDisciplina_Click(object sender, EventArgs e)
+    private void btnAdicionarAtividade_Click(object sender, EventArgs e)
         {
-            //DisciplinaOp Disc = new DisciplinaOp();
-
-            ///*var Consulta = */Disc.SelecionaDisciplina(cmbDisciplinaCadDi.Text);
-
-            ////Disc.RetornaConsulta(Consulta);
-        }
-
-        private void btnAdicionarAtividade_Click(object sender, EventArgs e)
-        {
+            string NomeDisciplina = cmbDisciplinaCadAt.Text;
             string NomeAtividade = txtNomeAtividade.Text;
             double NotaMax = double.Parse(txtNotaMax.Text);
 
-            //DisciplinaOp Disc = new DisciplinaOp();
+            DisciplinaOp Disc = new DisciplinaOp();
+
+            Disc.AdicionarAtividade(new Disciplina(), NomeDisciplina, NomeAtividade, NotaMax);
 
             //Disc.AdicionarAtividade(new Disciplina(), NomeAtividade, NotaMax/*, Consulta*/);
         }
@@ -59,7 +53,7 @@ namespace Controle_Disciplinas_Notas
 
             foreach (string nomeDisc in discs)
             {
-                cmbDisciplinaCadDi.Items.Add(nomeDisc);
+                cmbDisciplinaCadAt.Items.Add(nomeDisc);
             }
         }
     }

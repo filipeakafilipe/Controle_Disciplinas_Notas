@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSelecionarDisciplina = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbSelecionarDisciplina = new System.Windows.Forms.ComboBox();
@@ -46,7 +45,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSelecionarAtividade = new System.Windows.Forms.Button();
             this.cmbSelecionarAtividade = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -55,18 +53,6 @@
             this.btnAtualizarDisciplinas = new System.Windows.Forms.Button();
             this.btnAtualizarAtividades = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnSelecionarDisciplina
-            // 
-            this.btnSelecionarDisciplina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnSelecionarDisciplina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecionarDisciplina.ForeColor = System.Drawing.Color.White;
-            this.btnSelecionarDisciplina.Location = new System.Drawing.Point(236, 176);
-            this.btnSelecionarDisciplina.Name = "btnSelecionarDisciplina";
-            this.btnSelecionarDisciplina.Size = new System.Drawing.Size(75, 23);
-            this.btnSelecionarDisciplina.TabIndex = 36;
-            this.btnSelecionarDisciplina.Text = "Selecionar";
-            this.btnSelecionarDisciplina.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -97,7 +83,7 @@
             this.btnAdicionarAtividade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAdicionarAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionarAtividade.ForeColor = System.Drawing.Color.White;
-            this.btnAdicionarAtividade.Location = new System.Drawing.Point(594, 465);
+            this.btnAdicionarAtividade.Location = new System.Drawing.Point(594, 429);
             this.btnAdicionarAtividade.Name = "btnAdicionarAtividade";
             this.btnAdicionarAtividade.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionarAtividade.TabIndex = 32;
@@ -150,7 +136,7 @@
             // 
             this.lblNotaMax.AutoSize = true;
             this.lblNotaMax.ForeColor = System.Drawing.Color.White;
-            this.lblNotaMax.Location = new System.Drawing.Point(591, 377);
+            this.lblNotaMax.Location = new System.Drawing.Point(591, 345);
             this.lblNotaMax.Name = "lblNotaMax";
             this.lblNotaMax.Size = new System.Drawing.Size(59, 13);
             this.lblNotaMax.TabIndex = 27;
@@ -188,7 +174,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(594, 393);
+            this.textBox4.Location = new System.Drawing.Point(594, 361);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 23;
@@ -226,18 +212,6 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Alterar Disciplina";
             // 
-            // btnSelecionarAtividade
-            // 
-            this.btnSelecionarAtividade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnSelecionarAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecionarAtividade.ForeColor = System.Drawing.Color.White;
-            this.btnSelecionarAtividade.Location = new System.Drawing.Point(734, 173);
-            this.btnSelecionarAtividade.Name = "btnSelecionarAtividade";
-            this.btnSelecionarAtividade.Size = new System.Drawing.Size(75, 23);
-            this.btnSelecionarAtividade.TabIndex = 39;
-            this.btnSelecionarAtividade.Text = "Selecionar";
-            this.btnSelecionarAtividade.UseVisualStyleBackColor = false;
-            // 
             // cmbSelecionarAtividade
             // 
             this.cmbSelecionarAtividade.FormattingEnabled = true;
@@ -269,7 +243,7 @@
             this.btnExcluirAtividade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnExcluirAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluirAtividade.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirAtividade.Location = new System.Drawing.Point(828, 173);
+            this.btnExcluirAtividade.Location = new System.Drawing.Point(812, 173);
             this.btnExcluirAtividade.Name = "btnExcluirAtividade";
             this.btnExcluirAtividade.Size = new System.Drawing.Size(75, 23);
             this.btnExcluirAtividade.TabIndex = 40;
@@ -281,7 +255,7 @@
             this.btnExcluirDisciplina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnExcluirDisciplina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluirDisciplina.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirDisciplina.Location = new System.Drawing.Point(236, 213);
+            this.btnExcluirDisciplina.Location = new System.Drawing.Point(307, 174);
             this.btnExcluirDisciplina.Name = "btnExcluirDisciplina";
             this.btnExcluirDisciplina.Size = new System.Drawing.Size(75, 23);
             this.btnExcluirDisciplina.TabIndex = 41;
@@ -293,7 +267,7 @@
             this.btnAtualizarDisciplinas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAtualizarDisciplinas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizarDisciplinas.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarDisciplinas.Location = new System.Drawing.Point(236, 138);
+            this.btnAtualizarDisciplinas.Location = new System.Drawing.Point(226, 173);
             this.btnAtualizarDisciplinas.Name = "btnAtualizarDisciplinas";
             this.btnAtualizarDisciplinas.Size = new System.Drawing.Size(75, 23);
             this.btnAtualizarDisciplinas.TabIndex = 42;
@@ -305,7 +279,7 @@
             this.btnAtualizarAtividades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAtualizarAtividades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizarAtividades.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarAtividades.Location = new System.Drawing.Point(501, 173);
+            this.btnAtualizarAtividades.Location = new System.Drawing.Point(731, 174);
             this.btnAtualizarAtividades.Name = "btnAtualizarAtividades";
             this.btnAtualizarAtividades.Size = new System.Drawing.Size(75, 23);
             this.btnAtualizarAtividades.TabIndex = 43;
@@ -322,10 +296,8 @@
             this.Controls.Add(this.btnExcluirDisciplina);
             this.Controls.Add(this.btnExcluirAtividade);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.btnSelecionarAtividade);
             this.Controls.Add(this.cmbSelecionarAtividade);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnSelecionarDisciplina);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cmbSelecionarDisciplina);
@@ -351,8 +323,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnSelecionarDisciplina;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cmbSelecionarDisciplina;
@@ -370,7 +340,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSelecionarAtividade;
         private System.Windows.Forms.ComboBox cmbSelecionarAtividade;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;

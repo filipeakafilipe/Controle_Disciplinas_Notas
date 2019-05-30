@@ -94,4 +94,3 @@ C:\Users\Filipe\Desktop\Prog\PUC\Controle_Disciplinas_Notas\Controle_Disciplinas
 C:\Users\Filipe\Desktop\Prog\PUC\Controle_Disciplinas_Notas\Controle_Disciplinas_Notas\obj\Debug\Controle_Disciplinas_Notas.csproj.CopyComplete
 C:\Users\Filipe\Desktop\Prog\PUC\Controle_Disciplinas_Notas\Controle_Disciplinas_Notas\obj\Debug\Controle_Disciplinas_Notas.exe
 C:\Users\Filipe\Desktop\Prog\PUC\Controle_Disciplinas_Notas\Controle_Disciplinas_Notas\obj\Debug\Controle_Disciplinas_Notas.pdb
-C:\Users\Filipe\Desktop\Prog\PUC\Controle_Disciplinas_Notas\Controle_Disciplinas_Notas\obj\Debug\Controle_Disciplinas_Notas.csprojAssemblyReference.cache

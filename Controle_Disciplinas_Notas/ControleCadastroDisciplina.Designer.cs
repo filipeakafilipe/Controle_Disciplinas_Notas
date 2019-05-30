@@ -42,10 +42,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnAdicionarDisciplina = new System.Windows.Forms.Button();
             this.btnAdicionarAtividade = new System.Windows.Forms.Button();
-            this.cmbDisciplinaCadDi = new System.Windows.Forms.ComboBox();
+            this.cmbDisciplinaCadAt = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSelecionarDisciplina = new System.Windows.Forms.Button();
             this.btnAtualizarDisciplinas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -183,13 +182,13 @@
             this.btnAdicionarAtividade.UseVisualStyleBackColor = false;
             this.btnAdicionarAtividade.Click += new System.EventHandler(this.btnAdicionarAtividade_Click);
             // 
-            // cmbDisciplinaCadDi
+            // cmbDisciplinaCadAt
             // 
-            this.cmbDisciplinaCadDi.FormattingEnabled = true;
-            this.cmbDisciplinaCadDi.Location = new System.Drawing.Point(598, 174);
-            this.cmbDisciplinaCadDi.Name = "cmbDisciplinaCadDi";
-            this.cmbDisciplinaCadDi.Size = new System.Drawing.Size(121, 21);
-            this.cmbDisciplinaCadDi.TabIndex = 15;
+            this.cmbDisciplinaCadAt.FormattingEnabled = true;
+            this.cmbDisciplinaCadAt.Location = new System.Drawing.Point(598, 174);
+            this.cmbDisciplinaCadAt.Name = "cmbDisciplinaCadAt";
+            this.cmbDisciplinaCadAt.Size = new System.Drawing.Size(121, 21);
+            this.cmbDisciplinaCadAt.TabIndex = 15;
             // 
             // panel1
             // 
@@ -206,19 +205,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(10, 600);
             this.panel2.TabIndex = 17;
-            // 
-            // btnSelecionarDisciplina
-            // 
-            this.btnSelecionarDisciplina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnSelecionarDisciplina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecionarDisciplina.ForeColor = System.Drawing.Color.White;
-            this.btnSelecionarDisciplina.Location = new System.Drawing.Point(738, 171);
-            this.btnSelecionarDisciplina.Name = "btnSelecionarDisciplina";
-            this.btnSelecionarDisciplina.Size = new System.Drawing.Size(75, 23);
-            this.btnSelecionarDisciplina.TabIndex = 18;
-            this.btnSelecionarDisciplina.Text = "Selecionar";
-            this.btnSelecionarDisciplina.UseVisualStyleBackColor = false;
-            this.btnSelecionarDisciplina.Click += new System.EventHandler(this.BtnSelecionarDisciplina_Click);
             // 
             // btnAtualizarDisciplinas
             // 
@@ -239,10 +225,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.btnAtualizarDisciplinas);
-            this.Controls.Add(this.btnSelecionarDisciplina);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.cmbDisciplinaCadDi);
+            this.Controls.Add(this.cmbDisciplinaCadAt);
             this.Controls.Add(this.btnAdicionarAtividade);
             this.Controls.Add(this.btnAdicionarDisciplina);
             this.Controls.Add(this.label4);
@@ -281,10 +266,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAdicionarDisciplina;
         private System.Windows.Forms.Button btnAdicionarAtividade;
-        private System.Windows.Forms.ComboBox cmbDisciplinaCadDi;
+        private System.Windows.Forms.ComboBox cmbDisciplinaCadAt;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnSelecionarDisciplina;
         private System.Windows.Forms.Button btnAtualizarDisciplinas;
     }
 }

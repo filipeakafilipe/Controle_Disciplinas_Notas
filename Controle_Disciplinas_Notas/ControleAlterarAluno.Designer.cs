@@ -48,15 +48,15 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnSelecionarAluno = new System.Windows.Forms.Button();
-            this.btnSelecionarDisciplina = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSelecionarAtividade = new System.Windows.Forms.Button();
             this.btnExcluirAluno = new System.Windows.Forms.Button();
             this.btnAtualizarAlunos = new System.Windows.Forms.Button();
             this.btnAtualizarDisciplinas = new System.Windows.Forms.Button();
+            this.btnExcluirDisciplinaAluno = new System.Windows.Forms.Button();
+            this.btnExcluirAtividadeAluno = new System.Windows.Forms.Button();
+            this.btnAtualizarAtividadeAluno = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAlterarNotaAluno
@@ -240,28 +240,6 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 23;
             // 
-            // btnSelecionarAluno
-            // 
-            this.btnSelecionarAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnSelecionarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecionarAluno.Location = new System.Drawing.Point(170, 129);
-            this.btnSelecionarAluno.Name = "btnSelecionarAluno";
-            this.btnSelecionarAluno.Size = new System.Drawing.Size(75, 23);
-            this.btnSelecionarAluno.TabIndex = 45;
-            this.btnSelecionarAluno.Text = "Selecionar";
-            this.btnSelecionarAluno.UseVisualStyleBackColor = false;
-            // 
-            // btnSelecionarDisciplina
-            // 
-            this.btnSelecionarDisciplina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnSelecionarDisciplina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecionarDisciplina.Location = new System.Drawing.Point(609, 141);
-            this.btnSelecionarDisciplina.Name = "btnSelecionarDisciplina";
-            this.btnSelecionarDisciplina.Size = new System.Drawing.Size(75, 23);
-            this.btnSelecionarDisciplina.TabIndex = 46;
-            this.btnSelecionarDisciplina.Text = "Selecionar";
-            this.btnSelecionarDisciplina.UseVisualStyleBackColor = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -288,17 +266,6 @@
             this.panel2.Size = new System.Drawing.Size(10, 630);
             this.panel2.TabIndex = 49;
             // 
-            // btnSelecionarAtividade
-            // 
-            this.btnSelecionarAtividade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnSelecionarAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecionarAtividade.Location = new System.Drawing.Point(609, 210);
-            this.btnSelecionarAtividade.Name = "btnSelecionarAtividade";
-            this.btnSelecionarAtividade.Size = new System.Drawing.Size(75, 23);
-            this.btnSelecionarAtividade.TabIndex = 50;
-            this.btnSelecionarAtividade.Text = "Selecionar";
-            this.btnSelecionarAtividade.UseVisualStyleBackColor = false;
-            // 
             // btnExcluirAluno
             // 
             this.btnExcluirAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -316,7 +283,7 @@
             this.btnAtualizarAlunos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAtualizarAlunos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizarAlunos.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarAlunos.Location = new System.Drawing.Point(170, 100);
+            this.btnAtualizarAlunos.Location = new System.Drawing.Point(170, 129);
             this.btnAtualizarAlunos.Name = "btnAtualizarAlunos";
             this.btnAtualizarAlunos.Size = new System.Drawing.Size(75, 23);
             this.btnAtualizarAlunos.TabIndex = 52;
@@ -328,27 +295,63 @@
             this.btnAtualizarDisciplinas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAtualizarDisciplinas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizarDisciplinas.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarDisciplinas.Location = new System.Drawing.Point(609, 110);
+            this.btnAtualizarDisciplinas.Location = new System.Drawing.Point(609, 141);
             this.btnAtualizarDisciplinas.Name = "btnAtualizarDisciplinas";
             this.btnAtualizarDisciplinas.Size = new System.Drawing.Size(75, 23);
             this.btnAtualizarDisciplinas.TabIndex = 53;
             this.btnAtualizarDisciplinas.Text = "Atualizar";
             this.btnAtualizarDisciplinas.UseVisualStyleBackColor = false;
             // 
+            // btnExcluirDisciplinaAluno
+            // 
+            this.btnExcluirDisciplinaAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnExcluirDisciplinaAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluirDisciplinaAluno.ForeColor = System.Drawing.Color.White;
+            this.btnExcluirDisciplinaAluno.Location = new System.Drawing.Point(690, 141);
+            this.btnExcluirDisciplinaAluno.Name = "btnExcluirDisciplinaAluno";
+            this.btnExcluirDisciplinaAluno.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluirDisciplinaAluno.TabIndex = 54;
+            this.btnExcluirDisciplinaAluno.Text = "Excluir";
+            this.btnExcluirDisciplinaAluno.UseVisualStyleBackColor = false;
+            // 
+            // btnExcluirAtividadeAluno
+            // 
+            this.btnExcluirAtividadeAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnExcluirAtividadeAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluirAtividadeAluno.ForeColor = System.Drawing.Color.White;
+            this.btnExcluirAtividadeAluno.Location = new System.Drawing.Point(690, 210);
+            this.btnExcluirAtividadeAluno.Name = "btnExcluirAtividadeAluno";
+            this.btnExcluirAtividadeAluno.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluirAtividadeAluno.TabIndex = 55;
+            this.btnExcluirAtividadeAluno.Text = "Excluir";
+            this.btnExcluirAtividadeAluno.UseVisualStyleBackColor = false;
+            // 
+            // btnAtualizarAtividadeAluno
+            // 
+            this.btnAtualizarAtividadeAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAtualizarAtividadeAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarAtividadeAluno.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarAtividadeAluno.Location = new System.Drawing.Point(609, 208);
+            this.btnAtualizarAtividadeAluno.Name = "btnAtualizarAtividadeAluno";
+            this.btnAtualizarAtividadeAluno.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizarAtividadeAluno.TabIndex = 56;
+            this.btnAtualizarAtividadeAluno.Text = "Atualizar";
+            this.btnAtualizarAtividadeAluno.UseVisualStyleBackColor = false;
+            // 
             // ControleAlterarAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.btnAtualizarAtividadeAluno);
+            this.Controls.Add(this.btnExcluirAtividadeAluno);
+            this.Controls.Add(this.btnExcluirDisciplinaAluno);
             this.Controls.Add(this.btnAtualizarDisciplinas);
             this.Controls.Add(this.btnAtualizarAlunos);
             this.Controls.Add(this.btnExcluirAluno);
-            this.Controls.Add(this.btnSelecionarAtividade);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSelecionarDisciplina);
-            this.Controls.Add(this.btnSelecionarAluno);
             this.Controls.Add(this.btnAlterarNotaAluno);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblNotaAluno);
@@ -399,14 +402,14 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnSelecionarAluno;
-        private System.Windows.Forms.Button btnSelecionarDisciplina;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnSelecionarAtividade;
         private System.Windows.Forms.Button btnExcluirAluno;
         private System.Windows.Forms.Button btnAtualizarAlunos;
         private System.Windows.Forms.Button btnAtualizarDisciplinas;
+        private System.Windows.Forms.Button btnExcluirDisciplinaAluno;
+        private System.Windows.Forms.Button btnExcluirAtividadeAluno;
+        private System.Windows.Forms.Button btnAtualizarAtividadeAluno;
     }
 }
