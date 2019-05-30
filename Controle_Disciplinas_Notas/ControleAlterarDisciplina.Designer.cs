@@ -50,6 +50,10 @@
             this.cmbSelecionarAtividade = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnExcluirAtividade = new System.Windows.Forms.Button();
+            this.btnExcluirDisciplina = new System.Windows.Forms.Button();
+            this.btnAtualizarDisciplinas = new System.Windows.Forms.Button();
+            this.btnAtualizarAtividades = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSelecionarDisciplina
@@ -118,9 +122,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(591, 112);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 13);
+            this.label4.Size = new System.Drawing.Size(110, 13);
             this.label4.TabIndex = 30;
-            this.label4.Text = "Adicionar nova atividade";
+            this.label4.Text = "Alterar nova atividade";
             // 
             // label3
             // 
@@ -128,9 +132,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(93, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 13);
+            this.label3.Size = new System.Drawing.Size(110, 13);
             this.label3.TabIndex = 29;
-            this.label3.Text = "Adicionar nova disciplina";
+            this.label3.Text = "Alterar nova disciplina";
             // 
             // label2
             // 
@@ -260,11 +264,63 @@
             this.panel3.Size = new System.Drawing.Size(1079, 10);
             this.panel3.TabIndex = 35;
             // 
+            // btnExcluirAtividade
+            // 
+            this.btnExcluirAtividade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnExcluirAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluirAtividade.ForeColor = System.Drawing.Color.White;
+            this.btnExcluirAtividade.Location = new System.Drawing.Point(828, 173);
+            this.btnExcluirAtividade.Name = "btnExcluirAtividade";
+            this.btnExcluirAtividade.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluirAtividade.TabIndex = 40;
+            this.btnExcluirAtividade.Text = "Excluir";
+            this.btnExcluirAtividade.UseVisualStyleBackColor = false;
+            // 
+            // btnExcluirDisciplina
+            // 
+            this.btnExcluirDisciplina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnExcluirDisciplina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluirDisciplina.ForeColor = System.Drawing.Color.White;
+            this.btnExcluirDisciplina.Location = new System.Drawing.Point(236, 213);
+            this.btnExcluirDisciplina.Name = "btnExcluirDisciplina";
+            this.btnExcluirDisciplina.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluirDisciplina.TabIndex = 41;
+            this.btnExcluirDisciplina.Text = "Excluir";
+            this.btnExcluirDisciplina.UseVisualStyleBackColor = false;
+            // 
+            // btnAtualizarDisciplinas
+            // 
+            this.btnAtualizarDisciplinas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAtualizarDisciplinas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarDisciplinas.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarDisciplinas.Location = new System.Drawing.Point(236, 138);
+            this.btnAtualizarDisciplinas.Name = "btnAtualizarDisciplinas";
+            this.btnAtualizarDisciplinas.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizarDisciplinas.TabIndex = 42;
+            this.btnAtualizarDisciplinas.Text = "Atualizar";
+            this.btnAtualizarDisciplinas.UseVisualStyleBackColor = false;
+            // 
+            // btnAtualizarAtividades
+            // 
+            this.btnAtualizarAtividades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAtualizarAtividades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarAtividades.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarAtividades.Location = new System.Drawing.Point(501, 173);
+            this.btnAtualizarAtividades.Name = "btnAtualizarAtividades";
+            this.btnAtualizarAtividades.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizarAtividades.TabIndex = 43;
+            this.btnAtualizarAtividades.Text = "Atualizar";
+            this.btnAtualizarAtividades.UseVisualStyleBackColor = false;
+            // 
             // ControleAlterarDisciplina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.btnAtualizarAtividades);
+            this.Controls.Add(this.btnAtualizarDisciplinas);
+            this.Controls.Add(this.btnExcluirDisciplina);
+            this.Controls.Add(this.btnExcluirAtividade);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnSelecionarAtividade);
             this.Controls.Add(this.cmbSelecionarAtividade);
@@ -318,5 +374,9 @@
         private System.Windows.Forms.ComboBox cmbSelecionarAtividade;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnExcluirAtividade;
+        private System.Windows.Forms.Button btnExcluirDisciplina;
+        private System.Windows.Forms.Button btnAtualizarDisciplinas;
+        private System.Windows.Forms.Button btnAtualizarAtividades;
     }
 }

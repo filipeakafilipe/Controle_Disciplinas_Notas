@@ -9,6 +9,8 @@ namespace Controle_Disciplinas_Notas
 {
     class Disciplina
     {
+        // Adicionar um ID para cada disciplina também?
+
         private string _NomeDisc;
 
         public string NomeDisc
@@ -39,6 +41,22 @@ namespace Controle_Disciplinas_Notas
         {
             get { return _NotaMax; }
             set { _NotaMax = value; }
+        }
+
+        private ArrayList _Data;
+
+        public ArrayList Data
+        {
+            get { return _Data; }
+            set { _Data = value; }
+        }
+
+        private ArrayList _Horario;
+
+        public ArrayList Horario
+        {
+            get { return _Horario; }
+            set { _Horario = value; }
         }
 
         private ArrayList _NotaAluno;

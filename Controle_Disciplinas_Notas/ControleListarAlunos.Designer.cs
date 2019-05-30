@@ -33,6 +33,7 @@
             this.dgvListarAlunos = new System.Windows.Forms.DataGridView();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnAtualizarAlunos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarAlunos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,11 +77,24 @@
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = false;
             // 
+            // btnAtualizarAlunos
+            // 
+            this.btnAtualizarAlunos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAtualizarAlunos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarAlunos.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarAlunos.Location = new System.Drawing.Point(196, 50);
+            this.btnAtualizarAlunos.Name = "btnAtualizarAlunos";
+            this.btnAtualizarAlunos.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizarAlunos.TabIndex = 20;
+            this.btnAtualizarAlunos.Text = "Atualizar";
+            this.btnAtualizarAlunos.UseVisualStyleBackColor = false;
+            // 
             // ControleListarAlunos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.btnAtualizarAlunos);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtPesquisar);
             this.Controls.Add(this.dgvListarAlunos);
@@ -99,5 +113,6 @@
         private System.Windows.Forms.DataGridView dgvListarAlunos;
         private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Button btnAtualizarAlunos;
     }
 }

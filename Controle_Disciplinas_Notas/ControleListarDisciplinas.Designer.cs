@@ -33,6 +33,7 @@
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnAtualizarDisciplinas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarDisciplinas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,18 +82,31 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(207, 53);
+            this.label2.Location = new System.Drawing.Point(204, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(657, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "Adicionar uma coluna para alunos cadastrados em cada disciplina? (mesmo sem nota " +
     "- não mostrar nota em nenhum)";
             // 
+            // btnAtualizarDisciplinas
+            // 
+            this.btnAtualizarDisciplinas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAtualizarDisciplinas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarDisciplinas.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarDisciplinas.Location = new System.Drawing.Point(196, 49);
+            this.btnAtualizarDisciplinas.Name = "btnAtualizarDisciplinas";
+            this.btnAtualizarDisciplinas.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizarDisciplinas.TabIndex = 20;
+            this.btnAtualizarDisciplinas.Text = "Atualizar";
+            this.btnAtualizarDisciplinas.UseVisualStyleBackColor = false;
+            // 
             // ControleListarDisciplinas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.btnAtualizarDisciplinas);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtPesquisar);
@@ -114,5 +128,6 @@
         private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAtualizarDisciplinas;
     }
 }

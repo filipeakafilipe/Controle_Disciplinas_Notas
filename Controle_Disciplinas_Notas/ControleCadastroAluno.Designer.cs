@@ -55,6 +55,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSelecionarAluno = new System.Windows.Forms.Button();
             this.btnSelecionarDisciplina = new System.Windows.Forms.Button();
+            this.btnAtualizarAlunos = new System.Windows.Forms.Button();
+            this.btnAtualizarDisciplinas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -310,11 +312,37 @@
             this.btnSelecionarDisciplina.Text = "Selecionar";
             this.btnSelecionarDisciplina.UseVisualStyleBackColor = false;
             // 
+            // btnAtualizarAlunos
+            // 
+            this.btnAtualizarAlunos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAtualizarAlunos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarAlunos.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarAlunos.Location = new System.Drawing.Point(422, 177);
+            this.btnAtualizarAlunos.Name = "btnAtualizarAlunos";
+            this.btnAtualizarAlunos.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizarAlunos.TabIndex = 27;
+            this.btnAtualizarAlunos.Text = "Atualizar";
+            this.btnAtualizarAlunos.UseVisualStyleBackColor = false;
+            // 
+            // btnAtualizarDisciplinas
+            // 
+            this.btnAtualizarDisciplinas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAtualizarDisciplinas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarDisciplinas.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarDisciplinas.Location = new System.Drawing.Point(422, 242);
+            this.btnAtualizarDisciplinas.Name = "btnAtualizarDisciplinas";
+            this.btnAtualizarDisciplinas.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizarDisciplinas.TabIndex = 28;
+            this.btnAtualizarDisciplinas.Text = "Atualizar";
+            this.btnAtualizarDisciplinas.UseVisualStyleBackColor = false;
+            // 
             // ControleCadastroAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.btnAtualizarDisciplinas);
+            this.Controls.Add(this.btnAtualizarAlunos);
             this.Controls.Add(this.btnSelecionarDisciplina);
             this.Controls.Add(this.btnSelecionarAluno);
             this.Controls.Add(this.panel1);
@@ -379,5 +407,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSelecionarAluno;
         private System.Windows.Forms.Button btnSelecionarDisciplina;
+        private System.Windows.Forms.Button btnAtualizarAlunos;
+        private System.Windows.Forms.Button btnAtualizarDisciplinas;
     }
 }

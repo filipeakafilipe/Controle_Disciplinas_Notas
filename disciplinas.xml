@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disciplinas>
+  <Disciplina>
+    <NomeDisc>aaaaaa</NomeDisc>
+    <Professor>bbbbbb</Professor>
+  </Disciplina>
+  <Disciplina>
+    <NomeDisc>cccccc</NomeDisc>
+    <Professor>dddddd</Professor>
+  </Disciplina>
+  <Disciplina>
+    <NomeDisc>cccccc</NomeDisc>
+    <Professor>dddddd</Professor>
+  </Disciplina>
+  <Disciplina>
+    <NomeDisc>sld;mfasl</NomeDisc>
+    <Professor>naklsdsak</Professor>
+  </Disciplina>
+</Disciplinas>

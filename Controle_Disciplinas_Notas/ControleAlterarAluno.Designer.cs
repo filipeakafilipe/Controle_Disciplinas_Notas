@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.btnAlterarNotaAluno = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblNotaAluno = new System.Windows.Forms.TextBox();
             this.cmbAtividade = new System.Windows.Forms.ComboBox();
@@ -55,36 +53,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSelecionarAtividade = new System.Windows.Forms.Button();
+            this.btnExcluirAluno = new System.Windows.Forms.Button();
+            this.btnAtualizarAlunos = new System.Windows.Forms.Button();
+            this.btnAtualizarDisciplinas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAlterarNotaAluno
             // 
+            this.btnAlterarNotaAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAlterarNotaAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterarNotaAluno.Location = new System.Drawing.Point(472, 335);
             this.btnAlterarNotaAluno.Name = "btnAlterarNotaAluno";
             this.btnAlterarNotaAluno.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarNotaAluno.TabIndex = 44;
             this.btnAlterarNotaAluno.Text = "Alterar";
-            this.btnAlterarNotaAluno.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(606, 217);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 13);
-            this.label5.TabIndex = 43;
-            this.label5.Text = "Trocar a pontuação";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(606, 194);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
-            this.label4.TabIndex = 42;
-            this.label4.Text = "Valor:";
+            this.btnAlterarNotaAluno.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -219,12 +203,14 @@
             // 
             // btnAlterarDadosAluno
             // 
+            this.btnAlterarDadosAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAlterarDadosAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterarDadosAluno.Location = new System.Drawing.Point(43, 441);
             this.btnAlterarDadosAluno.Name = "btnAlterarDadosAluno";
             this.btnAlterarDadosAluno.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarDadosAluno.TabIndex = 27;
             this.btnAlterarDadosAluno.Text = "Alterar";
-            this.btnAlterarDadosAluno.UseVisualStyleBackColor = true;
+            this.btnAlterarDadosAluno.UseVisualStyleBackColor = false;
             // 
             // textBox4
             // 
@@ -302,19 +288,68 @@
             this.panel2.Size = new System.Drawing.Size(10, 630);
             this.panel2.TabIndex = 49;
             // 
+            // btnSelecionarAtividade
+            // 
+            this.btnSelecionarAtividade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnSelecionarAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelecionarAtividade.Location = new System.Drawing.Point(609, 210);
+            this.btnSelecionarAtividade.Name = "btnSelecionarAtividade";
+            this.btnSelecionarAtividade.Size = new System.Drawing.Size(75, 23);
+            this.btnSelecionarAtividade.TabIndex = 50;
+            this.btnSelecionarAtividade.Text = "Selecionar";
+            this.btnSelecionarAtividade.UseVisualStyleBackColor = false;
+            // 
+            // btnExcluirAluno
+            // 
+            this.btnExcluirAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnExcluirAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluirAluno.ForeColor = System.Drawing.Color.White;
+            this.btnExcluirAluno.Location = new System.Drawing.Point(251, 129);
+            this.btnExcluirAluno.Name = "btnExcluirAluno";
+            this.btnExcluirAluno.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluirAluno.TabIndex = 51;
+            this.btnExcluirAluno.Text = "Excluir";
+            this.btnExcluirAluno.UseVisualStyleBackColor = false;
+            // 
+            // btnAtualizarAlunos
+            // 
+            this.btnAtualizarAlunos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAtualizarAlunos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarAlunos.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarAlunos.Location = new System.Drawing.Point(170, 100);
+            this.btnAtualizarAlunos.Name = "btnAtualizarAlunos";
+            this.btnAtualizarAlunos.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizarAlunos.TabIndex = 52;
+            this.btnAtualizarAlunos.Text = "Atualizar";
+            this.btnAtualizarAlunos.UseVisualStyleBackColor = false;
+            // 
+            // btnAtualizarDisciplinas
+            // 
+            this.btnAtualizarDisciplinas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAtualizarDisciplinas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarDisciplinas.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarDisciplinas.Location = new System.Drawing.Point(609, 110);
+            this.btnAtualizarDisciplinas.Name = "btnAtualizarDisciplinas";
+            this.btnAtualizarDisciplinas.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizarDisciplinas.TabIndex = 53;
+            this.btnAtualizarDisciplinas.Text = "Atualizar";
+            this.btnAtualizarDisciplinas.UseVisualStyleBackColor = false;
+            // 
             // ControleAlterarAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.btnAtualizarDisciplinas);
+            this.Controls.Add(this.btnAtualizarAlunos);
+            this.Controls.Add(this.btnExcluirAluno);
+            this.Controls.Add(this.btnSelecionarAtividade);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSelecionarDisciplina);
             this.Controls.Add(this.btnSelecionarAluno);
             this.Controls.Add(this.btnAlterarNotaAluno);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblNotaAluno);
             this.Controls.Add(this.cmbAtividade);
@@ -345,8 +380,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnAlterarNotaAluno;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox lblNotaAluno;
         private System.Windows.Forms.ComboBox cmbAtividade;
@@ -371,5 +404,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnSelecionarAtividade;
+        private System.Windows.Forms.Button btnExcluirAluno;
+        private System.Windows.Forms.Button btnAtualizarAlunos;
+        private System.Windows.Forms.Button btnAtualizarDisciplinas;
     }
 }
