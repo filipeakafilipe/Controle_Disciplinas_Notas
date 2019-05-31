@@ -49,6 +49,8 @@ namespace Controle_Disciplinas_Notas
         {
             DisciplinaOp discop = new DisciplinaOp();
 
+            cmbDisciplinaCadAt.Items.Clear();
+
             List<string> discs = discop.ProcuraDisciplina(new Disciplina());
 
             foreach (string nomeDisc in discs)

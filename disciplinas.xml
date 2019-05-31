@@ -3,8 +3,10 @@
   <Disciplina>
     <NomeDisc>aaaaaa</NomeDisc>
     <Professor>bbbbbb</Professor>
-    <NomeAtividade>345345</NomeAtividade>
-    <NotaMax>345</NotaMax>
+    <NomeAtividade>123123</NomeAtividade>
+    <NotaMax>123</NotaMax>
+    <NomeAtividade>456456</NomeAtividade>
+    <NotaMax>456</NotaMax>
   </Disciplina>
   <Disciplina>
     <NomeDisc>cccccc</NomeDisc>

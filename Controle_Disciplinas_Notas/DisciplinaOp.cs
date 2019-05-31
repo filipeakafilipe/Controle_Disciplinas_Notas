@@ -11,7 +11,8 @@ namespace Controle_Disciplinas_Notas
 {
     class DisciplinaOp
     {
-        private string caminho = @"C:\Users\Filipe\Desktop\Prog\PUC\Controle_Disciplinas_Notas\disciplinas.xml";
+        private string caminhoAluno = @"C:\Users\Filipe\Desktop\Prog\PUC\Controle_Disciplinas_Notas\alunos.xml";
+        private string caminhoDisc = @"C:\Users\Filipe\Desktop\Prog\PUC\Controle_Disciplinas_Notas\disciplinas.xml";
         //private IEnumerable<XElement> DiscSelecionada { get; set; }
 
         public DisciplinaOp()
@@ -50,7 +51,7 @@ namespace Controle_Disciplinas_Notas
             //ArrayList discs = new ArrayList();
             List<string> discs = new List<string>();
 
-            XElement Raiz = XElement.Load(caminho);
+            XElement Raiz = XElement.Load(caminhoDisc);
             var Consulta = from p in Raiz.Elements("Disciplina")
                            orderby (string)p.Element("NomeDisc")
                            select new
@@ -58,13 +59,95 @@ namespace Controle_Disciplinas_Notas
                                Nome = (string)p.Element("NomeDisc")
                            };
 
-            // foreach aqui e lá
             foreach (var x in Consulta)
             {
                 discs.Add(x.Nome);
             }
 
             return discs;
+        }
+
+        public List<string> ProcuraAtividade(Disciplina disc, string nomeDisc)
+        {
+            List<string> atividades = new List<string>();
+
+            XElement Raiz = XElement.Load(caminhoDisc);
+
+            var Consulta = from p in Raiz.Elements("Disciplina")
+                           where ((string)p.Element("NomeDisc")).Equals(nomeDisc)
+                           select p;
+
+            return Consulta.Elements("NomeAtividade").Select(x => x.Value.ToString()).ToList();
+
+            //var Consulta = from p in Raiz.Elements("Disciplina")
+            //               where ((string)p.Element("NomeDisc").Value).Equals(nomeDisc)
+            //               select p.Elements("NomeAtividade");
+
+            //foreach (var x in Consulta)
+            //{
+            //    foreach(var y in x)
+            //    {
+            //        atividades.Add((string)y.Element("NomeAtividade").Value);
+            //    }
+            //}
+
+            //return atividades;
+            //return Consulta.Select(item => item.ToString()).ToList();
+
+            //foreach(var x in Consulta)
+            //{
+            //    atividades.Add();
+            //}
+
+            //var Consulta = from p in Raiz.Elements("Disciplina")
+            //               orderby (string)p.Element("NomeAtividade")
+            //               where ((string)p.Element("NomeDisc")).Equals(nomeDisc)
+            //               //select new
+            //               //{
+            //               //    NomeAtividade = p.Elements("NomeAtividade")
+            //               //};
+            //               //select p.Elements("NomeAtividade");
+            //               select p;
+            //               //select new
+            //               //{
+            //               //    NomeAtividade = p.Elements("NomeAtividade")
+            //               //    //NomeAtividade = p.Elements("NomeAtividade")
+            //               //};
+
+            //var Consulta2 = from x in Consulta.Elements("Disciplina")
+            //                select new
+            //                {
+            //                    NomeAtividade = (string)x.Element("NomeAtividade")
+            //                };
+
+            //foreach(var x in Consulta2)
+            //{
+            //    atividades.Add(x.NomeAtividade);
+            //}
+
+            //foreach (var x in Consulta)
+            //{
+            //    //atividades.Add(x.NomeAtividade.ToString());
+            //    atividades.Add(x.NomeAtividade);
+            //}
+
+            //{
+            //    NomeAtividade = p.Element("NomeAtividade")
+            //};
+
+            //for (int i = 0; i < Consulta.Count(); i++)
+            //{
+            //    atividades.Add(Consulta.ElementAt(i).ToString());
+            //}
+
+            //foreach(var x in Consulta)
+            //{
+            //    atividades.Add(x.NomeAtividade);
+            //}
+
+            //atividades.ToList().ForEach(i => atividades.Add(i.ToString()));
+
+            //return atividades;
         }
 
         //public /*IEnumerable<XElement>*/ void SelecionaDisciplina(string NomeDisciplina)
@@ -86,14 +169,14 @@ namespace Controle_Disciplinas_Notas
 
         public void AdicionarAtividade(Disciplina disc, string NomeDisciplina, string NomeAtividade, double NotaMax/*, IEnumerable<XElement> Consulta*/)
         {
-            XElement Raiz = XElement.Load(caminho);
+            XElement Raiz = XElement.Load(caminhoDisc);
 
             var Consulta = from P in Raiz.Elements("Disciplina")
                            where ((string)P.Element("NomeDisc")).Equals(NomeDisciplina)
                            select P;
 
-            //XElement NovaAtividade;
-            //XElement NovaNota;
+            XElement NovaAtividade;
+            XElement NovaNota;
 
             //XElement NovaAtividade = new XElement("NomeAtividade", NomeAtividade,
             //    new XElement("NotaMax", NotaMax));
@@ -103,17 +186,17 @@ namespace Controle_Disciplinas_Notas
                 //x.Element("NomeAtividade").Add(NomeAtividade);
                 //x.Element("NotaMax").Add(NotaMax);
 
-                //NovaAtividade = new XElement("NomeAtividade", NomeAtividade);
-                //Raiz.Add(NovaAtividade);
-                x.SetElementValue("NomeAtividade", NomeAtividade);
-                //NovaNota = new XElement("NotaMax", NotaMax);
-                //Raiz.Add(NovaNota);
-                x.SetElementValue("NotaMax", NotaMax);
+                NovaAtividade = new XElement("NomeAtividade", NomeAtividade);
+                x.Add(NovaAtividade);
+                //x.Add("NomeAtividade", NomeAtividade);
+                NovaNota = new XElement("NotaMax", NotaMax);
+                x.Add(NovaNota);
+                //x.Add("NotaMax", NotaMax);
 
                 //Raiz.AppendChild(NovaAtividade);
             }
 
-            Raiz.Save(caminho);
+            Raiz.Save(caminhoDisc);
 
             //this.SalvaXmlAtividade(disc, NomeAtividade, NotaMax);
         }
@@ -145,7 +228,7 @@ namespace Controle_Disciplinas_Notas
 
         private void SalvaXmlDisc(Disciplina disc)
         {
-            XElement Raiz = XElement.Load(caminho);
+            XElement Raiz = XElement.Load(caminhoDisc);
 
             XElement NovaDisciplina = new XElement("Disciplina",
                 new XElement("NomeDisc", disc.NomeDisc),
@@ -153,7 +236,7 @@ namespace Controle_Disciplinas_Notas
 
             Raiz.Add(NovaDisciplina);
 
-            Raiz.Save(caminho);
+            Raiz.Save(caminhoDisc);
         }
 
         private void ConsultaXmlDisc(Disciplina disc)

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Alunos>
+  <Aluno>
+    <NomeAlu>asdasd</NomeAlu>
+    <Idade>11</Idade>
+    <Telefone>11-1111</Telefone>
+    <Ano>1</Ano>
+    <Disciplina>
+      <NomeDisc>aaaaaa</NomeDisc>
+      <Professor>bbbbbb</Professor>
+    </Disciplina>
+    <Disciplina>
+      <NomeDisc>sld;mfasl</NomeDisc>
+      <Professor>naklsdsak</Professor>
+    </Disciplina>
+    <Disciplina>
+      <NomeDisc>cccccc</NomeDisc>
+      <Professor>dddddd</Professor>
+    </Disciplina>
+    <Disciplina>
+      <NomeDisc>cccccc</NomeDisc>
+      <Professor>dddddd</Professor>
+    </Disciplina>
+  </Aluno>
+  <Aluno>
+    <NomeAlu>qweqwe</NomeAlu>
+    <Idade>22</Idade>
+    <Telefone>22-2222</Telefone>
+    <Ano>2</Ano>
+  </Aluno>
+</Alunos>
