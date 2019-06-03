@@ -8,6 +8,32 @@
     <Disciplina>
       <NomeDisc>aaaaaa</NomeDisc>
       <Professor>bbbbbb</Professor>
+      <Atividade>
+        <NomeAtividade>123123</NomeAtividade>
+        <NotaAluno>10</NotaAluno>
+      </Atividade>
+    </Disciplina>
+    <Disciplina>
+      <NomeDisc>sld;mfasl</NomeDisc>
+      <Professor>naklsdsak</Professor>
+    </Disciplina>
+    <Disciplina>
+      <NomeDisc>cccccc</NomeDisc>
+      <Professor>dddddd</Professor>
+    </Disciplina>
+  </Aluno>
+  <Aluno>
+    <NomeAlu>orwoper</NomeAlu>
+    <Idade>91</Idade>
+    <Telefone>123123</Telefone>
+    <Ano>1000</Ano>
+    <Disciplina>
+      <NomeDisc>aaaaaa</NomeDisc>
+      <Professor>bbbbbb</Professor>
+      <Atividade>
+        <NomeAtividade>123123</NomeAtividade>
+        <NotaAluno>10</NotaAluno>
+      </Atividade>
     </Disciplina>
     <Disciplina>
       <NomeDisc>sld;mfasl</NomeDisc>
@@ -18,14 +44,34 @@
       <Professor>dddddd</Professor>
     </Disciplina>
     <Disciplina>
-      <NomeDisc>cccccc</NomeDisc>
-      <Professor>dddddd</Professor>
+      <NomeDisc>testeDisciplina</NomeDisc>
+      <Professor>testeProfessor</Professor>
     </Disciplina>
   </Aluno>
   <Aluno>
-    <NomeAlu>qweqwe</NomeAlu>
-    <Idade>22</Idade>
-    <Telefone>22-2222</Telefone>
-    <Ano>2</Ano>
+    <NomeAlu>TesteAluno</NomeAlu>
+    <Idade>20</Idade>
+    <Telefone>123123</Telefone>
+    <Ano>2000</Ano>
+    <Disciplina>
+      <NomeDisc>aaaaaa</NomeDisc>
+      <Professor>bbbbbb</Professor>
+      <Atividade>
+        <NomeAtividade>123123</NomeAtividade>
+        <NotaAluno>10</NotaAluno>
+      </Atividade>
+    </Disciplina>
+    <Disciplina>
+      <NomeDisc>testeDisciplina</NomeDisc>
+      <Professor>testeProfessor</Professor>
+      <Atividade>
+        <NomeAtividade>testeAtividade1</NomeAtividade>
+        <NotaAluno>1</NotaAluno>
+      </Atividade>
+      <Atividade>
+        <NomeAtividade>testeAtividade2</NomeAtividade>
+        <NotaAluno>2</NotaAluno>
+      </Atividade>
+    </Disciplina>
   </Aluno>
 </Alunos>

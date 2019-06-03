@@ -29,10 +29,10 @@ namespace Controle_Disciplinas_Notas
             //MinhaDisciplina.NomeDisc = txtNomeDisc.Text;
             //MinhaDisciplina.Professor = txtProfessor.Text;
 
-            DisciplinaOp Disc = new DisciplinaOp(new Disciplina(), txtNomeDisc.Text, txtProfessor.Text);
+            DisciplinaOp Disc = new DisciplinaOp(txtNomeDisc.Text, txtProfessor.Text);
         }
 
-    private void btnAdicionarAtividade_Click(object sender, EventArgs e)
+        private void btnAdicionarAtividade_Click(object sender, EventArgs e)
         {
             string NomeDisciplina = cmbDisciplinaCadAt.Text;
             string NomeAtividade = txtNomeAtividade.Text;
@@ -45,8 +45,10 @@ namespace Controle_Disciplinas_Notas
             //Disc.AdicionarAtividade(new Disciplina(), NomeAtividade, NotaMax/*, Consulta*/);
         }
 
-        private void btnAtualizarDisciplinas_Click(object sender, EventArgs e)
+        private void cmbDisciplinaCadAt_MouseUp(object sender, MouseEventArgs e)
         {
+            // Atualiza Combobox Disciplina
+
             DisciplinaOp discop = new DisciplinaOp();
 
             cmbDisciplinaCadAt.Items.Clear();

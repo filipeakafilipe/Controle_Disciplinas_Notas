@@ -45,17 +45,18 @@
             this.lblDisciplinaCadAl = new System.Windows.Forms.Label();
             this.cmbDisciplina = new System.Windows.Forms.ComboBox();
             this.cmbAtividadeCadAl = new System.Windows.Forms.Label();
-            this.cmbAtividadeAluno = new System.Windows.Forms.ComboBox();
+            this.cmbAtividade = new System.Windows.Forms.ComboBox();
             this.lblNotaAluno = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAdicionarNota = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAtualizarAlunos = new System.Windows.Forms.Button();
+            this.btnAtualizarDisciplinas = new System.Windows.Forms.Button();
+            this.btnAdicionarDisciplinaAluno = new System.Windows.Forms.Button();
+            this.btnAtualizarAtividade = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnAdicionarDisciplinaAluno = new System.Windows.Forms.Button();
-            this.cmbDiscAluno = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -166,7 +167,6 @@
             this.cmbAluno.Name = "cmbAluno";
             this.cmbAluno.Size = new System.Drawing.Size(121, 21);
             this.cmbAluno.TabIndex = 11;
-            this.cmbAluno.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cmbAluno_MouseUp);
             // 
             // lblNota
             // 
@@ -192,7 +192,7 @@
             // 
             this.lblDisciplinaCadAl.AutoSize = true;
             this.lblDisciplinaCadAl.ForeColor = System.Drawing.Color.White;
-            this.lblDisciplinaCadAl.Location = new System.Drawing.Point(688, 161);
+            this.lblDisciplinaCadAl.Location = new System.Drawing.Point(500, 227);
             this.lblDisciplinaCadAl.Name = "lblDisciplinaCadAl";
             this.lblDisciplinaCadAl.Size = new System.Drawing.Size(52, 13);
             this.lblDisciplinaCadAl.TabIndex = 14;
@@ -201,34 +201,32 @@
             // cmbDisciplina
             // 
             this.cmbDisciplina.FormattingEnabled = true;
-            this.cmbDisciplina.Location = new System.Drawing.Point(691, 177);
+            this.cmbDisciplina.Location = new System.Drawing.Point(503, 242);
             this.cmbDisciplina.Name = "cmbDisciplina";
             this.cmbDisciplina.Size = new System.Drawing.Size(121, 21);
             this.cmbDisciplina.TabIndex = 15;
-            this.cmbDisciplina.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cmbDisciplina_MouseUp);
             // 
             // cmbAtividadeCadAl
             // 
             this.cmbAtividadeCadAl.AutoSize = true;
             this.cmbAtividadeCadAl.ForeColor = System.Drawing.Color.White;
-            this.cmbAtividadeCadAl.Location = new System.Drawing.Point(500, 326);
+            this.cmbAtividadeCadAl.Location = new System.Drawing.Point(500, 295);
             this.cmbAtividadeCadAl.Name = "cmbAtividadeCadAl";
             this.cmbAtividadeCadAl.Size = new System.Drawing.Size(51, 13);
             this.cmbAtividadeCadAl.TabIndex = 16;
             this.cmbAtividadeCadAl.Text = "Atividade";
             // 
-            // cmbAtividadeAluno
+            // cmbAtividade
             // 
-            this.cmbAtividadeAluno.FormattingEnabled = true;
-            this.cmbAtividadeAluno.Location = new System.Drawing.Point(503, 342);
-            this.cmbAtividadeAluno.Name = "cmbAtividadeAluno";
-            this.cmbAtividadeAluno.Size = new System.Drawing.Size(121, 21);
-            this.cmbAtividadeAluno.TabIndex = 17;
-            this.cmbAtividadeAluno.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cmbAtividade_MouseUp);
+            this.cmbAtividade.FormattingEnabled = true;
+            this.cmbAtividade.Location = new System.Drawing.Point(503, 311);
+            this.cmbAtividade.Name = "cmbAtividade";
+            this.cmbAtividade.Size = new System.Drawing.Size(121, 21);
+            this.cmbAtividade.TabIndex = 17;
             // 
             // lblNotaAluno
             // 
-            this.lblNotaAluno.Location = new System.Drawing.Point(503, 408);
+            this.lblNotaAluno.Location = new System.Drawing.Point(503, 377);
             this.lblNotaAluno.Name = "lblNotaAluno";
             this.lblNotaAluno.Size = new System.Drawing.Size(100, 20);
             this.lblNotaAluno.TabIndex = 18;
@@ -237,7 +235,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(500, 392);
+            this.label3.Location = new System.Drawing.Point(500, 361);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 19;
@@ -248,13 +246,12 @@
             this.btnAdicionarNota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAdicionarNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionarNota.ForeColor = System.Drawing.Color.White;
-            this.btnAdicionarNota.Location = new System.Drawing.Point(503, 446);
+            this.btnAdicionarNota.Location = new System.Drawing.Point(503, 415);
             this.btnAdicionarNota.Name = "btnAdicionarNota";
             this.btnAdicionarNota.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionarNota.TabIndex = 22;
             this.btnAdicionarNota.Text = "Adicionar";
             this.btnAdicionarNota.UseVisualStyleBackColor = false;
-            this.btnAdicionarNota.Click += new System.EventHandler(this.btnAdicionarNota_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -272,11 +269,63 @@
             this.panel1.Size = new System.Drawing.Size(10, 600);
             this.panel1.TabIndex = 24;
             // 
+            // btnAtualizarAlunos
+            // 
+            this.btnAtualizarAlunos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAtualizarAlunos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarAlunos.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarAlunos.Location = new System.Drawing.Point(422, 177);
+            this.btnAtualizarAlunos.Name = "btnAtualizarAlunos";
+            this.btnAtualizarAlunos.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizarAlunos.TabIndex = 27;
+            this.btnAtualizarAlunos.Text = "Atualizar";
+            this.btnAtualizarAlunos.UseVisualStyleBackColor = false;
+            this.btnAtualizarAlunos.Click += new System.EventHandler(this.btnAtualizarAlunos_Click);
+            // 
+            // btnAtualizarDisciplinas
+            // 
+            this.btnAtualizarDisciplinas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAtualizarDisciplinas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarDisciplinas.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarDisciplinas.Location = new System.Drawing.Point(422, 242);
+            this.btnAtualizarDisciplinas.Name = "btnAtualizarDisciplinas";
+            this.btnAtualizarDisciplinas.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizarDisciplinas.TabIndex = 28;
+            this.btnAtualizarDisciplinas.Text = "Atualizar";
+            this.btnAtualizarDisciplinas.UseVisualStyleBackColor = false;
+            this.btnAtualizarDisciplinas.Click += new System.EventHandler(this.btnAtualizarDisciplinas_Click);
+            // 
+            // btnAdicionarDisciplinaAluno
+            // 
+            this.btnAdicionarDisciplinaAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAdicionarDisciplinaAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionarDisciplinaAluno.ForeColor = System.Drawing.Color.White;
+            this.btnAdicionarDisciplinaAluno.Location = new System.Drawing.Point(630, 243);
+            this.btnAdicionarDisciplinaAluno.Name = "btnAdicionarDisciplinaAluno";
+            this.btnAdicionarDisciplinaAluno.Size = new System.Drawing.Size(75, 23);
+            this.btnAdicionarDisciplinaAluno.TabIndex = 30;
+            this.btnAdicionarDisciplinaAluno.Text = "Adicionar";
+            this.btnAdicionarDisciplinaAluno.UseVisualStyleBackColor = false;
+            this.btnAdicionarDisciplinaAluno.Click += new System.EventHandler(this.btnAdicionarDisciplinaAluno_Click);
+            // 
+            // btnAtualizarAtividade
+            // 
+            this.btnAtualizarAtividade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAtualizarAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarAtividade.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarAtividade.Location = new System.Drawing.Point(419, 309);
+            this.btnAtualizarAtividade.Name = "btnAtualizarAtividade";
+            this.btnAtualizarAtividade.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizarAtividade.TabIndex = 31;
+            this.btnAtualizarAtividade.Text = "Atualizar";
+            this.btnAtualizarAtividade.UseVisualStyleBackColor = false;
+            this.btnAtualizarAtividade.Click += new System.EventHandler(this.btnAtualizarAtividade_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(637, 349);
+            this.label5.Location = new System.Drawing.Point(637, 318);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 13);
             this.label5.TabIndex = 21;
@@ -286,52 +335,21 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(637, 326);
+            this.label4.Location = new System.Drawing.Point(637, 295);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 20;
             this.label4.Text = "Valor:";
-            // 
-            // btnAdicionarDisciplinaAluno
-            // 
-            this.btnAdicionarDisciplinaAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAdicionarDisciplinaAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarDisciplinaAluno.ForeColor = System.Drawing.Color.White;
-            this.btnAdicionarDisciplinaAluno.Location = new System.Drawing.Point(818, 177);
-            this.btnAdicionarDisciplinaAluno.Name = "btnAdicionarDisciplinaAluno";
-            this.btnAdicionarDisciplinaAluno.Size = new System.Drawing.Size(75, 23);
-            this.btnAdicionarDisciplinaAluno.TabIndex = 25;
-            this.btnAdicionarDisciplinaAluno.Text = "Adicionar";
-            this.btnAdicionarDisciplinaAluno.UseVisualStyleBackColor = false;
-            this.btnAdicionarDisciplinaAluno.Click += new System.EventHandler(this.BtnAdicionarDisciplinaAluno_Click);
-            // 
-            // cmbDiscAluno
-            // 
-            this.cmbDiscAluno.FormattingEnabled = true;
-            this.cmbDiscAluno.Location = new System.Drawing.Point(503, 295);
-            this.cmbDiscAluno.Name = "cmbDiscAluno";
-            this.cmbDiscAluno.Size = new System.Drawing.Size(121, 21);
-            this.cmbDiscAluno.TabIndex = 26;
-            this.cmbDiscAluno.MouseUp += new System.Windows.Forms.MouseEventHandler(this.CmbDiscAluno_MouseUp);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(500, 279);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 13);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Disciplinas do aluno";
             // 
             // ControleCadastroAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.cmbDiscAluno);
+            this.Controls.Add(this.btnAtualizarAtividade);
             this.Controls.Add(this.btnAdicionarDisciplinaAluno);
+            this.Controls.Add(this.btnAtualizarDisciplinas);
+            this.Controls.Add(this.btnAtualizarAlunos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnAdicionarNota);
@@ -339,7 +357,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblNotaAluno);
-            this.Controls.Add(this.cmbAtividadeAluno);
+            this.Controls.Add(this.cmbAtividade);
             this.Controls.Add(this.cmbAtividadeCadAl);
             this.Controls.Add(this.cmbDisciplina);
             this.Controls.Add(this.lblDisciplinaCadAl);
@@ -384,16 +402,17 @@
         private System.Windows.Forms.Label lblDisciplinaCadAl;
         private System.Windows.Forms.ComboBox cmbDisciplina;
         private System.Windows.Forms.Label cmbAtividadeCadAl;
-        private System.Windows.Forms.ComboBox cmbAtividadeAluno;
+        private System.Windows.Forms.ComboBox cmbAtividade;
         private System.Windows.Forms.TextBox lblNotaAluno;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAdicionarNota;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnAtualizarAlunos;
+        private System.Windows.Forms.Button btnAtualizarDisciplinas;
+        private System.Windows.Forms.Button btnAdicionarDisciplinaAluno;
+        private System.Windows.Forms.Button btnAtualizarAtividade;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnAdicionarDisciplinaAluno;
-        private System.Windows.Forms.ComboBox cmbDiscAluno;
-        private System.Windows.Forms.Label label6;
     }
 }

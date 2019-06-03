@@ -63,7 +63,6 @@
   <ItemGroup>
     <Compile Include="Aluno.cs" />
     <Compile Include="AlunoOp.cs" />
-    <Compile Include="Alunos.cs" />
     <Compile Include="ControleAlterar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -150,7 +149,6 @@
     </Compile>
     <Compile Include="Disciplina.cs" />
     <Compile Include="DisciplinaOp.cs" />
-    <Compile Include="Disciplinas.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

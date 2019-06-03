@@ -45,7 +45,6 @@
             this.cmbDisciplinaCadAt = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAtualizarDisciplinas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -189,6 +188,7 @@
             this.cmbDisciplinaCadAt.Name = "cmbDisciplinaCadAt";
             this.cmbDisciplinaCadAt.Size = new System.Drawing.Size(121, 21);
             this.cmbDisciplinaCadAt.TabIndex = 15;
+            this.cmbDisciplinaCadAt.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cmbDisciplinaCadAt_MouseUp);
             // 
             // panel1
             // 
@@ -206,25 +206,11 @@
             this.panel2.Size = new System.Drawing.Size(10, 600);
             this.panel2.TabIndex = 17;
             // 
-            // btnAtualizarDisciplinas
-            // 
-            this.btnAtualizarDisciplinas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAtualizarDisciplinas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizarDisciplinas.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarDisciplinas.Location = new System.Drawing.Point(504, 174);
-            this.btnAtualizarDisciplinas.Name = "btnAtualizarDisciplinas";
-            this.btnAtualizarDisciplinas.Size = new System.Drawing.Size(75, 23);
-            this.btnAtualizarDisciplinas.TabIndex = 19;
-            this.btnAtualizarDisciplinas.Text = "Atualizar";
-            this.btnAtualizarDisciplinas.UseVisualStyleBackColor = false;
-            this.btnAtualizarDisciplinas.Click += new System.EventHandler(this.btnAtualizarDisciplinas_Click);
-            // 
             // ControleCadastroDisciplina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Controls.Add(this.btnAtualizarDisciplinas);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cmbDisciplinaCadAt);
@@ -269,6 +255,5 @@
         private System.Windows.Forms.ComboBox cmbDisciplinaCadAt;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnAtualizarDisciplinas;
     }
 }

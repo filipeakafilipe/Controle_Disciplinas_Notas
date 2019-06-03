@@ -25,13 +25,11 @@ namespace Controle_Disciplinas_Notas
 
         }
 
-        public DisciplinaOp(/*Disciplina disc, */string NomeDisc, string Prof)
+        public DisciplinaOp(Disciplina disc, string NomeDisc, string Prof)
         {
             // Adicionar o nome, professor
 
             // Seria bom dar um aviso quando o Xml for salvo, para falar que foi um sucesso
-
-            Disciplina disc = new Disciplina();
 
             disc.NomeDisc = NomeDisc;
             disc.Professor = Prof;
@@ -74,25 +72,43 @@ namespace Controle_Disciplinas_Notas
             List<string> atividades = new List<string>();
 
             XElement Raiz = XElement.Load(caminhoDisc);
-
             var Consulta = from p in Raiz.Elements("Disciplina")
+                           orderby (string)p.Element("NomeAtividade")
                            where ((string)p.Element("NomeDisc")).Equals(nomeDisc)
-                           select p;
+                           //select new
+                           //{
+                           //    NomeAtividade = p.Elements("NomeAtividade")
+                           //};
+                           //select p.Elements("NomeAtividade");
+                           select new
+                           {
+                               NomeAtividade = (string)p.Element("NomeAtividade")
+                               //NomeAtividade = p.Elements("NomeAtividade")
+                           };
 
-            var Consulta2 = from p in Consulta.Elements("Atividade")
-                            select new
-                            {
-                                Nome = (string)p.Element("NomeAtividade")
-                            };
-
-            foreach(var x in Consulta2)
+            foreach (var x in Consulta)
             {
-                atividades.Add(x.Nome);
+                //atividades.Add(x.NomeAtividade.ToString());
+                atividades.Add(x.NomeAtividade);
             }
 
-            return atividades;
+            //{
+            //    NomeAtividade = p.Element("NomeAtividade")
+            //};
 
-            //return Consulta.Elements("NomeAtividade").Select(x => x.Value.ToString()).ToList();
+            //for (int i = 0; i < Consulta.Count(); i++)
+            //{
+            //    atividades.Add(Consulta.ElementAt(i).ToString());
+            //}
+
+            //foreach(var x in Consulta)
+            //{
+            //    atividades.Add(x.NomeAtividade);
+            //}
+
+            //atividades.ToList().ForEach(i => atividades.Add(i.ToString()));
+
+            return atividades;
         }
 
         //public /*IEnumerable<XElement>*/ void SelecionaDisciplina(string NomeDisciplina)
@@ -132,12 +148,10 @@ namespace Controle_Disciplinas_Notas
                 //x.Element("NotaMax").Add(NotaMax);
 
                 NovaAtividade = new XElement("NomeAtividade", NomeAtividade);
-                //x.Add(NovaAtividade);
+                x.Add(NovaAtividade);
                 //x.Add("NomeAtividade", NomeAtividade);
                 NovaNota = new XElement("NotaMax", NotaMax);
-                XElement AtividadeAdd = new XElement("Atividade", NovaAtividade, NovaNota);
-                x.Add(AtividadeAdd);
-                //x.Add(NovaNota);
+                x.Add(NovaNota);
                 //x.Add("NotaMax", NotaMax);
 
                 //Raiz.AppendChild(NovaAtividade);
@@ -148,84 +162,29 @@ namespace Controle_Disciplinas_Notas
             //this.SalvaXmlAtividade(disc, NomeAtividade, NotaMax);
         }
 
-        public void AlterarDisciplina(string nomeDisc, string nomeDiscNovo, string nomeProfessor)
-        // Fazer um overload 1: nomeDisc, 2: nomeProfessor, 3: nomeDisc, nomeProfessor
+        public void AlterarDisciplina(Disciplina disc)
         {
-            XElement Raiz = XElement.Load(caminhoDisc);
 
-            var Consulta = from P in Raiz.Elements("Disciplina")
-                           where ((string)P.Element("NomeDisc")).Equals(nomeDisc)
-                           select P;
-
-            foreach (var x in Consulta)
-            {
-                x.SetElementValue("NomeDisc", nomeDiscNovo);
-                x.SetElementValue("Professor", nomeProfessor);
-            }
-
-            Raiz.Save(caminhoDisc);
         }
 
-        public void AlterarAtividade(string nomeDisc, string nomeAtividade, string nomeAtividadeNovo, string nota)
+        public void AlterarAtividade(Disciplina disc)
         {
-            XElement Raiz = XElement.Load(caminhoDisc);
 
-            var Consulta1 = from P in Raiz.Elements("Disciplina")
-                            where ((string)P.Element("NomeDisc")).Equals(nomeDisc)
-                            select P;
-
-            var Consulta2 = from P in Consulta1.Elements("Atividade")
-                            where ((string)P.Element("NomeAtividade")).Equals(nomeAtividade)
-                            select P;
-
-            foreach (var x in Consulta2)
-            {
-                x.SetElementValue("NomeAtividade", nomeAtividadeNovo);
-                x.SetElementValue("NotaMax", nota);
-            }
-
-            Raiz.Save(caminhoDisc);
         }
 
-        public void ExcluirDisciplina(string nomeDisciplina)
+        public void ExcluirDisciplina(Disciplina disc)
         {
-            XElement Raiz = XElement.Load(caminhoDisc);
 
-            var Consulta = from P in Raiz.Elements("Disciplina")
-                           where ((string)P.Element("NomeDisc")).Equals(nomeDisciplina)
-                           select P;
-
-            foreach (var x in Consulta)
-            {
-                x.Element("NomeDisc").Parent.Remove();
-            }
-
-            Raiz.Save(caminhoDisc);
         }
 
-        public void ExcluirAtividade(string nomeDisciplina, string nomeAtividade)
+        public void ExcluirAtividade(Disciplina disc)
         {
-            XElement Raiz = XElement.Load(caminhoDisc);
 
-            var Consulta1 = from P in Raiz.Elements("Disciplina")
-                            where ((string)P.Element("NomeDisc")).Equals(nomeDisciplina)
-                            select P;
-
-            var Consulta2 = from P in Consulta1.Elements("Atividade")
-                            where ((string)P.Element("NomeAtividade")).Equals(nomeAtividade)
-                            select P;
-
-            foreach(var x in Consulta2)
-            {
-                x.Element("NomeAtividade").Parent.Remove();   
-            }
-
-            Raiz.Save(caminhoDisc);
         }
 
-        public void ListarDisciplinas(Disciplina disc)
+        public void ListarDisciplina(Disciplina disc)
         {
-            // ControleListarDisciplina
+
         }
 
         private void SalvaXmlDisc(Disciplina disc)
@@ -239,6 +198,11 @@ namespace Controle_Disciplinas_Notas
             Raiz.Add(NovaDisciplina);
 
             Raiz.Save(caminhoDisc);
+        }
+
+        private void ConsultaXmlDisc(Disciplina disc)
+        {
+
         }
 
         //private void SalvaXmlAtividade(Disciplina disc, string NomeAtividade, double NotaMax/*, IEnumerable<XElement> Consulta*/)

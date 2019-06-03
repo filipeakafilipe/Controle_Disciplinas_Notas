@@ -50,10 +50,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblAno = new System.Windows.Forms.Label();
-            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
-            this.pieChart1 = new LiveCharts.WinForms.PieChart();
-            this.btnAtualizarAlunos = new System.Windows.Forms.Button();
-            this.btnAtualizarDisciplinas = new System.Windows.Forms.Button();
+            this.grfCartesiano = new LiveCharts.WinForms.CartesianChart();
+            this.grfPizza = new LiveCharts.WinForms.PieChart();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscNotas)).BeginInit();
             this.SuspendLayout();
@@ -95,6 +93,7 @@
             this.cmbAlunos.Name = "cmbAlunos";
             this.cmbAlunos.Size = new System.Drawing.Size(121, 21);
             this.cmbAlunos.TabIndex = 3;
+            this.cmbAlunos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cmbAlunos_MouseUp);
             // 
             // lblSelecionar
             // 
@@ -276,55 +275,29 @@
             this.lblAno.TabIndex = 21;
             this.lblAno.Text = "Nome:";
             // 
-            // cartesianChart1
+            // grfCartesiano
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(744, 108);
-            this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(308, 213);
-            this.cartesianChart1.TabIndex = 22;
-            this.cartesianChart1.Text = "cartesianChart1";
+            this.grfCartesiano.Location = new System.Drawing.Point(744, 108);
+            this.grfCartesiano.Name = "grfCartesiano";
+            this.grfCartesiano.Size = new System.Drawing.Size(308, 213);
+            this.grfCartesiano.TabIndex = 22;
+            this.grfCartesiano.Text = "cartesianChart1";
             // 
-            // pieChart1
+            // grfPizza
             // 
-            this.pieChart1.Location = new System.Drawing.Point(791, 327);
-            this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(227, 173);
-            this.pieChart1.TabIndex = 23;
-            this.pieChart1.Text = "pieChart1";
-            // 
-            // btnAtualizarAlunos
-            // 
-            this.btnAtualizarAlunos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAtualizarAlunos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizarAlunos.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarAlunos.Location = new System.Drawing.Point(163, 29);
-            this.btnAtualizarAlunos.Name = "btnAtualizarAlunos";
-            this.btnAtualizarAlunos.Size = new System.Drawing.Size(75, 23);
-            this.btnAtualizarAlunos.TabIndex = 24;
-            this.btnAtualizarAlunos.Text = "Atualizar";
-            this.btnAtualizarAlunos.UseVisualStyleBackColor = false;
-            // 
-            // btnAtualizarDisciplinas
-            // 
-            this.btnAtualizarDisciplinas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAtualizarDisciplinas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizarDisciplinas.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarDisciplinas.Location = new System.Drawing.Point(383, 27);
-            this.btnAtualizarDisciplinas.Name = "btnAtualizarDisciplinas";
-            this.btnAtualizarDisciplinas.Size = new System.Drawing.Size(75, 23);
-            this.btnAtualizarDisciplinas.TabIndex = 25;
-            this.btnAtualizarDisciplinas.Text = "Atualizar";
-            this.btnAtualizarDisciplinas.UseVisualStyleBackColor = false;
+            this.grfPizza.Location = new System.Drawing.Point(791, 327);
+            this.grfPizza.Name = "grfPizza";
+            this.grfPizza.Size = new System.Drawing.Size(227, 173);
+            this.grfPizza.TabIndex = 23;
+            this.grfPizza.Text = "pieChart1";
             // 
             // ControleAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Controls.Add(this.btnAtualizarDisciplinas);
-            this.Controls.Add(this.btnAtualizarAlunos);
-            this.Controls.Add(this.pieChart1);
-            this.Controls.Add(this.cartesianChart1);
+            this.Controls.Add(this.grfPizza);
+            this.Controls.Add(this.grfCartesiano);
             this.Controls.Add(this.lblAno);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
@@ -380,9 +353,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblAno;
-        private LiveCharts.WinForms.CartesianChart cartesianChart1;
-        private LiveCharts.WinForms.PieChart pieChart1;
-        private System.Windows.Forms.Button btnAtualizarAlunos;
-        private System.Windows.Forms.Button btnAtualizarDisciplinas;
+        private LiveCharts.WinForms.CartesianChart grfCartesiano;
+        private LiveCharts.WinForms.PieChart grfPizza;
     }
 }

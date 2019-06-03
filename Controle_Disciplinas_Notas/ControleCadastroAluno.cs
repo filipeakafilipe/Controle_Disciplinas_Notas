@@ -27,35 +27,39 @@ namespace Controle_Disciplinas_Notas
             AlunoOp aluno = new AlunoOp(new Aluno(), nome, idade, telefone, ano);
         }
 
-        private void btnAtualizarAlunos_Click(object sender, EventArgs e)
+        private void cmbAluno_MouseUp(object sender, MouseEventArgs e)
         {
+            // Atualiza Combobox Aluno
+
             AlunoOp aluop = new AlunoOp();
 
             cmbAluno.Items.Clear();
 
             List<string> alunos = aluop.ProcuraAluno(new Aluno());
 
-            foreach(string nomeAlu in alunos)
+            foreach (string nomeAlu in alunos)
             {
                 cmbAluno.Items.Add(nomeAlu);
             }
         }
 
-        private void btnAtualizarDisciplinas_Click(object sender, EventArgs e)
+        private void cmbDisciplina_MouseUp(object sender, MouseEventArgs e)
         {
+            // Atualiza Combobox Disciplina
+
             DisciplinaOp discop = new DisciplinaOp();
 
             cmbDisciplina.Items.Clear();
 
             List<string> discs = discop.ProcuraDisciplina(new Disciplina());
 
-            foreach(string nomeDisc in discs)
+            foreach (string nomeDisc in discs)
             {
                 cmbDisciplina.Items.Add(nomeDisc);
             }
         }
 
-        private void btnAdicionarDisciplinaAluno_Click(object sender, EventArgs e)
+        private void BtnAdicionarDisciplinaAluno_Click(object sender, EventArgs e)
         {
             AlunoOp aluop = new AlunoOp();
 
@@ -65,20 +69,51 @@ namespace Controle_Disciplinas_Notas
             aluop.AdicionarDisciplina(new Disciplina(), new Aluno(), NomeDisciplina, NomeAluno);
         }
 
-        private void btnAtualizarAtividade_Click(object sender, EventArgs e)
+        private void CmbDiscAluno_MouseUp(object sender, MouseEventArgs e)
         {
+            AlunoOp aluop = new AlunoOp();
+
+            cmbDiscAluno.Items.Clear();
+
+            //string NomeDisciplina = cmbDisciplina.Text;
+            string NomeAluno = cmbAluno.Text;
+
+            List<string> discs = aluop.ProcuraDiscAluno(/*NomeDisciplina, */NomeAluno);
+
+            foreach(string nomeAtividade in discs)
+            {
+                cmbDiscAluno.Items.Add(nomeAtividade);
+            }
+        }
+
+        private void cmbAtividade_MouseUp(object sender, MouseEventArgs e)
+        {
+            // Atualiza Combobox Atividade
+
             DisciplinaOp discop = new DisciplinaOp();
 
-            cmbAtividade.Items.Clear();
+            cmbAtividadeAluno.Items.Clear();
 
-            string nomeDisc = cmbDisciplina.Text;
+            string nomeDisc = cmbDiscAluno.Text;
 
             List<string> atividades = discop.ProcuraAtividade(new Disciplina(), nomeDisc);
 
-            foreach(string nomeAtividade in atividades)
+            foreach (string nomeAtividade in atividades)
             {
-                cmbAtividade.Items.Add(nomeAtividade);
+                cmbAtividadeAluno.Items.Add(nomeAtividade);
             }
         }
+
+        private void btnAdicionarNota_Click(object sender, EventArgs e)
+        {
+            AlunoOp aluop = new AlunoOp();
+
+            string NomeAluno = cmbAluno.Text;
+            string NomeDisciplina = cmbDiscAluno.Text;
+            string NomeAtividade = cmbAtividadeAluno.Text;
+            double Nota = double.Parse(lblNotaAluno.Text);
+
+            aluop.AdicionarNota(NomeDisciplina, NomeAluno, NomeAtividade, Nota);
+        }     
     }
 }

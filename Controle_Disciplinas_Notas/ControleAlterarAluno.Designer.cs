@@ -37,26 +37,23 @@
             this.lblDisciplinaCadAl = new System.Windows.Forms.Label();
             this.lblNomeCadAl = new System.Windows.Forms.Label();
             this.lblNota = new System.Windows.Forms.Label();
-            this.cmbAlunoCadAl = new System.Windows.Forms.ComboBox();
+            this.cmbAluno = new System.Windows.Forms.ComboBox();
             this.lblAno = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.lblIdade = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAlterarDadosAluno = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAno = new System.Windows.Forms.TextBox();
+            this.txtIdade = new System.Windows.Forms.TextBox();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExcluirAluno = new System.Windows.Forms.Button();
-            this.btnAtualizarAlunos = new System.Windows.Forms.Button();
-            this.btnAtualizarDisciplinas = new System.Windows.Forms.Button();
             this.btnExcluirDisciplinaAluno = new System.Windows.Forms.Button();
             this.btnExcluirAtividadeAluno = new System.Windows.Forms.Button();
-            this.btnAtualizarAtividadeAluno = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAlterarNotaAluno
@@ -69,6 +66,7 @@
             this.btnAlterarNotaAluno.TabIndex = 44;
             this.btnAlterarNotaAluno.Text = "Alterar";
             this.btnAlterarNotaAluno.UseVisualStyleBackColor = false;
+            this.btnAlterarNotaAluno.Click += new System.EventHandler(this.BtnAlterarNotaAluno_Click);
             // 
             // label3
             // 
@@ -94,6 +92,7 @@
             this.cmbAtividade.Name = "cmbAtividade";
             this.cmbAtividade.Size = new System.Drawing.Size(121, 21);
             this.cmbAtividade.TabIndex = 39;
+            this.cmbAtividade.MouseUp += new System.Windows.Forms.MouseEventHandler(this.CmbAtividade_MouseUp);
             // 
             // cmbAtividadeCadAl
             // 
@@ -112,6 +111,7 @@
             this.cmbDisciplinaCadAl.Name = "cmbDisciplinaCadAl";
             this.cmbDisciplinaCadAl.Size = new System.Drawing.Size(121, 21);
             this.cmbDisciplinaCadAl.TabIndex = 37;
+            this.cmbDisciplinaCadAl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.CmbDisciplinaCadAl_MouseUp);
             // 
             // lblDisciplinaCadAl
             // 
@@ -143,13 +143,14 @@
             this.lblNota.TabIndex = 34;
             this.lblNota.Text = "Notas";
             // 
-            // cmbAlunoCadAl
+            // cmbAluno
             // 
-            this.cmbAlunoCadAl.FormattingEnabled = true;
-            this.cmbAlunoCadAl.Location = new System.Drawing.Point(43, 131);
-            this.cmbAlunoCadAl.Name = "cmbAlunoCadAl";
-            this.cmbAlunoCadAl.Size = new System.Drawing.Size(121, 21);
-            this.cmbAlunoCadAl.TabIndex = 33;
+            this.cmbAluno.FormattingEnabled = true;
+            this.cmbAluno.Location = new System.Drawing.Point(43, 131);
+            this.cmbAluno.Name = "cmbAluno";
+            this.cmbAluno.Size = new System.Drawing.Size(121, 21);
+            this.cmbAluno.TabIndex = 33;
+            this.cmbAluno.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cmbAluno_MouseUp);
             // 
             // lblAno
             // 
@@ -211,34 +212,35 @@
             this.btnAlterarDadosAluno.TabIndex = 27;
             this.btnAlterarDadosAluno.Text = "Alterar";
             this.btnAlterarDadosAluno.UseVisualStyleBackColor = false;
+            this.btnAlterarDadosAluno.Click += new System.EventHandler(this.BtnAlterarDadosAluno_Click);
             // 
-            // textBox4
+            // txtAno
             // 
-            this.textBox4.Location = new System.Drawing.Point(43, 382);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 26;
+            this.txtAno.Location = new System.Drawing.Point(43, 382);
+            this.txtAno.Name = "txtAno";
+            this.txtAno.Size = new System.Drawing.Size(100, 20);
+            this.txtAno.TabIndex = 26;
             // 
-            // textBox3
+            // txtIdade
             // 
-            this.textBox3.Location = new System.Drawing.Point(43, 248);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 25;
+            this.txtIdade.Location = new System.Drawing.Point(43, 248);
+            this.txtIdade.Name = "txtIdade";
+            this.txtIdade.Size = new System.Drawing.Size(100, 20);
+            this.txtIdade.TabIndex = 25;
             // 
-            // textBox2
+            // txtTelefone
             // 
-            this.textBox2.Location = new System.Drawing.Point(43, 316);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 24;
+            this.txtTelefone.Location = new System.Drawing.Point(43, 316);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefone.TabIndex = 24;
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(43, 182);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 23;
+            this.txtNome.Location = new System.Drawing.Point(43, 182);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNome.TabIndex = 23;
             // 
             // label1
             // 
@@ -271,83 +273,47 @@
             this.btnExcluirAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnExcluirAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluirAluno.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirAluno.Location = new System.Drawing.Point(251, 129);
+            this.btnExcluirAluno.Location = new System.Drawing.Point(170, 129);
             this.btnExcluirAluno.Name = "btnExcluirAluno";
             this.btnExcluirAluno.Size = new System.Drawing.Size(75, 23);
             this.btnExcluirAluno.TabIndex = 51;
             this.btnExcluirAluno.Text = "Excluir";
             this.btnExcluirAluno.UseVisualStyleBackColor = false;
-            // 
-            // btnAtualizarAlunos
-            // 
-            this.btnAtualizarAlunos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAtualizarAlunos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizarAlunos.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarAlunos.Location = new System.Drawing.Point(170, 129);
-            this.btnAtualizarAlunos.Name = "btnAtualizarAlunos";
-            this.btnAtualizarAlunos.Size = new System.Drawing.Size(75, 23);
-            this.btnAtualizarAlunos.TabIndex = 52;
-            this.btnAtualizarAlunos.Text = "Atualizar";
-            this.btnAtualizarAlunos.UseVisualStyleBackColor = false;
-            // 
-            // btnAtualizarDisciplinas
-            // 
-            this.btnAtualizarDisciplinas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAtualizarDisciplinas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizarDisciplinas.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarDisciplinas.Location = new System.Drawing.Point(609, 141);
-            this.btnAtualizarDisciplinas.Name = "btnAtualizarDisciplinas";
-            this.btnAtualizarDisciplinas.Size = new System.Drawing.Size(75, 23);
-            this.btnAtualizarDisciplinas.TabIndex = 53;
-            this.btnAtualizarDisciplinas.Text = "Atualizar";
-            this.btnAtualizarDisciplinas.UseVisualStyleBackColor = false;
+            this.btnExcluirAluno.Click += new System.EventHandler(this.BtnExcluirAluno_Click);
             // 
             // btnExcluirDisciplinaAluno
             // 
             this.btnExcluirDisciplinaAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnExcluirDisciplinaAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluirDisciplinaAluno.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirDisciplinaAluno.Location = new System.Drawing.Point(690, 141);
+            this.btnExcluirDisciplinaAluno.Location = new System.Drawing.Point(599, 141);
             this.btnExcluirDisciplinaAluno.Name = "btnExcluirDisciplinaAluno";
             this.btnExcluirDisciplinaAluno.Size = new System.Drawing.Size(75, 23);
             this.btnExcluirDisciplinaAluno.TabIndex = 54;
             this.btnExcluirDisciplinaAluno.Text = "Excluir";
             this.btnExcluirDisciplinaAluno.UseVisualStyleBackColor = false;
+            this.btnExcluirDisciplinaAluno.Click += new System.EventHandler(this.BtnExcluirDisciplinaAluno_Click);
             // 
             // btnExcluirAtividadeAluno
             // 
             this.btnExcluirAtividadeAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnExcluirAtividadeAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluirAtividadeAluno.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirAtividadeAluno.Location = new System.Drawing.Point(690, 210);
+            this.btnExcluirAtividadeAluno.Location = new System.Drawing.Point(599, 210);
             this.btnExcluirAtividadeAluno.Name = "btnExcluirAtividadeAluno";
             this.btnExcluirAtividadeAluno.Size = new System.Drawing.Size(75, 23);
             this.btnExcluirAtividadeAluno.TabIndex = 55;
             this.btnExcluirAtividadeAluno.Text = "Excluir";
             this.btnExcluirAtividadeAluno.UseVisualStyleBackColor = false;
-            // 
-            // btnAtualizarAtividadeAluno
-            // 
-            this.btnAtualizarAtividadeAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAtualizarAtividadeAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizarAtividadeAluno.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarAtividadeAluno.Location = new System.Drawing.Point(609, 208);
-            this.btnAtualizarAtividadeAluno.Name = "btnAtualizarAtividadeAluno";
-            this.btnAtualizarAtividadeAluno.Size = new System.Drawing.Size(75, 23);
-            this.btnAtualizarAtividadeAluno.TabIndex = 56;
-            this.btnAtualizarAtividadeAluno.Text = "Atualizar";
-            this.btnAtualizarAtividadeAluno.UseVisualStyleBackColor = false;
+            this.btnExcluirAtividadeAluno.Click += new System.EventHandler(this.BtnExcluirAtividadeAluno_Click);
             // 
             // ControleAlterarAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Controls.Add(this.btnAtualizarAtividadeAluno);
             this.Controls.Add(this.btnExcluirAtividadeAluno);
             this.Controls.Add(this.btnExcluirDisciplinaAluno);
-            this.Controls.Add(this.btnAtualizarDisciplinas);
-            this.Controls.Add(this.btnAtualizarAlunos);
             this.Controls.Add(this.btnExcluirAluno);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -361,17 +327,17 @@
             this.Controls.Add(this.lblDisciplinaCadAl);
             this.Controls.Add(this.lblNomeCadAl);
             this.Controls.Add(this.lblNota);
-            this.Controls.Add(this.cmbAlunoCadAl);
+            this.Controls.Add(this.cmbAluno);
             this.Controls.Add(this.lblAno);
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.lblIdade);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAlterarDadosAluno);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAno);
+            this.Controls.Add(this.txtIdade);
+            this.Controls.Add(this.txtTelefone);
+            this.Controls.Add(this.txtNome);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "ControleAlterarAluno";
             this.Size = new System.Drawing.Size(1082, 500);
@@ -391,25 +357,22 @@
         private System.Windows.Forms.Label lblDisciplinaCadAl;
         private System.Windows.Forms.Label lblNomeCadAl;
         private System.Windows.Forms.Label lblNota;
-        private System.Windows.Forms.ComboBox cmbAlunoCadAl;
+        private System.Windows.Forms.ComboBox cmbAluno;
         private System.Windows.Forms.Label lblAno;
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.Label lblIdade;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAlterarDadosAluno;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAno;
+        private System.Windows.Forms.TextBox txtIdade;
+        private System.Windows.Forms.TextBox txtTelefone;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnExcluirAluno;
-        private System.Windows.Forms.Button btnAtualizarAlunos;
-        private System.Windows.Forms.Button btnAtualizarDisciplinas;
         private System.Windows.Forms.Button btnExcluirDisciplinaAluno;
         private System.Windows.Forms.Button btnExcluirAtividadeAluno;
-        private System.Windows.Forms.Button btnAtualizarAtividadeAluno;
     }
 }

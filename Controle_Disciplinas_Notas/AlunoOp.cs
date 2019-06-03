@@ -34,7 +34,7 @@ namespace Controle_Disciplinas_Notas
             this.SalvarXmlAluno(alu);
         }
 
-        public List<string> ProcuraAluno(Aluno alu)
+        public List<string> ProcuraAluno(Aluno alu/*posso apagar isso, nem usei*/)
         {
             List<string> alunos = new List<string>();
 
@@ -53,6 +53,30 @@ namespace Controle_Disciplinas_Notas
 
             return alunos;
         }
+
+        //public List<string> ProcuraAtividade(string nomeDisc)
+        //{
+        //    List<string> atividades = new List<string>();
+
+        //    XElement Raiz = XElement.Load(caminhoDisc);
+
+        //    var Consulta = from p in Raiz.Elements("Disciplina")
+        //                   where ((string)p.Element("NomeDisc")).Equals(nomeDisc)
+        //                   select p;
+
+        //    var Consulta2 = from p in Consulta.Elements("Atividade")
+        //                    select new
+        //                    {
+        //                        Nome = (string)p.Element("NomeAtividade")
+        //                    };
+
+        //    foreach (var x in Consulta2)
+        //    {
+        //        atividades.Add(x.Nome);
+        //    }
+
+        //    return atividades;
+        //}
 
         public void AdicionarDisciplina(Disciplina disc, Aluno alu, string NomeDisciplina, string NomeAluno)
         {
@@ -86,19 +110,189 @@ namespace Controle_Disciplinas_Notas
             RaizAluno.Save(caminhoAluno);
         }
 
-        public void AdicionarNota(Disciplina disc, Aluno alu, string NomeDisciplina, string NomeAluno, double Nota)
+        public List<string> ProcuraDiscAluno(string nomeAluno)
         {
+            List<string> disciplinas = new List<string>();
 
+            XElement Raiz = XElement.Load(caminhoAluno);
+
+            var Consulta = from P in Raiz.Elements("Aluno")
+                           where ((string)P.Element("NomeAlu")).Equals(nomeAluno)
+                           select P;
+
+            var Consulta2 = from P in Consulta.Elements("Disciplina")
+                            select new
+                            {
+                                Nome = (string)P.Element("NomeDisc")
+                            };
+
+            foreach (var x in Consulta2)
+            {
+                disciplinas.Add(x.Nome);
+            }
+
+            return disciplinas;
         }
 
-        public void AdicionarNota()
+        public List<string> ProcuraAtvAluno(/*string nomeDisc, */string NomeAluno, string nomeDisc)
         {
+            List<string> atividades = new List<string>();
 
+            XElement Raiz = XElement.Load(caminhoAluno);
+
+            var Consulta = from P in Raiz.Elements("Aluno")
+                           where ((string)P.Element("NomeAlu")).Equals(NomeAluno)
+                           select P;
+
+            var Consulta2 = from P in Consulta.Elements("Disciplina")
+                            where ((string)P.Element("NomeDisc")).Equals(nomeDisc)
+                            select P;
+
+            var Consulta3 = from P in Consulta2.Elements("Atividade")
+                            select new
+                            {
+                                Nome = (string)P.Element("NomeAtividade")
+                            };
+
+            foreach (var x in Consulta3)
+            {
+                atividades.Add(x.Nome);
+            }
+
+            return atividades;
         }
 
-        public void ExcluirNota(Disciplina disc, Aluno alu)
+        public void AdicionarNota(string NomeDisciplina, string NomeAluno, string NomeAtividade, double Nota)
         {
+            XElement RaizAluno = XElement.Load(caminhoAluno);
 
+            var ConsultaAluno = from P in RaizAluno.Elements("Aluno")
+                                where ((string)P.Element("NomeAlu")).Equals(NomeAluno)
+                                select P;
+
+            var Consulta2 = from P in ConsultaAluno.Elements("Disciplina")
+                            where ((string)P.Element("NomeDisc")).Equals(NomeDisciplina)
+                            //where ((string)P.Element("NomeAtividade")).Equals(NomeAtividade)
+                            select P;
+
+            foreach (var x in Consulta2)
+            {
+                XElement NomeAtividadeAdd = new XElement("NomeAtividade", NomeAtividade);
+                //x.Add(Atividade);
+                XElement NotaAdd = new XElement("NotaAluno", Nota);
+                XElement Atividade = new XElement("Atividade", NomeAtividadeAdd, NotaAdd);
+                //x.Add(NotaAdd);
+                x.Add(Atividade);
+            }
+
+            RaizAluno.Save(caminhoAluno);
+        }
+
+        public void ExcluirAluno(string NomeAluno)
+        {
+            XElement Raiz = XElement.Load(caminhoAluno);
+
+            var Consulta = from P in Raiz.Elements("Aluno")
+                           where ((string)P.Element("NomeAlu")).Equals(NomeAluno)
+                           select P;
+
+            foreach (var x in Consulta)
+            {
+                x.Element("NomeAlu").Parent.Remove();
+            }
+
+            Raiz.Save(caminhoAluno);
+        }
+
+        public void AlterarAluno(string NomeAluno, string NomeAlunoNovo, string Idade, string Telefone, string Ano)
+        {
+            XElement Raiz = XElement.Load(caminhoAluno);
+
+            var Consulta = from P in Raiz.Elements("Aluno")
+                           where ((string)P.Element("NomeAlu")).Equals(NomeAluno)
+                           select P;
+
+            foreach (var x in Consulta)
+            {
+                x.SetElementValue("NomeAlu", NomeAlunoNovo);
+                x.SetElementValue("Idade", Idade);
+                x.SetElementValue("Telefone", Telefone);
+                x.SetElementValue("Ano", Ano);
+            }
+
+            Raiz.Save(caminhoAluno);
+        }
+
+        public void ExcluirDiscplinaAluno(string NomeAluno, string nomeDisciplina)
+        {
+            XElement Raiz = XElement.Load(caminhoAluno);
+
+            var Consulta = from P in Raiz.Elements("Aluno")
+                           where ((string)P.Element("NomeAlu")).Equals(NomeAluno)
+                           select P;
+
+            var Consulta2 = from P in Consulta.Elements("Disciplina")
+                            where ((string)P.Element("NomeDisc")).Equals(nomeDisciplina)
+                            select P;
+
+            foreach (var x in Consulta2)
+            {
+                x.Element("NomeDisc").Parent.Remove();
+            }
+
+            Raiz.Save(caminhoAluno);
+        }
+
+        public void ExcluirAtividadeAluno(string nomeAluno, string nomeDisciplina, string nomeAtividade)
+        {
+            XElement Raiz = XElement.Load(caminhoAluno);
+
+            var Consulta = from P in Raiz.Elements("Aluno")
+                           where ((string)P.Element("NomeAlu")).Equals(nomeAluno)
+                           select P;
+
+            var Consulta2 = from P in Consulta.Elements("Disciplina")
+                            where ((string)P.Element("NomeDisc")).Equals(nomeDisciplina)
+                            select P;
+
+            var Consulta3 = from P in Consulta2.Elements("Atividade")
+                            where ((string)P.Element("NomeAtividade")).Equals(nomeAtividade)
+                            select P;
+
+            foreach (var x in Consulta3)
+            {
+                x.Element("NomeAtividade").Parent.Remove();
+            }
+            Raiz.Save(caminhoAluno);
+        }
+
+        public void AlterarAtividadeNota(string nomeAluno, string nomeDisciplina, string nomeAtividade, string Nota)
+        {
+            XElement Raiz = XElement.Load(caminhoAluno);
+
+            var Consulta = from P in Raiz.Elements("Aluno")
+                           where ((string)P.Element("NomeAlu")).Equals(nomeAluno)
+                           select P;
+
+            var Consulta2 = from P in Consulta.Elements("Disciplina")
+                            where ((string)P.Element("NomeDisc")).Equals(nomeDisciplina)
+                            select P;
+
+            var Consulta3 = from P in Consulta2.Elements("Atividade")
+                            where ((string)P.Element("NomeAtividade")).Equals(nomeAtividade)
+                            select P;
+
+            foreach (var x in Consulta3)
+            {
+                x.SetElementValue("NotaAluno", Nota);
+            }
+
+            Raiz.Save(caminhoAluno);
+        }
+
+        public void ListarAlunos()
+        {
+            // ControleListarAluno
         }
 
         public void SalvarXmlAluno(Aluno alu)

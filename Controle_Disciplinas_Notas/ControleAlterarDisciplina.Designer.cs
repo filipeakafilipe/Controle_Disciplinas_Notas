@@ -31,8 +31,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbSelecionarDisciplina = new System.Windows.Forms.ComboBox();
-            this.btnAdicionarAtividade = new System.Windows.Forms.Button();
-            this.btnAdicionarDisciplina = new System.Windows.Forms.Button();
+            this.btnAlterarAtividade = new System.Windows.Forms.Button();
+            this.btnAlterarDisciplina = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,18 +40,16 @@
             this.lblNomeAtividade = new System.Windows.Forms.Label();
             this.lblProfessor = new System.Windows.Forms.Label();
             this.lblNomeDisciplina = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNota = new System.Windows.Forms.TextBox();
+            this.txtNomeAtividade = new System.Windows.Forms.TextBox();
+            this.txtNomeProf = new System.Windows.Forms.TextBox();
+            this.txtNomeDisc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSelecionarAtividade = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnExcluirAtividade = new System.Windows.Forms.Button();
             this.btnExcluirDisciplina = new System.Windows.Forms.Button();
-            this.btnAtualizarDisciplinas = new System.Windows.Forms.Button();
-            this.btnAtualizarAtividades = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel2
@@ -77,30 +75,33 @@
             this.cmbSelecionarDisciplina.Name = "cmbSelecionarDisciplina";
             this.cmbSelecionarDisciplina.Size = new System.Drawing.Size(121, 21);
             this.cmbSelecionarDisciplina.TabIndex = 33;
+            this.cmbSelecionarDisciplina.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cmbSelecionarDisciplina_MouseUp);
             // 
-            // btnAdicionarAtividade
+            // btnAlterarAtividade
             // 
-            this.btnAdicionarAtividade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAdicionarAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarAtividade.ForeColor = System.Drawing.Color.White;
-            this.btnAdicionarAtividade.Location = new System.Drawing.Point(594, 429);
-            this.btnAdicionarAtividade.Name = "btnAdicionarAtividade";
-            this.btnAdicionarAtividade.Size = new System.Drawing.Size(75, 23);
-            this.btnAdicionarAtividade.TabIndex = 32;
-            this.btnAdicionarAtividade.Text = "Adicionar";
-            this.btnAdicionarAtividade.UseVisualStyleBackColor = false;
+            this.btnAlterarAtividade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAlterarAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterarAtividade.ForeColor = System.Drawing.Color.White;
+            this.btnAlterarAtividade.Location = new System.Drawing.Point(594, 429);
+            this.btnAlterarAtividade.Name = "btnAlterarAtividade";
+            this.btnAlterarAtividade.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterarAtividade.TabIndex = 32;
+            this.btnAlterarAtividade.Text = "Alterar";
+            this.btnAlterarAtividade.UseVisualStyleBackColor = false;
+            this.btnAlterarAtividade.Click += new System.EventHandler(this.BtnAlterarAtividade_Click);
             // 
-            // btnAdicionarDisciplina
+            // btnAlterarDisciplina
             // 
-            this.btnAdicionarDisciplina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAdicionarDisciplina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarDisciplina.ForeColor = System.Drawing.Color.White;
-            this.btnAdicionarDisciplina.Location = new System.Drawing.Point(96, 429);
-            this.btnAdicionarDisciplina.Name = "btnAdicionarDisciplina";
-            this.btnAdicionarDisciplina.Size = new System.Drawing.Size(75, 23);
-            this.btnAdicionarDisciplina.TabIndex = 31;
-            this.btnAdicionarDisciplina.Text = "Adicionar";
-            this.btnAdicionarDisciplina.UseVisualStyleBackColor = false;
+            this.btnAlterarDisciplina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAlterarDisciplina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterarDisciplina.ForeColor = System.Drawing.Color.White;
+            this.btnAlterarDisciplina.Location = new System.Drawing.Point(96, 429);
+            this.btnAlterarDisciplina.Name = "btnAlterarDisciplina";
+            this.btnAlterarDisciplina.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterarDisciplina.TabIndex = 31;
+            this.btnAlterarDisciplina.Text = "Alterar";
+            this.btnAlterarDisciplina.UseVisualStyleBackColor = false;
+            this.btnAlterarDisciplina.Click += new System.EventHandler(this.BtnAlterarDisciplina_Click);
             // 
             // label4
             // 
@@ -172,33 +173,33 @@
             this.lblNomeDisciplina.TabIndex = 24;
             this.lblNomeDisciplina.Text = "Nome da disciplina";
             // 
-            // textBox4
+            // txtNota
             // 
-            this.textBox4.Location = new System.Drawing.Point(594, 361);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 23;
+            this.txtNota.Location = new System.Drawing.Point(594, 361);
+            this.txtNota.Name = "txtNota";
+            this.txtNota.Size = new System.Drawing.Size(100, 20);
+            this.txtNota.TabIndex = 23;
             // 
-            // textBox3
+            // txtNomeAtividade
             // 
-            this.textBox3.Location = new System.Drawing.Point(594, 309);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 22;
+            this.txtNomeAtividade.Location = new System.Drawing.Point(594, 309);
+            this.txtNomeAtividade.Name = "txtNomeAtividade";
+            this.txtNomeAtividade.Size = new System.Drawing.Size(100, 20);
+            this.txtNomeAtividade.TabIndex = 22;
             // 
-            // textBox2
+            // txtNomeProf
             // 
-            this.textBox2.Location = new System.Drawing.Point(96, 361);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 21;
+            this.txtNomeProf.Location = new System.Drawing.Point(96, 361);
+            this.txtNomeProf.Name = "txtNomeProf";
+            this.txtNomeProf.Size = new System.Drawing.Size(100, 20);
+            this.txtNomeProf.TabIndex = 21;
             // 
-            // textBox1
+            // txtNomeDisc
             // 
-            this.textBox1.Location = new System.Drawing.Point(96, 293);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 20;
+            this.txtNomeDisc.Location = new System.Drawing.Point(96, 293);
+            this.txtNomeDisc.Name = "txtNomeDisc";
+            this.txtNomeDisc.Size = new System.Drawing.Size(100, 20);
+            this.txtNomeDisc.TabIndex = 20;
             // 
             // label1
             // 
@@ -219,6 +220,7 @@
             this.cmbSelecionarAtividade.Name = "cmbSelecionarAtividade";
             this.cmbSelecionarAtividade.Size = new System.Drawing.Size(121, 21);
             this.cmbSelecionarAtividade.TabIndex = 38;
+            this.cmbSelecionarAtividade.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cmbSelecionarAtividade_MouseUp);
             // 
             // label5
             // 
@@ -243,56 +245,32 @@
             this.btnExcluirAtividade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnExcluirAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluirAtividade.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirAtividade.Location = new System.Drawing.Point(812, 173);
+            this.btnExcluirAtividade.Location = new System.Drawing.Point(721, 174);
             this.btnExcluirAtividade.Name = "btnExcluirAtividade";
             this.btnExcluirAtividade.Size = new System.Drawing.Size(75, 23);
             this.btnExcluirAtividade.TabIndex = 40;
             this.btnExcluirAtividade.Text = "Excluir";
             this.btnExcluirAtividade.UseVisualStyleBackColor = false;
+            this.btnExcluirAtividade.Click += new System.EventHandler(this.BtnExcluirAtividade_Click);
             // 
             // btnExcluirDisciplina
             // 
             this.btnExcluirDisciplina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnExcluirDisciplina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluirDisciplina.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirDisciplina.Location = new System.Drawing.Point(307, 174);
+            this.btnExcluirDisciplina.Location = new System.Drawing.Point(223, 177);
             this.btnExcluirDisciplina.Name = "btnExcluirDisciplina";
             this.btnExcluirDisciplina.Size = new System.Drawing.Size(75, 23);
             this.btnExcluirDisciplina.TabIndex = 41;
             this.btnExcluirDisciplina.Text = "Excluir";
             this.btnExcluirDisciplina.UseVisualStyleBackColor = false;
-            // 
-            // btnAtualizarDisciplinas
-            // 
-            this.btnAtualizarDisciplinas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAtualizarDisciplinas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizarDisciplinas.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarDisciplinas.Location = new System.Drawing.Point(226, 173);
-            this.btnAtualizarDisciplinas.Name = "btnAtualizarDisciplinas";
-            this.btnAtualizarDisciplinas.Size = new System.Drawing.Size(75, 23);
-            this.btnAtualizarDisciplinas.TabIndex = 42;
-            this.btnAtualizarDisciplinas.Text = "Atualizar";
-            this.btnAtualizarDisciplinas.UseVisualStyleBackColor = false;
-            // 
-            // btnAtualizarAtividades
-            // 
-            this.btnAtualizarAtividades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAtualizarAtividades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizarAtividades.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarAtividades.Location = new System.Drawing.Point(731, 174);
-            this.btnAtualizarAtividades.Name = "btnAtualizarAtividades";
-            this.btnAtualizarAtividades.Size = new System.Drawing.Size(75, 23);
-            this.btnAtualizarAtividades.TabIndex = 43;
-            this.btnAtualizarAtividades.Text = "Atualizar";
-            this.btnAtualizarAtividades.UseVisualStyleBackColor = false;
+            this.btnExcluirDisciplina.Click += new System.EventHandler(this.BtnExcluirDisciplina_Click);
             // 
             // ControleAlterarDisciplina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Controls.Add(this.btnAtualizarAtividades);
-            this.Controls.Add(this.btnAtualizarDisciplinas);
             this.Controls.Add(this.btnExcluirDisciplina);
             this.Controls.Add(this.btnExcluirAtividade);
             this.Controls.Add(this.panel3);
@@ -301,8 +279,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cmbSelecionarDisciplina);
-            this.Controls.Add(this.btnAdicionarAtividade);
-            this.Controls.Add(this.btnAdicionarDisciplina);
+            this.Controls.Add(this.btnAlterarAtividade);
+            this.Controls.Add(this.btnAlterarDisciplina);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -310,10 +288,10 @@
             this.Controls.Add(this.lblNomeAtividade);
             this.Controls.Add(this.lblProfessor);
             this.Controls.Add(this.lblNomeDisciplina);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNota);
+            this.Controls.Add(this.txtNomeAtividade);
+            this.Controls.Add(this.txtNomeProf);
+            this.Controls.Add(this.txtNomeDisc);
             this.Controls.Add(this.label1);
             this.Name = "ControleAlterarDisciplina";
             this.Size = new System.Drawing.Size(1082, 500);
@@ -326,8 +304,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cmbSelecionarDisciplina;
-        private System.Windows.Forms.Button btnAdicionarAtividade;
-        private System.Windows.Forms.Button btnAdicionarDisciplina;
+        private System.Windows.Forms.Button btnAlterarAtividade;
+        private System.Windows.Forms.Button btnAlterarDisciplina;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -335,17 +313,15 @@
         private System.Windows.Forms.Label lblNomeAtividade;
         private System.Windows.Forms.Label lblProfessor;
         private System.Windows.Forms.Label lblNomeDisciplina;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNota;
+        private System.Windows.Forms.TextBox txtNomeAtividade;
+        private System.Windows.Forms.TextBox txtNomeProf;
+        private System.Windows.Forms.TextBox txtNomeDisc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbSelecionarAtividade;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnExcluirAtividade;
         private System.Windows.Forms.Button btnExcluirDisciplina;
-        private System.Windows.Forms.Button btnAtualizarDisciplinas;
-        private System.Windows.Forms.Button btnAtualizarAtividades;
     }
 }
