@@ -47,7 +47,6 @@
             this.lblIdade = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblAno = new System.Windows.Forms.Label();
             this.grfCartesiano = new LiveCharts.WinForms.CartesianChart();
@@ -106,6 +105,7 @@
             this.lblSelecionar.TabIndex = 4;
             this.lblSelecionar.Text = "Selecionar";
             this.lblSelecionar.UseVisualStyleBackColor = false;
+            this.lblSelecionar.Click += new System.EventHandler(this.LblSelecionar_Click);
             // 
             // cmbSelecionarGrafico
             // 
@@ -122,6 +122,7 @@
             this.cmbDisciplinas.Name = "cmbDisciplinas";
             this.cmbDisciplinas.Size = new System.Drawing.Size(121, 21);
             this.cmbDisciplinas.TabIndex = 6;
+            this.cmbDisciplinas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.CmbDisciplinas_MouseUp);
             // 
             // btnSelecionarDisciplina
             // 
@@ -134,6 +135,7 @@
             this.btnSelecionarDisciplina.TabIndex = 7;
             this.btnSelecionarDisciplina.Text = "Selecionar";
             this.btnSelecionarDisciplina.UseVisualStyleBackColor = false;
+            this.btnSelecionarDisciplina.Click += new System.EventHandler(this.BtnSelecionarDisciplina_Click);
             // 
             // btnSelecionarGrafico
             // 
@@ -245,16 +247,6 @@
             this.lblTelefone.TabIndex = 18;
             this.lblTelefone.Text = "Trocar pro telefone";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(133, 317);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "lbl.Text (?)";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -300,7 +292,6 @@
             this.Controls.Add(this.grfCartesiano);
             this.Controls.Add(this.lblAno);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblIdade);
@@ -350,7 +341,6 @@
         private System.Windows.Forms.Label lblIdade;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblTelefone;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblAno;
         private LiveCharts.WinForms.CartesianChart grfCartesiano;

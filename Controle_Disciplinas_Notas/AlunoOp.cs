@@ -290,10 +290,37 @@ namespace Controle_Disciplinas_Notas
             Raiz.Save(caminhoAluno);
         }
 
+        public string[] DadosAluno(string nomeAluno)
+        {
+            XElement Raiz = XElement.Load(caminhoAluno);
+            string[] Dados = new string[4] { "", "", "", "" };
+
+            var Consulta = from P in Raiz.Elements("Aluno")
+                           where ((string)P.Element("NomeAlu")).Equals(nomeAluno)
+                           select new
+                           {
+                               Nome = (string)P.Element("NomeAlu"),
+                               Idade = (string)P.Element("Idade"),
+                               Telefone = (string)P.Element("Telefone"),
+                               Ano = (string)P.Element("Ano")
+                           };
+
+            foreach(var x in Consulta)
+            {
+                Dados[0] = x.Nome;
+                Dados[1] = x.Idade;
+                Dados[2] = x.Telefone;
+                Dados[3] = x.Ano;
+            }
+
+            return Dados;
+        }
+
         public void ListarAlunos()
         {
             // ControleListarAluno
         }
+
 
         public void SalvarXmlAluno(Aluno alu)
         {
@@ -309,5 +336,6 @@ namespace Controle_Disciplinas_Notas
 
             Raiz.Save(caminhoAluno);
         }
+
     }
 }
