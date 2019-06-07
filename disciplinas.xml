@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Disciplinas>
   <Disciplina>
+    <Codigo>A9234DG</Codigo>
     <NomeDisc>aaaaaa</NomeDisc>
     <Professor>bbbbbb</Professor>
     <Atividade>
@@ -13,6 +14,7 @@
     </Atividade>
   </Disciplina>
   <Disciplina>
+    <Codigo>FGDH943</Codigo>
     <NomeDisc>cccccc</NomeDisc>
     <Professor>dddddd</Professor>
     <Atividade>
@@ -21,10 +23,12 @@
     </Atividade>
   </Disciplina>
   <Disciplina>
+    <Codigo>23S27AH</Codigo>
     <NomeDisc>sld;mfasl</NomeDisc>
     <Professor>naklsdsak</Professor>
   </Disciplina>
   <Disciplina>
+    <Codigo>590SD52</Codigo>
     <NomeDisc>testeDisciplina</NomeDisc>
     <Professor>testeProfessor</Professor>
     <Atividade>

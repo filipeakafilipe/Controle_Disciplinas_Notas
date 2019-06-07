@@ -31,18 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PainelConteudo));
             this.PainelLado = new System.Windows.Forms.Panel();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.PainelLadoVerde = new System.Windows.Forms.Panel();
             this.btnAluno = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
             this.btnCadastro = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
             this.PainelCima = new System.Windows.Forms.FlowLayoutPanel();
-            this.controleInicio1 = new Controle_Disciplinas_Notas.ControleInicio();
-            this.controleCadastro1 = new Controle_Disciplinas_Notas.ControleCadastro();
-            this.controleAlterar1 = new Controle_Disciplinas_Notas.ControleAlterar();
-            this.controleListar1 = new Controle_Disciplinas_Notas.ControleListar();
             this.controleAluno1 = new Controle_Disciplinas_Notas.ControleAluno();
+            this.controleListar1 = new Controle_Disciplinas_Notas.ControleListar();
+            this.controleAlterar1 = new Controle_Disciplinas_Notas.ControleAlterar();
+            this.controleCadastro1 = new Controle_Disciplinas_Notas.ControleCadastro();
+            this.controleInicio1 = new Controle_Disciplinas_Notas.ControleInicio();
             this.PainelLado.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             // 
             this.PainelLado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.PainelLado.Controls.Add(this.btnAlterar);
-            this.PainelLado.Controls.Add(this.button1);
+            this.PainelLado.Controls.Add(this.btnSair);
             this.PainelLado.Controls.Add(this.PainelLadoVerde);
             this.PainelLado.Controls.Add(this.btnAluno);
             this.PainelLado.Controls.Add(this.btnListar);
@@ -78,19 +78,20 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
-            // button1
+            // btnSair
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(15, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 46);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Adicionar Expandir Menu";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.ForeColor = System.Drawing.Color.White;
+            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSair.Location = new System.Drawing.Point(15, 577);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(131, 46);
+            this.btnSair.TabIndex = 6;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // PainelLadoVerde
             // 
@@ -174,29 +175,13 @@
             this.PainelCima.Size = new System.Drawing.Size(1079, 21);
             this.PainelCima.TabIndex = 1;
             // 
-            // controleInicio1
+            // controleAluno1
             // 
-            this.controleInicio1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.controleInicio1.Location = new System.Drawing.Point(146, 12);
-            this.controleInicio1.Name = "controleInicio1";
-            this.controleInicio1.Size = new System.Drawing.Size(1079, 614);
-            this.controleInicio1.TabIndex = 2;
-            // 
-            // controleCadastro1
-            // 
-            this.controleCadastro1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.controleCadastro1.Location = new System.Drawing.Point(146, 12);
-            this.controleCadastro1.Name = "controleCadastro1";
-            this.controleCadastro1.Size = new System.Drawing.Size(1079, 614);
-            this.controleCadastro1.TabIndex = 3;
-            // 
-            // controleAlterar1
-            // 
-            this.controleAlterar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.controleAlterar1.Location = new System.Drawing.Point(146, 12);
-            this.controleAlterar1.Name = "controleAlterar1";
-            this.controleAlterar1.Size = new System.Drawing.Size(1079, 614);
-            this.controleAlterar1.TabIndex = 4;
+            this.controleAluno1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.controleAluno1.Location = new System.Drawing.Point(146, 12);
+            this.controleAluno1.Name = "controleAluno1";
+            this.controleAluno1.Size = new System.Drawing.Size(1079, 614);
+            this.controleAluno1.TabIndex = 6;
             // 
             // controleListar1
             // 
@@ -206,13 +191,29 @@
             this.controleListar1.Size = new System.Drawing.Size(1079, 614);
             this.controleListar1.TabIndex = 5;
             // 
-            // controleAluno1
+            // controleAlterar1
             // 
-            this.controleAluno1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.controleAluno1.Location = new System.Drawing.Point(146, 12);
-            this.controleAluno1.Name = "controleAluno1";
-            this.controleAluno1.Size = new System.Drawing.Size(1079, 614);
-            this.controleAluno1.TabIndex = 6;
+            this.controleAlterar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.controleAlterar1.Location = new System.Drawing.Point(146, 12);
+            this.controleAlterar1.Name = "controleAlterar1";
+            this.controleAlterar1.Size = new System.Drawing.Size(1079, 614);
+            this.controleAlterar1.TabIndex = 4;
+            // 
+            // controleCadastro1
+            // 
+            this.controleCadastro1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.controleCadastro1.Location = new System.Drawing.Point(146, 12);
+            this.controleCadastro1.Name = "controleCadastro1";
+            this.controleCadastro1.Size = new System.Drawing.Size(1079, 614);
+            this.controleCadastro1.TabIndex = 3;
+            // 
+            // controleInicio1
+            // 
+            this.controleInicio1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.controleInicio1.Location = new System.Drawing.Point(146, 12);
+            this.controleInicio1.Name = "controleInicio1";
+            this.controleInicio1.Size = new System.Drawing.Size(1079, 614);
+            this.controleInicio1.TabIndex = 2;
             // 
             // PainelConteudo
             // 
@@ -227,6 +228,8 @@
             this.Controls.Add(this.controleInicio1);
             this.Controls.Add(this.PainelCima);
             this.Controls.Add(this.PainelLado);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "PainelConteudo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Controle de Disciplinas e Notas";
@@ -244,7 +247,7 @@
         private System.Windows.Forms.Button btnCadastro;
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Panel PainelLadoVerde;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnAlterar;
         private ControleInicio controleInicio1;
         private ControleCadastro controleCadastro1;

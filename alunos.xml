@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Alunos>
   <Aluno>
+    <Codigo>BC85BC3</Codigo>
     <NomeAlu>asdasd</NomeAlu>
     <Idade>11</Idade>
     <Telefone>11-1111</Telefone>
@@ -23,6 +24,7 @@
     </Disciplina>
   </Aluno>
   <Aluno>
+    <Codigo>3B53BC8</Codigo>
     <NomeAlu>orwoper</NomeAlu>
     <Idade>91</Idade>
     <Telefone>123123</Telefone>
@@ -49,6 +51,7 @@
     </Disciplina>
   </Aluno>
   <Aluno>
+    <Codigo>41BDD0D</Codigo>
     <NomeAlu>TesteAluno</NomeAlu>
     <Idade>20</Idade>
     <Telefone>123123</Telefone>

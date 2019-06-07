@@ -9,7 +9,19 @@ namespace Controle_Disciplinas_Notas
 {
     class Disciplina
     {
-        // Adicionar um ID para cada disciplina também?
+        public Disciplina()
+        {
+            //_Codigo = Guid.NewGuid().ToString().Substring(0, 7).ToUpper();
+            // SALVAR NO XML
+        }
+
+        private string _Codigo;
+
+        public string Codigo
+        {
+            get { return _Codigo; }
+            set { _Codigo = value; }
+        }
 
         private string _NomeDisc;
 
@@ -27,44 +39,52 @@ namespace Controle_Disciplinas_Notas
             set { _Professor = value; }
         }
 
-        private ArrayList _NomeAtividade;
+        private string _NomeAtividade;
 
-        public ArrayList NomeAtividade
+        public string NomeAtividade
         {
             get { return _NomeAtividade; }
             set { _NomeAtividade = value; }
         }
 
-        private ArrayList _NotaMax;
+        private string _NotaMax;
 
-        public ArrayList NotaMax
+        public string NotaMax
         {
             get { return _NotaMax; }
             set { _NotaMax = value; }
         }
 
-        private ArrayList _Data;
+        private string _NotaAluno;
 
-        public ArrayList Data
-        {
-            get { return _Data; }
-            set { _Data = value; }
-        }
-
-        private ArrayList _Horario;
-
-        public ArrayList Horario
-        {
-            get { return _Horario; }
-            set { _Horario = value; }
-        }
-
-        private ArrayList _NotaAluno;
-
-        public ArrayList NotaAluno
+        public string NotaAluno
         {
             get { return _NotaAluno; }
             set { _NotaAluno = value; }
         }
+
+        //private ArrayList _Data;
+
+        //public ArrayList Data
+        //{
+        //    get { return _Data; }
+        //    set { _Data = value; }
+        //}
+
+        //private ArrayList _Horario;
+
+        //public ArrayList Horario
+        //{
+        //    get { return _Horario; }
+        //    set { _Horario = value; }
+        //}
+
+        //private ArrayList _NotaAluno;
+
+        //public ArrayList NotaAluno
+        //{
+        //    get { return _NotaAluno; }
+        //    set { _NotaAluno = value; }
+        //}
     }
 }

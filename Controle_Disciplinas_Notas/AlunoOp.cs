@@ -21,6 +21,7 @@ namespace Controle_Disciplinas_Notas
         {
             // Adicionar id guid, nome, idade, telefone, ano (série)
 
+            alu.Codigo = Guid.NewGuid().ToString().Substring(0, 7).ToUpper();
             alu.NomeAlu = nome;
             alu.Idade = idade;
             alu.Telefone = telefone;
@@ -43,40 +44,17 @@ namespace Controle_Disciplinas_Notas
                            orderby (string)p.Element("NomeAlu")
                            select new
                            {
+                               Codigo = (string)p.Element("Codigo"),
                                Nome = (string)p.Element("NomeAlu")
                            };
 
             foreach (var x in Consulta)
             {
-                alunos.Add(x.Nome);
+                alunos.Add(x.Codigo + " - " + x.Nome);
             }
 
             return alunos;
         }
-
-        //public List<string> ProcuraAtividade(string nomeDisc)
-        //{
-        //    List<string> atividades = new List<string>();
-
-        //    XElement Raiz = XElement.Load(caminhoDisc);
-
-        //    var Consulta = from p in Raiz.Elements("Disciplina")
-        //                   where ((string)p.Element("NomeDisc")).Equals(nomeDisc)
-        //                   select p;
-
-        //    var Consulta2 = from p in Consulta.Elements("Atividade")
-        //                    select new
-        //                    {
-        //                        Nome = (string)p.Element("NomeAtividade")
-        //                    };
-
-        //    foreach (var x in Consulta2)
-        //    {
-        //        atividades.Add(x.Nome);
-        //    }
-
-        //    return atividades;
-        //}
 
         public void AdicionarDisciplina(Disciplina disc, Aluno alu, string NomeDisciplina, string NomeAluno)
         {
@@ -305,7 +283,7 @@ namespace Controle_Disciplinas_Notas
                                Ano = (string)P.Element("Ano")
                            };
 
-            foreach(var x in Consulta)
+            foreach (var x in Consulta)
             {
                 Dados[0] = x.Nome;
                 Dados[1] = x.Idade;
@@ -316,17 +294,115 @@ namespace Controle_Disciplinas_Notas
             return Dados;
         }
 
-        public void ListarAlunos()
+        public List<Aluno> ListarAlunos()
         {
             // ControleListarAluno
-        }
 
+            List<Aluno> alu = new List<Aluno>();
+
+            XElement Raiz = XElement.Load(caminhoAluno);
+
+            var Consulta1 = from P in Raiz.Elements("Aluno")
+                            select new
+                            {
+                                Codigo = (string)P.Element("Codigo"),
+                                Nome = (string)P.Element("NomeAlu"),
+                                Idade = (int)P.Element("Idade"),
+                                Telefone = (string)P.Element("Telefone"),
+                                Ano = (int)P.Element("Ano"),
+                                discs = P.Elements("Disciplina").ToList()
+                            };
+
+            var Consulta2 = from P in Consulta1.Select(x => x.discs)
+                            select P;
+
+            foreach (var x in Consulta1)
+            {
+                int cont1 = Consulta2.Count();
+
+                if (cont1 == 0)
+                {
+                    alu.Add(new Aluno
+                    {
+                        Codigo = x.Codigo,
+                        NomeAlu = x.Nome,
+                        Idade = x.Idade,
+                        Telefone = x.Telefone,
+                        Ano = x.Ano,
+                        Disc = (new Disciplina
+                        {
+                            NomeDisc = "",
+                            NomeAtividade = "",
+                            NotaAluno = ""
+                        })
+                    });
+                }
+                else
+                {
+                    var Consulta3 = from P in x.discs
+                                    select new
+                                    {
+                                        NomeD = (string)P.Element("NomeDisc"),
+                                        NomeP = (string)P.Element("Professor"),
+                                        Atvs = P.Elements("Atividade").ToList()
+                                    };
+
+                    foreach (var y in Consulta3)
+                    {
+                        int cont2 = y.Atvs.Count();
+
+                        if (cont2 == 0)
+                        {
+                            alu.Add(new Aluno
+                            {
+                                Codigo = x.Codigo,
+                                NomeAlu = x.Nome,
+                                Idade = x.Idade,
+                                Telefone = x.Telefone,
+                                Ano = x.Ano,
+                                Disc = (new Disciplina
+                                {
+                                    NomeDisc = y.NomeD,
+                                    Professor = y.NomeP,
+                                    NomeAtividade = "",
+                                    NotaAluno = ""
+                                })
+                            });
+                        }
+                        else
+                        {
+                            for (int i = 0; i < cont2; i++)
+                            {
+                                alu.Add(new Aluno
+                                {
+                                    Codigo = x.Codigo,
+                                    NomeAlu = x.Nome,
+                                    Idade = x.Idade,
+                                    Telefone = x.Telefone,
+                                    Ano = x.Ano,
+                                    Disc = (new Disciplina
+                                    {
+                                        NomeDisc = y.NomeD,
+                                        Professor = y.NomeP,
+                                        NomeAtividade = y.Atvs[i].Element("NomeAtividade").Value.ToString(),
+                                        NotaAluno = y.Atvs[i].Element("NotaAluno").Value.ToString()
+                                    })
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+
+            return alu;
+        }
 
         public void SalvarXmlAluno(Aluno alu)
         {
             XElement Raiz = XElement.Load(caminhoAluno);
 
             XElement NovoAluno = new XElement("Aluno",
+                new XElement("Codigo", alu.Codigo),
                 new XElement("NomeAlu", alu.NomeAlu),
                 new XElement("Idade", alu.Idade),
                 new XElement("Telefone", alu.Telefone),

@@ -11,6 +11,20 @@ namespace Controle_Disciplinas_Notas
     {
         // Adicionar GUID Id
 
+        public Aluno()
+        {
+            //_Codigo = Guid.NewGuid().ToString().Substring(0, 7).ToUpper();
+            // SALVAR NO XML
+        }
+
+        private string _Codigo;
+
+        public string Codigo
+        {
+            get { return _Codigo; }
+            set { _Codigo = value; }
+        }
+
         private string _NomeAlu;
 
         public string NomeAlu
@@ -43,12 +57,37 @@ namespace Controle_Disciplinas_Notas
             set { _Ano = value; }
         }
 
-        private ArrayList _ListaDisciplinas;
+        private Disciplina _Disc;
 
-        public ArrayList ListaDisciplinas
+        public Disciplina Disc
         {
-            get { return _ListaDisciplinas; }
-            set { _ListaDisciplinas = value; }
+            get { return _Disc; }
+            set { _Disc = value; }
+        }
+
+        public Aluno(Disciplina disc)
+        {
+            _Disc = Disc;
+        }
+
+        public string NomeDisc
+        {
+            get { return _Disc.NomeDisc; }
+        }
+
+        public string Professor
+        {
+            get { return _Disc.Professor; }
+        }
+
+        public string NomeAtividade
+        {
+            get { return _Disc.NomeAtividade; }
+        }
+
+        public string NotaAluno
+        {
+            get { return _Disc.NotaAluno; }
         }
     }
 }

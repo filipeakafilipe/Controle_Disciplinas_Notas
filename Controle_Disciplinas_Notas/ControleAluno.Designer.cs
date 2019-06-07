@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.cmbAlunos = new System.Windows.Forms.ComboBox();
             this.lblSelecionar = new System.Windows.Forms.Button();
             this.cmbSelecionarGrafico = new System.Windows.Forms.ComboBox();
@@ -51,7 +49,6 @@
             this.lblAno = new System.Windows.Forms.Label();
             this.grfCartesiano = new LiveCharts.WinForms.CartesianChart();
             this.grfPizza = new LiveCharts.WinForms.PieChart();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscNotas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,25 +62,6 @@
             this.label1.Size = new System.Drawing.Size(186, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "ControleAluno";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Lime;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 108);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(161, 163);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(28, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Adicionar foto do aluno em baixo";
             // 
             // cmbAlunos
             // 
@@ -191,7 +169,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(28, 304);
+            this.label4.Location = new System.Drawing.Point(28, 108);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 13;
@@ -201,7 +179,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.ForeColor = System.Drawing.Color.White;
-            this.lblNome.Location = new System.Drawing.Point(28, 317);
+            this.lblNome.Location = new System.Drawing.Point(28, 121);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(85, 13);
             this.lblNome.TabIndex = 14;
@@ -211,7 +189,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(28, 341);
+            this.label6.Location = new System.Drawing.Point(28, 145);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 15;
@@ -221,7 +199,7 @@
             // 
             this.lblIdade.AutoSize = true;
             this.lblIdade.ForeColor = System.Drawing.Color.White;
-            this.lblIdade.Location = new System.Drawing.Point(28, 354);
+            this.lblIdade.Location = new System.Drawing.Point(28, 158);
             this.lblIdade.Name = "lblIdade";
             this.lblIdade.Size = new System.Drawing.Size(85, 13);
             this.lblIdade.TabIndex = 16;
@@ -231,7 +209,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(28, 387);
+            this.label7.Location = new System.Drawing.Point(28, 191);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 17;
@@ -241,7 +219,7 @@
             // 
             this.lblTelefone.AutoSize = true;
             this.lblTelefone.ForeColor = System.Drawing.Color.White;
-            this.lblTelefone.Location = new System.Drawing.Point(28, 400);
+            this.lblTelefone.Location = new System.Drawing.Point(28, 204);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(97, 13);
             this.lblTelefone.TabIndex = 18;
@@ -251,7 +229,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(28, 432);
+            this.label8.Location = new System.Drawing.Point(28, 236);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(60, 13);
             this.label8.TabIndex = 20;
@@ -261,7 +239,7 @@
             // 
             this.lblAno.AutoSize = true;
             this.lblAno.ForeColor = System.Drawing.Color.White;
-            this.lblAno.Location = new System.Drawing.Point(28, 445);
+            this.lblAno.Location = new System.Drawing.Point(28, 249);
             this.lblAno.Name = "lblAno";
             this.lblAno.Size = new System.Drawing.Size(38, 13);
             this.lblAno.TabIndex = 21;
@@ -308,12 +286,9 @@
             this.Controls.Add(this.cmbSelecionarGrafico);
             this.Controls.Add(this.lblSelecionar);
             this.Controls.Add(this.cmbAlunos);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Name = "ControleAluno";
             this.Size = new System.Drawing.Size(1079, 614);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscNotas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -323,8 +298,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbAlunos;
         private System.Windows.Forms.Button lblSelecionar;
         private System.Windows.Forms.ComboBox cmbSelecionarGrafico;

@@ -88,6 +88,7 @@
             this.btnAtualizarAlunos.TabIndex = 20;
             this.btnAtualizarAlunos.Text = "Atualizar";
             this.btnAtualizarAlunos.UseVisualStyleBackColor = false;
+            this.btnAtualizarAlunos.Click += new System.EventHandler(this.btnAtualizarAlunos_Click);
             // 
             // ControleListarAlunos
             // 

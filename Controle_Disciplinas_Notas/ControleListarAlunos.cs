@@ -16,5 +16,20 @@ namespace Controle_Disciplinas_Notas
         {
             InitializeComponent();
         }
+
+        private void btnAtualizarAlunos_Click(object sender, EventArgs e)
+        {
+            AlunoOp aluop = new AlunoOp();
+
+            List<Aluno> alus = new List<Aluno>();
+
+            alus = aluop.ListarAlunos();
+
+            dgvListarAlunos.ForeColor = Color.Black;
+            dgvListarAlunos.DataSource = alus;
+            dgvListarAlunos.Columns[5].Visible = false;
+
+            dgvListarAlunos.ClearSelection();
+        }
     }
 }

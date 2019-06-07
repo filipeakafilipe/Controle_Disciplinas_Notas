@@ -33,6 +33,7 @@ namespace Controle_Disciplinas_Notas
 
             Disciplina disc = new Disciplina();
 
+            disc.Codigo = Guid.NewGuid().ToString().Substring(0, 7).ToUpper();
             disc.NomeDisc = NomeDisc;
             disc.Professor = Prof;
 
@@ -58,12 +59,13 @@ namespace Controle_Disciplinas_Notas
                            orderby (string)p.Element("NomeDisc")
                            select new
                            {
+                               Codigo = (string)p.Element("Codigo"),
                                Nome = (string)p.Element("NomeDisc")
                            };
 
             foreach (var x in Consulta)
             {
-                discs.Add(x.Nome);
+                discs.Add(x.Codigo + " - " + x.Nome);
             }
 
             return discs;
@@ -85,7 +87,7 @@ namespace Controle_Disciplinas_Notas
                                 Nome = (string)p.Element("NomeAtividade")
                             };
 
-            foreach(var x in Consulta2)
+            foreach (var x in Consulta2)
             {
                 atividades.Add(x.Nome);
             }
@@ -215,17 +217,63 @@ namespace Controle_Disciplinas_Notas
                             where ((string)P.Element("NomeAtividade")).Equals(nomeAtividade)
                             select P;
 
-            foreach(var x in Consulta2)
+            foreach (var x in Consulta2)
             {
-                x.Element("NomeAtividade").Parent.Remove();   
+                x.Element("NomeAtividade").Parent.Remove();
             }
 
             Raiz.Save(caminhoDisc);
         }
 
-        public void ListarDisciplinas(Disciplina disc)
+        public List<Disciplina> ListarDisciplinas()
         {
             // ControleListarDisciplina
+
+            List<Disciplina> Discs = new List<Disciplina>();
+
+            XElement Raiz = XElement.Load(caminhoDisc);
+
+            var Consulta1 = from P in Raiz.Elements("Disciplina")
+                            select new
+                            {
+                                Codigo = (string)P.Element("Codigo"),
+                                Nome = (string)P.Element("NomeDisc"),
+                                Prof = (string)P.Element("Professor"),
+                                Discs = P.Elements("Atividade").ToList()
+                            };
+
+            foreach(var x in Consulta1)
+            {
+                int cont = x.Discs.Count();
+
+                if(cont == 0)
+                {
+                    Discs.Add(new Disciplina
+                    {
+                        Codigo = x.Codigo,
+                        NomeDisc = x.Nome,
+                        Professor = x.Prof,
+                        NomeAtividade = "",
+                        NotaMax = ""
+                    });
+                }
+                else
+                {
+                    for (int i = 0; i < cont; i++)
+                    {
+                        Discs.Add(new Disciplina
+                        {
+                            Codigo = x.Codigo,
+                            NomeDisc = x.Nome,
+                            Professor = x.Prof,
+                            NomeAtividade = x.Discs[i].Element("NomeAtividade").Value.ToString(),
+                            NotaMax = x.Discs[i].Element("NotaMax").Value.ToString()
+                        });
+                    }
+                }
+            }
+
+            return Discs;
         }
 
         private void SalvaXmlDisc(Disciplina disc)
@@ -233,6 +281,7 @@ namespace Controle_Disciplinas_Notas
             XElement Raiz = XElement.Load(caminhoDisc);
 
             XElement NovaDisciplina = new XElement("Disciplina",
+                new XElement("Codigo", disc.Codigo),
                 new XElement("NomeDisc", disc.NomeDisc),
                 new XElement("Professor", disc.Professor));
 
@@ -240,19 +289,5 @@ namespace Controle_Disciplinas_Notas
 
             Raiz.Save(caminhoDisc);
         }
-
-        //private void SalvaXmlAtividade(Disciplina disc, string NomeAtividade, double NotaMax/*, IEnumerable<XElement> Consulta*/)
-        //{
-        //    XElement Raiz = XElement.Load(caminho);
-
-        //    //XElement NovaAtividade = new XElement("NomeAtividade", NomeAtividade,
-        //    //    new XElement("NotaMax", NotaMax));
-
-        //    foreach (var x in DiscSelecionada)
-        //    {
-        //        x.Add("NomeAtividade", NomeAtividade);
-        //        x.Add("NotaMax", NotaMax);
-        //    }
-        //}
     }
 }

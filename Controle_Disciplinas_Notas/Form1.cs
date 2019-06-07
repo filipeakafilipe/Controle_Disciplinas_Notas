@@ -80,5 +80,10 @@ namespace Controle_Disciplinas_Notas
             btnListar.BackColor = Color.FromArgb(40, 40, 40);
             btnAluno.BackColor = Color.FromArgb(50, 50, 50);
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

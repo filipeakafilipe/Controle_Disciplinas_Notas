@@ -100,6 +100,7 @@
             this.btnAtualizarDisciplinas.TabIndex = 20;
             this.btnAtualizarDisciplinas.Text = "Atualizar";
             this.btnAtualizarDisciplinas.UseVisualStyleBackColor = false;
+            this.btnAtualizarDisciplinas.Click += new System.EventHandler(this.btnAtualizarDisciplinas_Click);
             // 
             // ControleListarDisciplinas
             // 
