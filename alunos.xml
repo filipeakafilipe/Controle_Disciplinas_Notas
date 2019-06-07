@@ -7,6 +7,7 @@
     <Telefone>11-1111</Telefone>
     <Ano>1</Ano>
     <Disciplina>
+      <Codigo>A9234DG</Codigo>
       <NomeDisc>aaaaaa</NomeDisc>
       <Professor>bbbbbb</Professor>
       <Atividade>
@@ -15,10 +16,12 @@
       </Atividade>
     </Disciplina>
     <Disciplina>
+      <Codigo>23S27AH</Codigo>
       <NomeDisc>sld;mfasl</NomeDisc>
       <Professor>naklsdsak</Professor>
     </Disciplina>
     <Disciplina>
+      <Codigo>FGDH943</Codigo>
       <NomeDisc>cccccc</NomeDisc>
       <Professor>dddddd</Professor>
     </Disciplina>
@@ -30,6 +33,7 @@
     <Telefone>123123</Telefone>
     <Ano>1000</Ano>
     <Disciplina>
+      <Codigo>A9234DG</Codigo>
       <NomeDisc>aaaaaa</NomeDisc>
       <Professor>bbbbbb</Professor>
       <Atividade>
@@ -38,10 +42,12 @@
       </Atividade>
     </Disciplina>
     <Disciplina>
+      <Codigo>23S27AH</Codigo>
       <NomeDisc>sld;mfasl</NomeDisc>
       <Professor>naklsdsak</Professor>
     </Disciplina>
     <Disciplina>
+      <Codigo>FGDH943</Codigo>
       <NomeDisc>cccccc</NomeDisc>
       <Professor>dddddd</Professor>
     </Disciplina>
@@ -57,6 +63,7 @@
     <Telefone>123123</Telefone>
     <Ano>2000</Ano>
     <Disciplina>
+      <Codigo>A9234DG</Codigo>
       <NomeDisc>aaaaaa</NomeDisc>
       <Professor>bbbbbb</Professor>
       <Atividade>
@@ -65,6 +72,7 @@
       </Atividade>
     </Disciplina>
     <Disciplina>
+      <Codigo>590SD52</Codigo>
       <NomeDisc>testeDisciplina</NomeDisc>
       <Professor>testeProfessor</Professor>
       <Atividade>
