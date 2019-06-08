@@ -15,8 +15,6 @@ namespace Controle_Disciplinas_Notas
 {
     public partial class ControleCadastroDisciplina : UserControl
     {
-        //Disciplina disc = new Disciplina();
-
         public ControleCadastroDisciplina()
         {
             InitializeComponent();
@@ -24,25 +22,32 @@ namespace Controle_Disciplinas_Notas
 
         private void btnAdicionarDisciplina_Click(object sender, EventArgs e)
         {
-            //Disciplina MinhaDisciplina = new Disciplina();
-
-            //MinhaDisciplina.NomeDisc = txtNomeDisc.Text;
-            //MinhaDisciplina.Professor = txtProfessor.Text;
-
-            DisciplinaOp Disc = new DisciplinaOp(txtNomeDisc.Text, txtProfessor.Text);
+            try
+            {
+                DisciplinaOp Disc = new DisciplinaOp(txtNomeDisc.Text, txtProfessor.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
 
         private void btnAdicionarAtividade_Click(object sender, EventArgs e)
         {
-            string NomeDisciplina = cmbDisciplinaCadAt.Text.Substring(0, 7);
-            string NomeAtividade = txtNomeAtividade.Text;
-            double NotaMax = double.Parse(txtNotaMax.Text);
+            try
+            {
+                string NomeDisciplina = cmbDisciplinaCadAt.Text.Substring(0, 7);
+                string NomeAtividade = txtNomeAtividade.Text;
+                double NotaMax = double.Parse(txtNotaMax.Text);
 
-            DisciplinaOp Disc = new DisciplinaOp();
+                DisciplinaOp Disc = new DisciplinaOp();
 
-            Disc.AdicionarAtividade(new Disciplina(), NomeDisciplina, NomeAtividade, NotaMax);
-
-            //Disc.AdicionarAtividade(new Disciplina(), NomeAtividade, NotaMax/*, Consulta*/);
+                Disc.AdicionarAtividade(new Disciplina(), NomeDisciplina, NomeAtividade, NotaMax);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
 
         private void cmbDisciplinaCadAt_MouseUp(object sender, MouseEventArgs e)
@@ -53,11 +58,18 @@ namespace Controle_Disciplinas_Notas
 
             cmbDisciplinaCadAt.Items.Clear();
 
-            List<string> discs = discop.ProcuraDisciplina(new Disciplina());
-
-            foreach (string nomeDisc in discs)
+            try
             {
-                cmbDisciplinaCadAt.Items.Add(nomeDisc);
+                List<string> discs = discop.ProcuraDisciplina(new Disciplina());
+
+                foreach (string nomeDisc in discs)
+                {
+                    cmbDisciplinaCadAt.Items.Add(nomeDisc);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
             }
         }
     }

@@ -35,31 +35,45 @@ namespace Controle_Disciplinas_Notas
 
             cmbAlunos.Items.Clear();
 
-            List<string> alunos = aluop.ProcuraAluno(new Aluno());
-
-            foreach (string nomeAlu in alunos)
+            try
             {
-                cmbAlunos.Items.Add(nomeAlu);
+                List<string> alunos = aluop.ProcuraAluno(new Aluno());
+
+                foreach (string nomeAlu in alunos)
+                {
+                    cmbAlunos.Items.Add(nomeAlu);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
             }
         }
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
-            lblCodigo.Visible = true;
-            lblNome.Visible = true;
-            lblTelefone.Visible = true;
-            lblIdade.Visible = true;
-            lblAno.Visible = true;
+            try
+            {
+                lblCodigo.Visible = true;
+                lblNome.Visible = true;
+                lblTelefone.Visible = true;
+                lblIdade.Visible = true;
+                lblAno.Visible = true;
 
-            AlunoOp aluop = new AlunoOp();
-            string[] Dados = new string[5];
-            Dados = aluop.DadosAluno(cmbAlunos.Text.Substring(0, 7));
+                AlunoOp aluop = new AlunoOp();
+                string[] Dados = new string[5];
+                Dados = aluop.DadosAluno(cmbAlunos.Text.Substring(0, 7));
 
-            lblCodigo.Text = Dados[0];
-            lblNome.Text = Dados[1];
-            lblTelefone.Text = Dados[2];
-            lblIdade.Text = Dados[3];
-            lblAno.Text = Dados[4];
+                lblCodigo.Text = Dados[0];
+                lblNome.Text = Dados[1];
+                lblTelefone.Text = Dados[2];
+                lblIdade.Text = Dados[3];
+                lblAno.Text = Dados[4];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
 
         private void CmbDisciplinas_MouseUp(object sender, MouseEventArgs e)
@@ -68,14 +82,20 @@ namespace Controle_Disciplinas_Notas
 
             cmbDisciplinas.Items.Clear();
 
-            //string NomeDisciplina = cmbDisciplina.Text;
-            string NomeAluno = cmbAlunos.Text.Substring(0, 7);
-
-            List<string> discs = aluop.ProcuraDiscAluno(/*NomeDisciplina, */NomeAluno);
-
-            foreach (string nomeAtividade in discs)
+            try
             {
-                cmbDisciplinas.Items.Add(nomeAtividade);
+                string NomeAluno = cmbAlunos.Text.Substring(0, 7);
+
+                List<string> discs = aluop.ProcuraDiscAluno(NomeAluno);
+
+                foreach (string nomeAtividade in discs)
+                {
+                    cmbDisciplinas.Items.Add(nomeAtividade);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
             }
         }
 
@@ -85,65 +105,71 @@ namespace Controle_Disciplinas_Notas
 
             List<Aluno> alu = new List<Aluno>();
 
-            string codAluno = cmbAlunos.Text.Substring(0, 7);
-            string codDisc = cmbDisciplinas.Text.Substring(0, 7);
-
-            alu = aluop.ListarDiscAluno(codAluno, codDisc);
-            dgvDiscNotas.ForeColor = Color.Black;
-            dgvDiscNotas.DataSource = alu;
-
-            dgvDiscNotas.Columns[0].Visible = false;
-            dgvDiscNotas.Columns[1].Visible = false;
-            dgvDiscNotas.Columns[2].Visible = false;
-            dgvDiscNotas.Columns[3].Visible = false;
-            dgvDiscNotas.Columns[4].Visible = false;
-            dgvDiscNotas.Columns[5].Visible = false;
-            dgvDiscNotas.Columns[6].Visible = false;
-            dgvDiscNotas.Columns[7].Visible = false;
-
-            dgvDiscNotas.ClearSelection();
-
-            DisciplinaOp discop = new DisciplinaOp();
-            List<double> notasMax = new List<double>();
-            notasMax = discop.NotasDisc(codDisc);
-
-            double somaMax = 0;
-            foreach (double x in notasMax)
+            try
             {
-                somaMax += x;
-            }
+                string codAluno = cmbAlunos.Text.Substring(0, 7);
+                string codDisc = cmbDisciplinas.Text.Substring(0, 7);
 
-            List<Aluno> notasAluno = new List<Aluno>();
-            notasAluno = aluop.NotasAluno(codAluno, codDisc);
+                alu = aluop.ListarDiscAluno(codAluno, codDisc);
+                dgvDiscNotas.ForeColor = Color.Black;
+                dgvDiscNotas.DataSource = alu;
 
-            double somaAluno = 0;
-            foreach (var x in notasAluno)
-            {
-                somaAluno += double.Parse(x.NotaAluno);
-            }
+                dgvDiscNotas.Columns[0].Visible = false;
+                dgvDiscNotas.Columns[1].Visible = false;
+                dgvDiscNotas.Columns[2].Visible = false;
+                dgvDiscNotas.Columns[3].Visible = false;
+                dgvDiscNotas.Columns[4].Visible = false;
+                dgvDiscNotas.Columns[5].Visible = false;
+                dgvDiscNotas.Columns[6].Visible = false;
+                dgvDiscNotas.Columns[7].Visible = false;
 
-            Func<ChartPoint, string> labelPoint = chartPoint =>
-                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
-            grfPizza.Visible = true;
-            grfPizza.Series = new SeriesCollection
-            {
-                new PieSeries
+                dgvDiscNotas.ClearSelection();
+
+                DisciplinaOp discop = new DisciplinaOp();
+                List<double> notasMax = new List<double>();
+                notasMax = discop.NotasDisc(codDisc);
+
+                double somaMax = 0;
+                foreach (double x in notasMax)
                 {
-                    Title = "Nota Máxima",
-                    Values = new ChartValues<double> {somaMax},
-                    DataLabels = true,
-                    LabelPoint = labelPoint
-                },
-                new PieSeries
-                {
-                    Title = "Nota Aluno",
-                    Values = new ChartValues<double> {somaAluno},
-                    DataLabels = true,
-                    LabelPoint = labelPoint
+                    somaMax += x;
                 }
-            };
 
-            grfPizza.LegendLocation = LegendLocation.Bottom;
+                List<Aluno> notasAluno = new List<Aluno>();
+                notasAluno = aluop.NotasAluno(codAluno, codDisc);
+
+                double somaAluno = 0;
+                foreach (var x in notasAluno)
+                {
+                    somaAluno += double.Parse(x.NotaAluno);
+                }
+
+                Func<ChartPoint, string> labelPoint = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+                grfPizza.Visible = true;
+                grfPizza.Series = new SeriesCollection
+                                  {
+                                      new PieSeries
+                                      {
+                                          Title = "Nota Máxima",
+                                          Values = new ChartValues<double> {somaMax},
+                                          DataLabels = true,
+                                          LabelPoint = labelPoint
+                                      },
+                                      new PieSeries
+                                      {
+                                          Title = "Nota Aluno",
+                                          Values = new ChartValues<double> {somaAluno},
+                                          DataLabels = true,
+                                          LabelPoint = labelPoint
+                                      }
+                                  };
+
+                grfPizza.LegendLocation = LegendLocation.Bottom;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
     }
 }

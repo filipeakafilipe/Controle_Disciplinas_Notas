@@ -20,13 +20,20 @@ namespace Controle_Disciplinas_Notas
 
             List<Aluno> alus = new List<Aluno>();
 
-            alus = aluop.ListarAlunos();
+            try
+            {
+                alus = aluop.ListarAlunos();
 
-            dgvListarAlunos.ForeColor = Color.Black;
-            dgvListarAlunos.DataSource = alus;
-            dgvListarAlunos.Columns[5].Visible = false;
+                dgvListarAlunos.ForeColor = Color.Black;
+                dgvListarAlunos.DataSource = alus;
+                dgvListarAlunos.Columns[5].Visible = false;
 
-            dgvListarAlunos.ClearSelection();
+                dgvListarAlunos.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
 
         private void btnAtualizarAlunos_Click(object sender, EventArgs e)
@@ -35,13 +42,20 @@ namespace Controle_Disciplinas_Notas
 
             List<Aluno> alus = new List<Aluno>();
 
-            alus = aluop.ListarAlunos();
+            try
+            {
+                alus = aluop.ListarAlunos();
 
-            dgvListarAlunos.ForeColor = Color.Black;
-            dgvListarAlunos.DataSource = alus;
-            dgvListarAlunos.Columns[5].Visible = false;
+                dgvListarAlunos.ForeColor = Color.Black;
+                dgvListarAlunos.DataSource = alus;
+                dgvListarAlunos.Columns[5].Visible = false;
 
-            dgvListarAlunos.ClearSelection();
+                dgvListarAlunos.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -50,13 +64,20 @@ namespace Controle_Disciplinas_Notas
 
             dgvListarAlunos.ClearSelection();
 
-            for (int i = 0; i < dgvListarAlunos.RowCount; i++)
+            try
             {
-                if (dgvListarAlunos.Rows[i].Cells[0].Value.ToString() == codAluno)
+                for (int i = 0; i < dgvListarAlunos.RowCount; i++)
                 {
-                    dgvListarAlunos.CurrentCell = dgvListarAlunos.Rows[i].Cells[0];
-                    break;
+                    if (dgvListarAlunos.Rows[i].Cells[0].Value.ToString() == codAluno)
+                    {
+                        dgvListarAlunos.CurrentCell = dgvListarAlunos.Rows[i].Cells[0];
+                        break;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
             }
         }
     }

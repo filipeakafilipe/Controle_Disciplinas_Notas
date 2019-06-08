@@ -25,11 +25,18 @@ namespace Controle_Disciplinas_Notas
 
             cmbSelecionarDisciplina.Items.Clear();
 
-            List<string> discs = discop.ProcuraDisciplina(new Disciplina());
-
-            foreach (string nomeDisc in discs)
+            try
             {
-                cmbSelecionarDisciplina.Items.Add(nomeDisc);
+                List<string> discs = discop.ProcuraDisciplina(new Disciplina());
+
+                foreach (string nomeDisc in discs)
+                {
+                    cmbSelecionarDisciplina.Items.Add(nomeDisc);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
             }
         }
 
@@ -41,13 +48,21 @@ namespace Controle_Disciplinas_Notas
 
             cmbSelecionarAtividade.Items.Clear();
 
-            string nomeDisc = cmbSelecionarDisciplina.Text.Substring(0, 7);
-
-            List<string> atividades = discop.ProcuraAtividade(new Disciplina(), nomeDisc);
-
-            foreach (string nomeAtividade in atividades)
+            try
             {
-                cmbSelecionarAtividade.Items.Add(nomeAtividade);
+
+                string nomeDisc = cmbSelecionarDisciplina.Text.Substring(0, 7);
+
+                List<string> atividades = discop.ProcuraAtividade(new Disciplina(), nomeDisc);
+
+                foreach (string nomeAtividade in atividades)
+                {
+                    cmbSelecionarAtividade.Items.Add(nomeAtividade);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
             }
         }
 
@@ -55,42 +70,70 @@ namespace Controle_Disciplinas_Notas
         {
             DisciplinaOp discop = new DisciplinaOp();
 
-            string nomeDisc = cmbSelecionarDisciplina.Text.Substring(0, 7);
+            try
+            {
+                string nomeDisc = cmbSelecionarDisciplina.Text.Substring(0, 7);
 
-            discop.ExcluirDisciplina(nomeDisc);
+                discop.ExcluirDisciplina(nomeDisc);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
 
         private void BtnExcluirAtividade_Click(object sender, EventArgs e)
         {
             DisciplinaOp discop = new DisciplinaOp();
 
-            string nomeDisc = cmbSelecionarDisciplina.Text.Substring(0, 7);
-            string nomeAtividade = cmbSelecionarAtividade.Text;
+            try
+            {
+                string nomeDisc = cmbSelecionarDisciplina.Text.Substring(0, 7);
+                string nomeAtividade = cmbSelecionarAtividade.Text;
 
-            discop.ExcluirAtividade(nomeDisc, nomeAtividade);
+                discop.ExcluirAtividade(nomeDisc, nomeAtividade);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
 
         private void BtnAlterarDisciplina_Click(object sender, EventArgs e)
         {
             DisciplinaOp discop = new DisciplinaOp();
 
-            string nomeDisc = cmbSelecionarDisciplina.Text.Substring(0, 7);
-            string nomeDiscNovo = txtNomeDisc.Text;
-            string nomeProfessor = txtNomeProf.Text;
+            try
+            {
+                string nomeDisc = cmbSelecionarDisciplina.Text.Substring(0, 7);
+                string nomeDiscNovo = txtNomeDisc.Text;
+                string nomeProfessor = txtNomeProf.Text;
 
-            discop.AlterarDisciplina(nomeDisc, nomeDiscNovo, nomeProfessor);
+                discop.AlterarDisciplina(nomeDisc, nomeDiscNovo, nomeProfessor);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
 
         private void BtnAlterarAtividade_Click(object sender, EventArgs e)
         {
             DisciplinaOp discop = new DisciplinaOp();
 
-            string nomeDisc = cmbSelecionarDisciplina.Text.Substring(0, 7);
-            string nomeAtividade = cmbSelecionarAtividade.Text;
-            string nomeAtividadeNovo = txtNomeAtividade.Text;
-            string nota = txtNota.Text;
+            try
+            {
+                string nomeDisc = cmbSelecionarDisciplina.Text.Substring(0, 7);
+                string nomeAtividade = cmbSelecionarAtividade.Text;
+                string nomeAtividadeNovo = txtNomeAtividade.Text;
+                string nota = txtNota.Text;
 
-            discop.AlterarAtividade(nomeDisc, nomeAtividade, nomeAtividadeNovo, nota);
+                discop.AlterarAtividade(nomeDisc, nomeAtividade, nomeAtividadeNovo, nota);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
     }
 }

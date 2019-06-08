@@ -25,11 +25,18 @@ namespace Controle_Disciplinas_Notas
 
             cmbAluno.Items.Clear();
 
-            List<string> alunos = aluop.ProcuraAluno(new Aluno());
-
-            foreach (string nomeAlu in alunos)
+            try
             {
-                cmbAluno.Items.Add(nomeAlu);
+                List<string> alunos = aluop.ProcuraAluno(new Aluno());
+
+                foreach (string nomeAlu in alunos)
+                {
+                    cmbAluno.Items.Add(nomeAlu);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
             }
         }
 
@@ -39,13 +46,21 @@ namespace Controle_Disciplinas_Notas
 
             cmbDisciplinaCadAl.Items.Clear();
 
-            string NomeAluno = cmbAluno.Text.Substring(0, 7);
 
-            List<string> discs = aluop.ProcuraDiscAluno(NomeAluno);
-
-            foreach (string nomeAtividade in discs)
+            try
             {
-                cmbDisciplinaCadAl.Items.Add(nomeAtividade);
+                string NomeAluno = cmbAluno.Text.Substring(0, 7);
+
+                List<string> discs = aluop.ProcuraDiscAluno(NomeAluno);
+
+                foreach (string nomeAtividade in discs)
+                {
+                    cmbDisciplinaCadAl.Items.Add(nomeAtividade);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
             }
         }
 
@@ -55,14 +70,21 @@ namespace Controle_Disciplinas_Notas
 
             cmbAtividade.Items.Clear();
 
-            string nomeAluno = cmbAluno.Text.Substring(0, 7);
-            string nomeDisc = cmbDisciplinaCadAl.Text.Substring(0, 7);
-
-            List<string> atividades = aluop.ProcuraAtvAluno(nomeAluno, nomeDisc);
-
-            foreach (string nomeAtv in atividades)
+            try
             {
-                cmbAtividade.Items.Add(nomeAtv);
+                string nomeAluno = cmbAluno.Text.Substring(0, 7);
+                string nomeDisc = cmbDisciplinaCadAl.Text.Substring(0, 7);
+
+                List<string> atividades = aluop.ProcuraAtvAluno(nomeAluno, nomeDisc);
+
+                foreach (string nomeAtv in atividades)
+                {
+                    cmbAtividade.Items.Add(nomeAtv);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
             }
         }
 
@@ -70,55 +92,92 @@ namespace Controle_Disciplinas_Notas
         {
             AlunoOp aluop = new AlunoOp();
 
-            string nomeAluno = cmbAluno.Text.Substring(0, 7);
+            try
+            {
 
-            aluop.ExcluirAluno(nomeAluno);
+                string nomeAluno = cmbAluno.Text.Substring(0, 7);
+
+                aluop.ExcluirAluno(nomeAluno);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
 
         private void BtnAlterarDadosAluno_Click(object sender, EventArgs e)
         {
             AlunoOp aluop = new AlunoOp();
 
-            string nomeAluno = cmbAluno.Text.Substring(0, 7);
-            string nomeAlunoNovo = txtNome.Text;
-            string Idade = txtIdade.Text;
-            string Telefone = txtTelefone.Text;
-            string Ano = txtAno.Text;
+            try
+            {
+                string nomeAluno = cmbAluno.Text.Substring(0, 7);
+                string nomeAlunoNovo = txtNome.Text;
+                string Idade = txtIdade.Text;
+                string Telefone = txtTelefone.Text;
+                string Ano = txtAno.Text;
 
-            aluop.AlterarAluno(nomeAluno, nomeAlunoNovo, Idade, Telefone, Ano);
+                aluop.AlterarAluno(nomeAluno, nomeAlunoNovo, Idade, Telefone, Ano);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
 
         private void BtnExcluirDisciplinaAluno_Click(object sender, EventArgs e)
         {
             AlunoOp aluop = new AlunoOp();
 
-            string nomeAluno = cmbAluno.Text.Substring(0, 7);
-            string nomeDisciplina = cmbDisciplinaCadAl.Text.Substring(0, 7);
+            try
+            {
 
-            aluop.ExcluirDiscplinaAluno(nomeAluno, nomeDisciplina);
+                string nomeAluno = cmbAluno.Text.Substring(0, 7);
+                string nomeDisciplina = cmbDisciplinaCadAl.Text.Substring(0, 7);
+
+                aluop.ExcluirDiscplinaAluno(nomeAluno, nomeDisciplina);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
 
         private void BtnExcluirAtividadeAluno_Click(object sender, EventArgs e)
         {
             AlunoOp aluop = new AlunoOp();
 
-            string nomeAluno = cmbAluno.Text.Substring(0, 7);
-            string nomeDisciplina = cmbDisciplinaCadAl.Text.Substring(0, 7);
-            string nomeAtividade = cmbAtividade.Text;
+            try
+            {
+                string nomeAluno = cmbAluno.Text.Substring(0, 7);
+                string nomeDisciplina = cmbDisciplinaCadAl.Text.Substring(0, 7);
+                string nomeAtividade = cmbAtividade.Text;
 
-            aluop.ExcluirAtividadeAluno(nomeAluno, nomeDisciplina, nomeAtividade);
+                aluop.ExcluirAtividadeAluno(nomeAluno, nomeDisciplina, nomeAtividade);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
 
         private void BtnAlterarNotaAluno_Click(object sender, EventArgs e)
         {
             AlunoOp aluop = new AlunoOp();
 
-            string nomeAluno = cmbAluno.Text.Substring(0, 7);
-            string nomeDisciplina = cmbDisciplinaCadAl.Text.Substring(0, 7);
-            string nomeAtividade = cmbAtividade.Text;
-            string Nota = lblNotaAluno.Text;
+            try
+            {
+                string nomeAluno = cmbAluno.Text.Substring(0, 7);
+                string nomeDisciplina = cmbDisciplinaCadAl.Text.Substring(0, 7);
+                string nomeAtividade = cmbAtividade.Text;
+                string Nota = lblNotaAluno.Text;
 
-            aluop.AlterarAtividadeNota(nomeAluno, nomeDisciplina, nomeAtividade, Nota);
+                aluop.AlterarAtividadeNota(nomeAluno, nomeDisciplina, nomeAtividade, Nota);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
     }
 }

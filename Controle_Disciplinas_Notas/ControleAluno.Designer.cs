@@ -149,9 +149,9 @@
             this.lblNome.ForeColor = System.Drawing.Color.White;
             this.lblNome.Location = new System.Drawing.Point(28, 175);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(85, 13);
+            this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 14;
-            this.lblNome.Text = "Trocar pro nome";
+            this.lblNome.Text = "Nome";
             // 
             // label6
             // 
@@ -159,9 +159,9 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(28, 199);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Idade";
+            this.label6.Text = "Idade:";
             // 
             // lblIdade
             // 
@@ -169,9 +169,9 @@
             this.lblIdade.ForeColor = System.Drawing.Color.White;
             this.lblIdade.Location = new System.Drawing.Point(28, 212);
             this.lblIdade.Name = "lblIdade";
-            this.lblIdade.Size = new System.Drawing.Size(85, 13);
+            this.lblIdade.Size = new System.Drawing.Size(34, 13);
             this.lblIdade.TabIndex = 16;
-            this.lblIdade.Text = "Trocar pra idade";
+            this.lblIdade.Text = "Idade";
             // 
             // label7
             // 
@@ -179,9 +179,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(28, 245);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 17;
-            this.label7.Text = "Telefone";
+            this.label7.Text = "Telefone:";
             // 
             // lblTelefone
             // 
@@ -189,9 +189,9 @@
             this.lblTelefone.ForeColor = System.Drawing.Color.White;
             this.lblTelefone.Location = new System.Drawing.Point(28, 258);
             this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(97, 13);
+            this.lblTelefone.Size = new System.Drawing.Size(49, 13);
             this.lblTelefone.TabIndex = 18;
-            this.lblTelefone.Text = "Trocar pro telefone";
+            this.lblTelefone.Text = "Telefone";
             // 
             // label8
             // 
@@ -209,9 +209,9 @@
             this.lblAno.ForeColor = System.Drawing.Color.White;
             this.lblAno.Location = new System.Drawing.Point(28, 303);
             this.lblAno.Name = "lblAno";
-            this.lblAno.Size = new System.Drawing.Size(38, 13);
+            this.lblAno.Size = new System.Drawing.Size(26, 13);
             this.lblAno.TabIndex = 21;
-            this.lblAno.Text = "Nome:";
+            this.lblAno.Text = "Ano";
             // 
             // grfPizza
             // 
@@ -237,9 +237,9 @@
             this.lblCodigo.ForeColor = System.Drawing.Color.White;
             this.lblCodigo.Location = new System.Drawing.Point(28, 130);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(91, 13);
+            this.lblCodigo.Size = new System.Drawing.Size(40, 13);
             this.lblCodigo.TabIndex = 25;
-            this.lblCodigo.Text = "Trocar pro código";
+            this.lblCodigo.Text = "Código";
             // 
             // ControleAluno
             // 

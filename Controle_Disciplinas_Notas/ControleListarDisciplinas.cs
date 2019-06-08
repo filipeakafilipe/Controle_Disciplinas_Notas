@@ -23,18 +23,25 @@ namespace Controle_Disciplinas_Notas
 
             List<Disciplina> Discs = new List<Disciplina>();
 
-            Discs = discop.ListarDisciplinas();
+            try
+            {
+                Discs = discop.ListarDisciplinas();
 
-            dgvListarDisciplinas.ForeColor = Color.Black;
-            dgvListarDisciplinas.DataSource = Discs;
-            dgvListarDisciplinas.Columns[0].Width = 84;
-            dgvListarDisciplinas.Columns[1].Width = 84;
-            dgvListarDisciplinas.Columns[2].Width = 84;
-            dgvListarDisciplinas.Columns[3].Width = 84;
-            dgvListarDisciplinas.Columns[4].Width = 84;
-            dgvListarDisciplinas.Columns[5].Visible = false;
+                dgvListarDisciplinas.ForeColor = Color.Black;
+                dgvListarDisciplinas.DataSource = Discs;
+                dgvListarDisciplinas.Columns[0].Width = 84;
+                dgvListarDisciplinas.Columns[1].Width = 84;
+                dgvListarDisciplinas.Columns[2].Width = 84;
+                dgvListarDisciplinas.Columns[3].Width = 84;
+                dgvListarDisciplinas.Columns[4].Width = 84;
+                dgvListarDisciplinas.Columns[5].Visible = false;
 
-            dgvListarDisciplinas.ClearSelection();
+                dgvListarDisciplinas.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
 
         private void btnAtualizarDisciplinas_Click(object sender, EventArgs e)
@@ -43,18 +50,25 @@ namespace Controle_Disciplinas_Notas
 
             List<Disciplina> Discs = new List<Disciplina>();
 
-            Discs = discop.ListarDisciplinas();
+            try
+            {
+                Discs = discop.ListarDisciplinas();
 
-            dgvListarDisciplinas.ForeColor = Color.Black;
-            dgvListarDisciplinas.DataSource = Discs;
-            dgvListarDisciplinas.Columns[0].Width = 84;
-            dgvListarDisciplinas.Columns[1].Width = 84;
-            dgvListarDisciplinas.Columns[2].Width = 84;
-            dgvListarDisciplinas.Columns[3].Width = 84;
-            dgvListarDisciplinas.Columns[4].Width = 84;
-            dgvListarDisciplinas.Columns[5].Visible = false;
+                dgvListarDisciplinas.ForeColor = Color.Black;
+                dgvListarDisciplinas.DataSource = Discs;
+                dgvListarDisciplinas.Columns[0].Width = 84;
+                dgvListarDisciplinas.Columns[1].Width = 84;
+                dgvListarDisciplinas.Columns[2].Width = 84;
+                dgvListarDisciplinas.Columns[3].Width = 84;
+                dgvListarDisciplinas.Columns[4].Width = 84;
+                dgvListarDisciplinas.Columns[5].Visible = false;
 
-            dgvListarDisciplinas.ClearSelection();
+                dgvListarDisciplinas.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
+            }
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -63,13 +77,20 @@ namespace Controle_Disciplinas_Notas
 
             dgvListarDisciplinas.ClearSelection();
 
-            for(int i = 0; i < dgvListarDisciplinas.RowCount; i++)
+            try
             {
-                if(dgvListarDisciplinas.Rows[i].Cells[0].Value.ToString() == codDisc)
+                for (int i = 0; i < dgvListarDisciplinas.RowCount; i++)
                 {
-                    dgvListarDisciplinas.CurrentCell = dgvListarDisciplinas.Rows[i].Cells[0];
-                    break;
+                    if (dgvListarDisciplinas.Rows[i].Cells[0].Value.ToString() == codDisc)
+                    {
+                        dgvListarDisciplinas.CurrentCell = dgvListarDisciplinas.Rows[i].Cells[0];
+                        break;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Um erro ocorreu.\nMensagem: {ex.Message}", "Atenção");
             }
         }
     }
