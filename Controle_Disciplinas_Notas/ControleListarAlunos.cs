@@ -15,6 +15,18 @@ namespace Controle_Disciplinas_Notas
         public ControleListarAlunos()
         {
             InitializeComponent();
+
+            AlunoOp aluop = new AlunoOp();
+
+            List<Aluno> alus = new List<Aluno>();
+
+            alus = aluop.ListarAlunos();
+
+            dgvListarAlunos.ForeColor = Color.Black;
+            dgvListarAlunos.DataSource = alus;
+            dgvListarAlunos.Columns[5].Visible = false;
+
+            dgvListarAlunos.ClearSelection();
         }
 
         private void btnAtualizarAlunos_Click(object sender, EventArgs e)
@@ -30,6 +42,22 @@ namespace Controle_Disciplinas_Notas
             dgvListarAlunos.Columns[5].Visible = false;
 
             dgvListarAlunos.ClearSelection();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            string codAluno = txtPesquisar.Text.ToUpper();
+
+            dgvListarAlunos.ClearSelection();
+
+            for (int i = 0; i < dgvListarAlunos.RowCount; i++)
+            {
+                if (dgvListarAlunos.Rows[i].Cells[0].Value.ToString() == codAluno)
+                {
+                    dgvListarAlunos.CurrentCell = dgvListarAlunos.Rows[i].Cells[0];
+                    break;
+                }
+            }
         }
     }
 }

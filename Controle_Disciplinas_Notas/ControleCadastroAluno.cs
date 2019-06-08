@@ -63,8 +63,8 @@ namespace Controle_Disciplinas_Notas
         {
             AlunoOp aluop = new AlunoOp();
 
-            string NomeDisciplina = cmbDisciplina.Text;
-            string NomeAluno = cmbAluno.Text;
+            string NomeDisciplina = cmbDisciplina.Text.Substring(0,7);
+            string NomeAluno = cmbAluno.Text.Substring(0,7);
 
             aluop.AdicionarDisciplina(new Disciplina(), new Aluno(), NomeDisciplina, NomeAluno);
         }
@@ -76,11 +76,11 @@ namespace Controle_Disciplinas_Notas
             cmbDiscAluno.Items.Clear();
 
             //string NomeDisciplina = cmbDisciplina.Text;
-            string NomeAluno = cmbAluno.Text;
+            string NomeAluno = cmbAluno.Text.Substring(0, 7);
 
             List<string> discs = aluop.ProcuraDiscAluno(/*NomeDisciplina, */NomeAluno);
 
-            foreach(string nomeAtividade in discs)
+            foreach (string nomeAtividade in discs)
             {
                 cmbDiscAluno.Items.Add(nomeAtividade);
             }
@@ -94,7 +94,7 @@ namespace Controle_Disciplinas_Notas
 
             cmbAtividadeAluno.Items.Clear();
 
-            string nomeDisc = cmbDiscAluno.Text;
+            string nomeDisc = cmbDiscAluno.Text.Substring(0, 7);
 
             List<string> atividades = discop.ProcuraAtividade(new Disciplina(), nomeDisc);
 
@@ -108,12 +108,12 @@ namespace Controle_Disciplinas_Notas
         {
             AlunoOp aluop = new AlunoOp();
 
-            string NomeAluno = cmbAluno.Text;
-            string NomeDisciplina = cmbDiscAluno.Text;
+            string NomeAluno = cmbAluno.Text.Substring(0,7);
+            string NomeDisciplina = cmbDiscAluno.Text.Substring(0, 7);
             string NomeAtividade = cmbAtividadeAluno.Text;
             double Nota = double.Parse(lblNotaAluno.Text);
 
             aluop.AdicionarNota(NomeDisciplina, NomeAluno, NomeAtividade, Nota);
-        }     
+        }
     }
 }

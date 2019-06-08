@@ -39,7 +39,7 @@ namespace Controle_Disciplinas_Notas
 
             cmbDisciplinaCadAl.Items.Clear();
 
-            string NomeAluno = cmbAluno.Text;
+            string NomeAluno = cmbAluno.Text.Substring(0, 7);
 
             List<string> discs = aluop.ProcuraDiscAluno(NomeAluno);
 
@@ -51,14 +51,14 @@ namespace Controle_Disciplinas_Notas
 
         private void CmbAtividade_MouseUp(object sender, MouseEventArgs e)
         {
-            AlunoOp discop = new AlunoOp();
+            AlunoOp aluop = new AlunoOp();
 
             cmbAtividade.Items.Clear();
 
-            string nomeAluno = cmbAluno.Text;
-            string nomeDisc = cmbDisciplinaCadAl.Text;
+            string nomeAluno = cmbAluno.Text.Substring(0, 7);
+            string nomeDisc = cmbDisciplinaCadAl.Text.Substring(0, 7);
 
-            List<string> atividades = discop.ProcuraAtvAluno(nomeAluno, nomeDisc);
+            List<string> atividades = aluop.ProcuraAtvAluno(nomeAluno, nomeDisc);
 
             foreach (string nomeAtv in atividades)
             {
@@ -70,7 +70,7 @@ namespace Controle_Disciplinas_Notas
         {
             AlunoOp aluop = new AlunoOp();
 
-            string nomeAluno = cmbAluno.Text;
+            string nomeAluno = cmbAluno.Text.Substring(0, 7);
 
             aluop.ExcluirAluno(nomeAluno);
         }
@@ -79,7 +79,7 @@ namespace Controle_Disciplinas_Notas
         {
             AlunoOp aluop = new AlunoOp();
 
-            string nomeAluno = cmbAluno.Text;
+            string nomeAluno = cmbAluno.Text.Substring(0, 7);
             string nomeAlunoNovo = txtNome.Text;
             string Idade = txtIdade.Text;
             string Telefone = txtTelefone.Text;
@@ -92,8 +92,8 @@ namespace Controle_Disciplinas_Notas
         {
             AlunoOp aluop = new AlunoOp();
 
-            string nomeAluno = cmbAluno.Text;
-            string nomeDisciplina = cmbDisciplinaCadAl.Text;
+            string nomeAluno = cmbAluno.Text.Substring(0, 7);
+            string nomeDisciplina = cmbDisciplinaCadAl.Text.Substring(0, 7);
 
             aluop.ExcluirDiscplinaAluno(nomeAluno, nomeDisciplina);
         }
@@ -102,8 +102,8 @@ namespace Controle_Disciplinas_Notas
         {
             AlunoOp aluop = new AlunoOp();
 
-            string nomeAluno = cmbAluno.Text;
-            string nomeDisciplina = cmbDisciplinaCadAl.Text;
+            string nomeAluno = cmbAluno.Text.Substring(0, 7);
+            string nomeDisciplina = cmbDisciplinaCadAl.Text.Substring(0, 7);
             string nomeAtividade = cmbAtividade.Text;
 
             aluop.ExcluirAtividadeAluno(nomeAluno, nomeDisciplina, nomeAtividade);
@@ -113,8 +113,8 @@ namespace Controle_Disciplinas_Notas
         {
             AlunoOp aluop = new AlunoOp();
 
-            string nomeAluno = cmbAluno.Text;
-            string nomeDisciplina = cmbDisciplinaCadAl.Text;
+            string nomeAluno = cmbAluno.Text.Substring(0, 7);
+            string nomeDisciplina = cmbDisciplinaCadAl.Text.Substring(0, 7);
             string nomeAtividade = cmbAtividade.Text;
             string Nota = lblNotaAluno.Text;
 

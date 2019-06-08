@@ -41,7 +41,7 @@ namespace Controle_Disciplinas_Notas
 
             cmbSelecionarAtividade.Items.Clear();
 
-            string nomeDisc = cmbSelecionarDisciplina.Text;
+            string nomeDisc = cmbSelecionarDisciplina.Text.Substring(0, 7);
 
             List<string> atividades = discop.ProcuraAtividade(new Disciplina(), nomeDisc);
 
@@ -55,7 +55,7 @@ namespace Controle_Disciplinas_Notas
         {
             DisciplinaOp discop = new DisciplinaOp();
 
-            string nomeDisc = cmbSelecionarDisciplina.Text;
+            string nomeDisc = cmbSelecionarDisciplina.Text.Substring(0, 7);
 
             discop.ExcluirDisciplina(nomeDisc);
         }
@@ -64,7 +64,7 @@ namespace Controle_Disciplinas_Notas
         {
             DisciplinaOp discop = new DisciplinaOp();
 
-            string nomeDisc = cmbSelecionarDisciplina.Text;
+            string nomeDisc = cmbSelecionarDisciplina.Text.Substring(0, 7);
             string nomeAtividade = cmbSelecionarAtividade.Text;
 
             discop.ExcluirAtividade(nomeDisc, nomeAtividade);
@@ -74,7 +74,7 @@ namespace Controle_Disciplinas_Notas
         {
             DisciplinaOp discop = new DisciplinaOp();
 
-            string nomeDisc = cmbSelecionarDisciplina.Text;
+            string nomeDisc = cmbSelecionarDisciplina.Text.Substring(0, 7);
             string nomeDiscNovo = txtNomeDisc.Text;
             string nomeProfessor = txtNomeProf.Text;
 
@@ -85,7 +85,7 @@ namespace Controle_Disciplinas_Notas
         {
             DisciplinaOp discop = new DisciplinaOp();
 
-            string nomeDisc = cmbSelecionarDisciplina.Text;
+            string nomeDisc = cmbSelecionarDisciplina.Text.Substring(0, 7);
             string nomeAtividade = cmbSelecionarAtividade.Text;
             string nomeAtividadeNovo = txtNomeAtividade.Text;
             string nota = txtNota.Text;

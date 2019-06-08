@@ -34,7 +34,7 @@ namespace Controle_Disciplinas_Notas
 
         private void btnAdicionarAtividade_Click(object sender, EventArgs e)
         {
-            string NomeDisciplina = cmbDisciplinaCadAt.Text;
+            string NomeDisciplina = cmbDisciplinaCadAt.Text.Substring(0, 7);
             string NomeAtividade = txtNomeAtividade.Text;
             double NotaMax = double.Parse(txtNotaMax.Text);
 

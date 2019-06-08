@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using LiveCharts;
+using LiveCharts;
+using LiveCharts.Wpf;
 
 namespace Controle_Disciplinas_Notas
 {
@@ -17,9 +18,9 @@ namespace Controle_Disciplinas_Notas
         {
             InitializeComponent();
 
-            grfCartesiano.Visible = false;
             grfPizza.Visible = false;
 
+            lblCodigo.Visible = false;
             lblNome.Visible = false;
             lblTelefone.Visible = false;
             lblIdade.Visible = false;
@@ -42,21 +43,23 @@ namespace Controle_Disciplinas_Notas
             }
         }
 
-        private void LblSelecionar_Click(object sender, EventArgs e)
+        private void btnSelecionar_Click(object sender, EventArgs e)
         {
+            lblCodigo.Visible = true;
             lblNome.Visible = true;
             lblTelefone.Visible = true;
             lblIdade.Visible = true;
             lblAno.Visible = true;
 
             AlunoOp aluop = new AlunoOp();
-            string[] Dados = new string[4];
-            Dados = aluop.DadosAluno(cmbAlunos.Text);
+            string[] Dados = new string[5];
+            Dados = aluop.DadosAluno(cmbAlunos.Text.Substring(0, 7));
 
-            lblNome.Text = Dados[0];
-            lblTelefone.Text = Dados[1];
-            lblIdade.Text = Dados[2];
-            lblAno.Text = Dados[3];
+            lblCodigo.Text = Dados[0];
+            lblNome.Text = Dados[1];
+            lblTelefone.Text = Dados[2];
+            lblIdade.Text = Dados[3];
+            lblAno.Text = Dados[4];
         }
 
         private void CmbDisciplinas_MouseUp(object sender, MouseEventArgs e)
@@ -66,7 +69,7 @@ namespace Controle_Disciplinas_Notas
             cmbDisciplinas.Items.Clear();
 
             //string NomeDisciplina = cmbDisciplina.Text;
-            string NomeAluno = cmbAlunos.Text;
+            string NomeAluno = cmbAlunos.Text.Substring(0, 7);
 
             List<string> discs = aluop.ProcuraDiscAluno(/*NomeDisciplina, */NomeAluno);
 
@@ -78,7 +81,69 @@ namespace Controle_Disciplinas_Notas
 
         private void BtnSelecionarDisciplina_Click(object sender, EventArgs e)
         {
+            AlunoOp aluop = new AlunoOp();
 
+            List<Aluno> alu = new List<Aluno>();
+
+            string codAluno = cmbAlunos.Text.Substring(0, 7);
+            string codDisc = cmbDisciplinas.Text.Substring(0, 7);
+
+            alu = aluop.ListarDiscAluno(codAluno, codDisc);
+            dgvDiscNotas.ForeColor = Color.Black;
+            dgvDiscNotas.DataSource = alu;
+
+            dgvDiscNotas.Columns[0].Visible = false;
+            dgvDiscNotas.Columns[1].Visible = false;
+            dgvDiscNotas.Columns[2].Visible = false;
+            dgvDiscNotas.Columns[3].Visible = false;
+            dgvDiscNotas.Columns[4].Visible = false;
+            dgvDiscNotas.Columns[5].Visible = false;
+            dgvDiscNotas.Columns[6].Visible = false;
+            dgvDiscNotas.Columns[7].Visible = false;
+
+            dgvDiscNotas.ClearSelection();
+
+            DisciplinaOp discop = new DisciplinaOp();
+            List<double> notasMax = new List<double>();
+            notasMax = discop.NotasDisc(codDisc);
+
+            double somaMax = 0;
+            foreach (double x in notasMax)
+            {
+                somaMax += x;
+            }
+
+            List<Aluno> notasAluno = new List<Aluno>();
+            notasAluno = aluop.NotasAluno(codAluno, codDisc);
+
+            double somaAluno = 0;
+            foreach (var x in notasAluno)
+            {
+                somaAluno += double.Parse(x.NotaAluno);
+            }
+
+            Func<ChartPoint, string> labelPoint = chartPoint =>
+                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+            grfPizza.Visible = true;
+            grfPizza.Series = new SeriesCollection
+            {
+                new PieSeries
+                {
+                    Title = "Nota Máxima",
+                    Values = new ChartValues<double> {somaMax},
+                    DataLabels = true,
+                    LabelPoint = labelPoint
+                },
+                new PieSeries
+                {
+                    Title = "Nota Aluno",
+                    Values = new ChartValues<double> {somaAluno},
+                    DataLabels = true,
+                    LabelPoint = labelPoint
+                }
+            };
+
+            grfPizza.LegendLocation = LegendLocation.Bottom;
         }
     }
 }
