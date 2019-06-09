@@ -27,7 +27,7 @@ namespace Controle_Disciplinas_Notas
 
             try
             {
-                List<string> discs = discop.ProcuraDisciplina(new Disciplina());
+                List<string> discs = discop.ProcuraDisciplina();
 
                 foreach (string nomeDisc in discs)
                 {
@@ -53,7 +53,7 @@ namespace Controle_Disciplinas_Notas
 
                 string nomeDisc = cmbSelecionarDisciplina.Text.Substring(0, 7);
 
-                List<string> atividades = discop.ProcuraAtividade(new Disciplina(), nomeDisc);
+                List<string> atividades = discop.ProcuraAtividade(nomeDisc);
 
                 foreach (string nomeAtividade in atividades)
                 {

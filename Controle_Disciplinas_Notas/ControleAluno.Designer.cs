@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.cmbAlunos = new System.Windows.Forms.ComboBox();
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.cmbDisciplinas = new System.Windows.Forms.ComboBox();
@@ -49,17 +48,6 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscNotas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ControleAluno";
             // 
             // cmbAlunos
             // 
@@ -264,7 +252,6 @@
             this.Controls.Add(this.cmbDisciplinas);
             this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.cmbAlunos);
-            this.Controls.Add(this.label1);
             this.Name = "ControleAluno";
             this.Size = new System.Drawing.Size(1079, 614);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscNotas)).EndInit();
@@ -274,8 +261,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbAlunos;
         private System.Windows.Forms.Button btnSelecionar;
         private System.Windows.Forms.ComboBox cmbDisciplinas;

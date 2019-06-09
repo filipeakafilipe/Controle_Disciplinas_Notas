@@ -37,7 +37,7 @@ namespace Controle_Disciplinas_Notas
 
             try
             {
-                List<string> alunos = aluop.ProcuraAluno(new Aluno());
+                List<string> alunos = aluop.ProcuraAluno();
 
                 foreach (string nomeAlu in alunos)
                 {

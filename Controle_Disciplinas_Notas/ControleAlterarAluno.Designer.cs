@@ -49,8 +49,6 @@
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnExcluirAluno = new System.Windows.Forms.Button();
             this.btnExcluirDisciplinaAluno = new System.Windows.Forms.Button();
             this.btnExcluirAtividadeAluno = new System.Windows.Forms.Button();
@@ -129,9 +127,9 @@
             this.lblNomeCadAl.ForeColor = System.Drawing.Color.White;
             this.lblNomeCadAl.Location = new System.Drawing.Point(40, 115);
             this.lblNomeCadAl.Name = "lblNomeCadAl";
-            this.lblNomeCadAl.Size = new System.Drawing.Size(85, 13);
+            this.lblNomeCadAl.Size = new System.Drawing.Size(34, 13);
             this.lblNomeCadAl.TabIndex = 35;
-            this.lblNomeCadAl.Text = "Aluno (Nome-ID)";
+            this.lblNomeCadAl.Text = "Aluno";
             // 
             // lblNota
             // 
@@ -248,25 +246,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 31);
+            this.label1.Size = new System.Drawing.Size(83, 31);
             this.label1.TabIndex = 47;
-            this.label1.Text = "Alterar Aluno";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(0, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1079, 10);
-            this.panel1.TabIndex = 48;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(356, 51);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 630);
-            this.panel2.TabIndex = 49;
+            this.label1.Text = "Aluno";
             // 
             // btnExcluirAluno
             // 
@@ -315,8 +297,6 @@
             this.Controls.Add(this.btnExcluirAtividadeAluno);
             this.Controls.Add(this.btnExcluirDisciplinaAluno);
             this.Controls.Add(this.btnExcluirAluno);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAlterarNotaAluno);
             this.Controls.Add(this.label3);
@@ -369,8 +349,6 @@
         private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnExcluirAluno;
         private System.Windows.Forms.Button btnExcluirDisciplinaAluno;
         private System.Windows.Forms.Button btnExcluirAtividadeAluno;

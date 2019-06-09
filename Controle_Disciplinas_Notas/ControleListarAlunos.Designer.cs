@@ -44,9 +44,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(281, 31);
+            this.label1.Size = new System.Drawing.Size(97, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Controle Listar Alunos";
+            this.label1.Text = "Alunos";
             // 
             // dgvListarAlunos
             // 
@@ -75,6 +75,7 @@
             this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
             this.btnPesquisar.TabIndex = 4;
             this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 

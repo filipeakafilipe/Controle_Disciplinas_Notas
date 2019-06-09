@@ -43,8 +43,6 @@
             this.btnAdicionarDisciplina = new System.Windows.Forms.Button();
             this.btnAdicionarAtividade = new System.Windows.Forms.Button();
             this.cmbDisciplinaCadAt = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -53,9 +51,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 31);
+            this.label1.Size = new System.Drawing.Size(131, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cadastro Disciplina";
+            this.label1.Text = "Disciplina";
             // 
             // txtNomeDisc
             // 
@@ -190,29 +188,11 @@
             this.cmbDisciplinaCadAt.TabIndex = 15;
             this.cmbDisciplinaCadAt.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cmbDisciplinaCadAt_MouseUp);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(0, 55);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1079, 10);
-            this.panel1.TabIndex = 16;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(392, 55);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 600);
-            this.panel2.TabIndex = 17;
-            // 
             // ControleCadastroDisciplina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.cmbDisciplinaCadAt);
             this.Controls.Add(this.btnAdicionarAtividade);
             this.Controls.Add(this.btnAdicionarDisciplina);
@@ -253,7 +233,5 @@
         private System.Windows.Forms.Button btnAdicionarDisciplina;
         private System.Windows.Forms.Button btnAdicionarAtividade;
         private System.Windows.Forms.ComboBox cmbDisciplinaCadAt;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
     }
 }

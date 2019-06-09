@@ -43,16 +43,16 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(406, 63);
+            this.label1.Size = new System.Drawing.Size(187, 63);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Controle Alterar";
+            this.label1.Text = "Alterar";
             // 
             // btnAlterarAluno
             // 
             this.btnAlterarAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAlterarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterarAluno.ForeColor = System.Drawing.Color.White;
-            this.btnAlterarAluno.Location = new System.Drawing.Point(456, 59);
+            this.btnAlterarAluno.Location = new System.Drawing.Point(14, 66);
             this.btnAlterarAluno.Name = "btnAlterarAluno";
             this.btnAlterarAluno.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarAluno.TabIndex = 4;
@@ -65,7 +65,7 @@
             this.btnAlterarDisciplina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAlterarDisciplina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterarDisciplina.ForeColor = System.Drawing.Color.White;
-            this.btnAlterarDisciplina.Location = new System.Drawing.Point(587, 59);
+            this.btnAlterarDisciplina.Location = new System.Drawing.Point(95, 66);
             this.btnAlterarDisciplina.Name = "btnAlterarDisciplina";
             this.btnAlterarDisciplina.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarDisciplina.TabIndex = 5;

@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.cmbSelecionarDisciplina = new System.Windows.Forms.ComboBox();
             this.btnAlterarAtividade = new System.Windows.Forms.Button();
             this.btnAlterarDisciplina = new System.Windows.Forms.Button();
@@ -47,26 +45,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSelecionarAtividade = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.btnExcluirAtividade = new System.Windows.Forms.Button();
             this.btnExcluirDisciplina = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(388, 62);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 600);
-            this.panel2.TabIndex = 35;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(-4, 62);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1079, 10);
-            this.panel1.TabIndex = 34;
             // 
             // cmbSelecionarDisciplina
             // 
@@ -109,9 +90,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(591, 112);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 13);
+            this.label4.Size = new System.Drawing.Size(83, 13);
             this.label4.TabIndex = 30;
-            this.label4.Text = "Alterar nova atividade";
+            this.label4.Text = "Alterar atividade";
             // 
             // label3
             // 
@@ -119,9 +100,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(93, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 13);
+            this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 29;
-            this.label3.Text = "Alterar nova disciplina";
+            this.label3.Text = "Alterar disciplina";
             // 
             // label2
             // 
@@ -209,9 +190,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(-1, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 31);
+            this.label1.Size = new System.Drawing.Size(131, 31);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Alterar Disciplina";
+            this.label1.Text = "Disciplina";
             // 
             // cmbSelecionarAtividade
             // 
@@ -231,14 +212,6 @@
             this.label5.Size = new System.Drawing.Size(96, 13);
             this.label5.TabIndex = 37;
             this.label5.Text = "Nome da atividade";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(0, 242);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1079, 10);
-            this.panel3.TabIndex = 35;
             // 
             // btnExcluirAtividade
             // 
@@ -273,11 +246,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.btnExcluirDisciplina);
             this.Controls.Add(this.btnExcluirAtividade);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.cmbSelecionarAtividade);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.cmbSelecionarDisciplina);
             this.Controls.Add(this.btnAlterarAtividade);
             this.Controls.Add(this.btnAlterarDisciplina);
@@ -301,8 +271,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cmbSelecionarDisciplina;
         private System.Windows.Forms.Button btnAlterarAtividade;
         private System.Windows.Forms.Button btnAlterarDisciplina;
@@ -320,7 +288,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbSelecionarAtividade;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnExcluirAtividade;
         private System.Windows.Forms.Button btnExcluirDisciplina;
     }

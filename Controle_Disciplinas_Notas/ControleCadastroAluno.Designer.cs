@@ -49,8 +49,6 @@
             this.lblNotaAluno = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAdicionarNota = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAdicionarDisciplinaAluno = new System.Windows.Forms.Button();
@@ -64,9 +62,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 31);
+            this.label1.Size = new System.Drawing.Size(83, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cadastro Aluno";
+            this.label1.Text = "Aluno";
             // 
             // txtNomeAlu
             // 
@@ -184,9 +182,9 @@
             this.lblNomeCadAl.ForeColor = System.Drawing.Color.White;
             this.lblNomeCadAl.Location = new System.Drawing.Point(500, 161);
             this.lblNomeCadAl.Name = "lblNomeCadAl";
-            this.lblNomeCadAl.Size = new System.Drawing.Size(85, 13);
+            this.lblNomeCadAl.Size = new System.Drawing.Size(34, 13);
             this.lblNomeCadAl.TabIndex = 13;
-            this.lblNomeCadAl.Text = "Aluno (Nome-ID)";
+            this.lblNomeCadAl.Text = "Aluno";
             // 
             // lblDisciplinaCadAl
             // 
@@ -256,22 +254,6 @@
             this.btnAdicionarNota.UseVisualStyleBackColor = false;
             this.btnAdicionarNota.Click += new System.EventHandler(this.btnAdicionarNota_Click);
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 60);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1079, 10);
-            this.flowLayoutPanel1.TabIndex = 23;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(345, 60);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 600);
-            this.panel1.TabIndex = 24;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -332,8 +314,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbDiscAluno);
             this.Controls.Add(this.btnAdicionarDisciplinaAluno);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnAdicionarNota);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -388,8 +368,6 @@
         private System.Windows.Forms.TextBox lblNotaAluno;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAdicionarNota;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAdicionarDisciplinaAluno;

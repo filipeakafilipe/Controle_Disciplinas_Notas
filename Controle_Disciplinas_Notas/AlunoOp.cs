@@ -9,8 +9,9 @@ namespace Controle_Disciplinas_Notas
 {
     class AlunoOp
     {
-        private string caminhoAluno = @"C:\Users\Filipe\Desktop\Prog\PUC\Controle_Disciplinas_Notas\alunos.xml";
-        private string caminhoDisc = @"C:\Users\Filipe\Desktop\Prog\PUC\Controle_Disciplinas_Notas\disciplinas.xml";
+        private string caminhoAluno = @"dados/alunos.xml";
+        private string caminhoDisc = @"dados/disciplinas.xml";
+        // Caminho: Controle_Disciplinas_Notas/Controle_Disciplinas_Notas/bin/Debug/dados
 
         public AlunoOp()
         {
@@ -19,7 +20,7 @@ namespace Controle_Disciplinas_Notas
 
         public AlunoOp(Aluno alu, string nome, int idade, string telefone, int ano)
         {
-            // Adicionar id guid, nome, idade, telefone, ano (série)
+            // Cadastra um novo aluno
 
             alu.Codigo = Guid.NewGuid().ToString().Substring(0, 7).ToUpper();
             alu.NomeAlu = nome;
@@ -35,8 +36,28 @@ namespace Controle_Disciplinas_Notas
             this.SalvarXmlAluno(alu);
         }
 
-        public List<string> ProcuraAluno(Aluno alu/*posso apagar isso, nem usei*/)
+        public void SalvarXmlAluno(Aluno alu)
         {
+            // Salva o novo aluno no arquivo XML alunos.xml
+
+            XElement Raiz = XElement.Load(caminhoAluno);
+
+            XElement NovoAluno = new XElement("Aluno",
+                new XElement("Codigo", alu.Codigo),
+                new XElement("NomeAlu", alu.NomeAlu),
+                new XElement("Idade", alu.Idade),
+                new XElement("Telefone", alu.Telefone),
+                new XElement("Ano", alu.Ano));
+
+            Raiz.Add(NovoAluno);
+
+            Raiz.Save(caminhoAluno);
+        }
+
+        public List<string> ProcuraAluno()
+        {
+            // Procura alunos e retorna uma List de string para ser usado em um Combobox
+
             List<string> alunos = new List<string>();
 
             XElement Raiz = XElement.Load(caminhoAluno);
@@ -56,8 +77,10 @@ namespace Controle_Disciplinas_Notas
             return alunos;
         }
 
-        public void AdicionarDisciplina(Disciplina disc, Aluno alu, string codDisc, string codAluno)
+        public void AdicionarDisciplina(string codDisc, string codAluno)
         {
+            // Adiciona uma nova disciplina para um aluno
+
             XElement RaizAluno = XElement.Load(caminhoAluno);
             XElement RaizDisc = XElement.Load(caminhoDisc);
 
@@ -69,16 +92,10 @@ namespace Controle_Disciplinas_Notas
                                 where ((string)p.Element("Codigo")).Equals(codAluno)
                                 select p;
 
-            //XElement NomeDisc;
-            //XElement NomeProfessor;
-
             foreach (var x in ConsultaAluno)
             {
                 foreach (var y in ConsultaDisc)
                 {
-                    //NomeDisc = new XElement("NomeDisc", y.Element("NomeDisc"));
-                    //NomeProfessor = new XElement("Professor", y.Element("Professor"));
-
                     XElement DiscAdd = new XElement("Disciplina", y.Element("Codigo"), y.Element("NomeDisc"), y.Element("Professor"));
 
                     x.Add(DiscAdd);
@@ -90,6 +107,8 @@ namespace Controle_Disciplinas_Notas
 
         public List<string> ProcuraDiscAluno(string codAluno)
         {
+            // Procura disciplinas cursadas por um aluno e retorna uma List de string para ser utilizado em um Combobox
+
             List<string> disciplinas = new List<string>();
 
             XElement Raiz = XElement.Load(caminhoAluno);
@@ -113,8 +132,10 @@ namespace Controle_Disciplinas_Notas
             return disciplinas;
         }
 
-        public List<string> ProcuraAtvAluno(/*string nomeDisc, */string codAluno, string codDisc)
+        public List<string> ProcuraAtvAluno(string codAluno, string codDisc)
         {
+            // Procura as atividades de uma disciplina cursada por um aluno e retorna uma List de string para ser usado em um Combobox
+
             List<string> atividades = new List<string>();
 
             XElement Raiz = XElement.Load(caminhoAluno);
@@ -144,6 +165,8 @@ namespace Controle_Disciplinas_Notas
 
         public void AdicionarNota(string codDisc, string codAluno, string NomeAtividade, double Nota)
         {
+            // Adiciona a nota de uma atividade de uma disciplina cursada por um aluno
+
             XElement RaizAluno = XElement.Load(caminhoAluno);
 
             var ConsultaAluno = from P in RaizAluno.Elements("Aluno")
@@ -152,16 +175,13 @@ namespace Controle_Disciplinas_Notas
 
             var Consulta2 = from P in ConsultaAluno.Elements("Disciplina")
                             where ((string)P.Element("Codigo")).Equals(codDisc)
-                            //where ((string)P.Element("NomeAtividade")).Equals(NomeAtividade)
                             select P;
 
             foreach (var x in Consulta2)
             {
                 XElement NomeAtividadeAdd = new XElement("NomeAtividade", NomeAtividade);
-                //x.Add(Atividade);
                 XElement NotaAdd = new XElement("NotaAluno", Nota);
                 XElement Atividade = new XElement("Atividade", NomeAtividadeAdd, NotaAdd);
-                //x.Add(NotaAdd);
                 x.Add(Atividade);
             }
 
@@ -170,6 +190,8 @@ namespace Controle_Disciplinas_Notas
 
         public void ExcluirAluno(string codAluno)
         {
+            // Exclui um aluno e seus campos
+
             XElement Raiz = XElement.Load(caminhoAluno);
 
             var Consulta = from P in Raiz.Elements("Aluno")
@@ -186,6 +208,8 @@ namespace Controle_Disciplinas_Notas
 
         public void AlterarAluno(string codAluno, string NomeAlunoNovo, string Idade, string Telefone, string Ano)
         {
+            // Altera os campos de um aluno
+
             XElement Raiz = XElement.Load(caminhoAluno);
 
             var Consulta = from P in Raiz.Elements("Aluno")
@@ -205,6 +229,8 @@ namespace Controle_Disciplinas_Notas
 
         public void ExcluirDiscplinaAluno(string codAluno, string codDisc)
         {
+            // Exclui uma disciplina cursada por um aluno
+
             XElement Raiz = XElement.Load(caminhoAluno);
 
             var Consulta = from P in Raiz.Elements("Aluno")
@@ -225,6 +251,8 @@ namespace Controle_Disciplinas_Notas
 
         public void ExcluirAtividadeAluno(string codAluno, string codDisc, string nomeAtividade)
         {
+            // Exclui uma atividade de uma disciplina cursada por um aluno
+
             XElement Raiz = XElement.Load(caminhoAluno);
 
             var Consulta = from P in Raiz.Elements("Aluno")
@@ -248,6 +276,8 @@ namespace Controle_Disciplinas_Notas
 
         public void AlterarAtividadeNota(string codAluno, string codDisc, string nomeAtividade, string Nota)
         {
+            // Altera a nota de uma atividade de uma disciplina cursada por um aluno
+
             XElement Raiz = XElement.Load(caminhoAluno);
 
             var Consulta = from P in Raiz.Elements("Aluno")
@@ -272,6 +302,8 @@ namespace Controle_Disciplinas_Notas
 
         public string[] DadosAluno(string codAluno)
         {
+            // Retorna um vetor de strings com os dados básicos de um aluno para ser mostrado no Controle pessoal do Aluno
+
             XElement Raiz = XElement.Load(caminhoAluno);
             string[] Dados = new string[5] { "", "", "", "", "" };
 
@@ -300,7 +332,7 @@ namespace Controle_Disciplinas_Notas
 
         public List<Aluno> ListarAlunos()
         {
-            // ControleListarAluno
+            // Retorna uma lista com os dados de um aluno, disciplinas, atividades, notas, etc. para ser mostrado em um DataGridView
 
             List<Aluno> alu = new List<Aluno>();
 
@@ -403,6 +435,8 @@ namespace Controle_Disciplinas_Notas
 
         public List<Aluno> ListarDiscAluno(string codAluno, string codDisc)
         {
+            // Retorna uma lista com as atividades e notas de uma disciplina cursada por um aluno para ser mostrado em um DataGridView
+
             List<Aluno> alu = new List<Aluno>();
 
             XElement Raiz = XElement.Load(caminhoAluno);
@@ -439,6 +473,8 @@ namespace Controle_Disciplinas_Notas
 
         public List<Aluno> NotasAluno(string codAluno, string codDisc)
         {
+            // Retorna uma lista com as notas de uma disciplina de um aluno
+
             List<Aluno> alu = new List<Aluno>();
 
             XElement Raiz = XElement.Load(caminhoAluno);
@@ -470,22 +506,5 @@ namespace Controle_Disciplinas_Notas
 
             return alu;
         }
-
-        public void SalvarXmlAluno(Aluno alu)
-        {
-            XElement Raiz = XElement.Load(caminhoAluno);
-
-            XElement NovoAluno = new XElement("Aluno",
-                new XElement("Codigo", alu.Codigo),
-                new XElement("NomeAlu", alu.NomeAlu),
-                new XElement("Idade", alu.Idade),
-                new XElement("Telefone", alu.Telefone),
-                new XElement("Ano", alu.Ano));
-
-            Raiz.Add(NovoAluno);
-
-            Raiz.Save(caminhoAluno);
-        }
-
     }
 }

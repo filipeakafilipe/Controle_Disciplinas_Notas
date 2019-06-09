@@ -42,7 +42,7 @@ namespace Controle_Disciplinas_Notas
 
                 DisciplinaOp Disc = new DisciplinaOp();
 
-                Disc.AdicionarAtividade(new Disciplina(), NomeDisciplina, NomeAtividade, NotaMax);
+                Disc.AdicionarAtividade(NomeDisciplina, NomeAtividade, NotaMax);
             }
             catch (Exception ex)
             {
@@ -60,7 +60,7 @@ namespace Controle_Disciplinas_Notas
 
             try
             {
-                List<string> discs = discop.ProcuraDisciplina(new Disciplina());
+                List<string> discs = discop.ProcuraDisciplina();
 
                 foreach (string nomeDisc in discs)
                 {

@@ -84,6 +84,7 @@
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.White;
+            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
             this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSair.Location = new System.Drawing.Point(15, 577);
             this.btnSair.Name = "btnSair";

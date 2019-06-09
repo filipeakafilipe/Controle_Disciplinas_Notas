@@ -44,16 +44,16 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(451, 63);
+            this.label1.Size = new System.Drawing.Size(246, 63);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ControleCadastro";
+            this.label1.Text = "Cadastro";
             // 
             // btnCadastroAluno
             // 
             this.btnCadastroAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnCadastroAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastroAluno.ForeColor = System.Drawing.Color.White;
-            this.btnCadastroAluno.Location = new System.Drawing.Point(526, 66);
+            this.btnCadastroAluno.Location = new System.Drawing.Point(14, 66);
             this.btnCadastroAluno.Name = "btnCadastroAluno";
             this.btnCadastroAluno.Size = new System.Drawing.Size(75, 23);
             this.btnCadastroAluno.TabIndex = 3;
@@ -66,7 +66,7 @@
             this.btnCadastroDisciplina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnCadastroDisciplina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastroDisciplina.ForeColor = System.Drawing.Color.White;
-            this.btnCadastroDisciplina.Location = new System.Drawing.Point(670, 66);
+            this.btnCadastroDisciplina.Location = new System.Drawing.Point(95, 66);
             this.btnCadastroDisciplina.Name = "btnCadastroDisciplina";
             this.btnCadastroDisciplina.Size = new System.Drawing.Size(75, 23);
             this.btnCadastroDisciplina.TabIndex = 4;

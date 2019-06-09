@@ -45,16 +45,16 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(365, 63);
+            this.label1.Size = new System.Drawing.Size(160, 63);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ControleListar";
+            this.label1.Text = "Listar";
             // 
             // btnListarAlunos
             // 
             this.btnListarAlunos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnListarAlunos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListarAlunos.ForeColor = System.Drawing.Color.White;
-            this.btnListarAlunos.Location = new System.Drawing.Point(493, 33);
+            this.btnListarAlunos.Location = new System.Drawing.Point(14, 66);
             this.btnListarAlunos.Name = "btnListarAlunos";
             this.btnListarAlunos.Size = new System.Drawing.Size(75, 23);
             this.btnListarAlunos.TabIndex = 1;
@@ -67,7 +67,7 @@
             this.btnListarDisciplinas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnListarDisciplinas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListarDisciplinas.ForeColor = System.Drawing.Color.White;
-            this.btnListarDisciplinas.Location = new System.Drawing.Point(601, 33);
+            this.btnListarDisciplinas.Location = new System.Drawing.Point(95, 66);
             this.btnListarDisciplinas.Name = "btnListarDisciplinas";
             this.btnListarDisciplinas.Size = new System.Drawing.Size(75, 23);
             this.btnListarDisciplinas.TabIndex = 2;
