@@ -2,4 +2,6 @@
 
 [...]
 
+Tecnologias: C# Windows Froms, LINQ, XML
+
 Planos futuros: XML -> SQL Server - WinForms -> Web
